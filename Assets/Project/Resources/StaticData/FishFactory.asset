@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3410532586c32459a84bc0357cf825, type: 3}
+  m_Name: FishFactory
+  m_EditorClassIdentifier: 
+  HedgehogPrefab: {fileID: 1975488316660557988, guid: 5900a2104010eb144a4dee8ab45e2a0f, type: 3}
+  BlueSergeonPrefab: {fileID: 8222625670074664619, guid: 7eb84179a7b5c6440a2cc3472fce1b58, type: 3}
+  ClounPrefab: {fileID: 7145479808271592400, guid: 6eb9f08cbf78f854b9976a70fe6408c7, type: 3}
+  AngelFish: {fileID: 4876050476916441270, guid: 33ea324d333992f48aa34dde0a60ee48, type: 3}
+  BelugaFish: {fileID: 125920886739772469, guid: c8f8d1bcf136b834096b3f32354c7123, type: 3}
+  PicassoFish: {fileID: -248252621069899272, guid: 687e7e9ba2a83244f9bebdb0f918828b, type: 3}
+  ParrotFish: {fileID: 376226829369952971, guid: c563d31fc303250499c2e23c6516d139, type: 3}
+  NapoleonFish: {fileID: 1402715104061062102, guid: 31b04700869355441bc3314eb074fa07, type: 3}
+  LunaFish: {fileID: 7568679899376936800, guid: cc3474825a122194ca8a02fc1bc0a83e, type: 3}

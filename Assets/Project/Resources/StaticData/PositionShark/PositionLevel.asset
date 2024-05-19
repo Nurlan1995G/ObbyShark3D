@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78c13ce1307d8c4fba8da1a58efd001, type: 3}
+  m_Name: PositionLevel
+  m_EditorClassIdentifier: 
+  InitSharkOnePosition: {x: 29.5, y: 0, z: 14.2}
+  InitSharkTwoPosition: {x: -29.1, y: -0.7, z: 13.6}
+  InitPlayerPosition: {x: -7.8, y: 0, z: -32.2}

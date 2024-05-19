@@ -26,7 +26,6 @@ public class Bootstraper : MonoBehaviour
         FactoryShark factoryShark = new FactoryShark(assetProvider);
 
         _spawnPointEnemy.Construct(factoryShark, _positionStaticData, _playerView, _spawner, _sharkStaticData);
-
         _spawnPointEnemys.Construct(factoryShark, _positionStaticData, _playerView, _spawner, _sharkStaticData);
 
         _playerView.Construct(_positionStaticData);

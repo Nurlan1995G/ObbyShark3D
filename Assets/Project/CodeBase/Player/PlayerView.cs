@@ -6,7 +6,7 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private ScoreLevelBar _scoreLevelBar;
     [SerializeField] private PlayerTrigger _playerTrigger;
     [SerializeField] private float _localScaleX = 0.2f;
-    [SerializeField] private PlayerControllerMover _mover;
+    [SerializeField] private PlayerMover _mover;
 
     private int _score = 1;
 

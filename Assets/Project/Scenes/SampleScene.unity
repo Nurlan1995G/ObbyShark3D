@@ -971,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnCooldown: 0.1
   _maxCountFish: 100
+  _fishes: []
 --- !u!1 &152253615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4228,8 +4229,9 @@ MonoBehaviour:
   _sharkStaticData: {fileID: 11400000, guid: 167da7f5af830a6409ab27b8f7eb1e5a, type: 2}
   _playerView: {fileID: 1033723640}
   _respawnObject: {fileID: 956305545}
-  _spawnPointEnemys: {fileID: 1691381032}
-  _spawnPointEnemy: {fileID: 1351350039}
+  _spawnPoints:
+  - {fileID: 1351350039}
+  - {fileID: 1691381032}
 --- !u!1 &1915624561
 GameObject:
   m_ObjectHideFlags: 0

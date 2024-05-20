@@ -6,10 +6,20 @@ public class Rotator : MonoBehaviour
 
     private float _currentRotation = 0;
 
+    private MouseInput _mouseInput;
+
+    private void Awake()
+    {
+        _mouseInput = new MouseInput();
+        _mouseInput.Enable();
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButton(0))
-            _currentRotation -= _mouseRotationSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
+        float mouseX = _mouseInput.Mouse.LeftButtonMouse.ReadValue<float>();
+
+        if (_mouseInput.Mouse.LeftButtonMouse.IsPressed())
+            _currentRotation -= _mouseRotationSpeed * mouseX * Time.deltaTime;
 
         transform.rotation = Quaternion.Euler(0, _currentRotation, 0);
     }

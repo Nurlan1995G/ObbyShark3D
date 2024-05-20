@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,18 +5,16 @@ public class SpawnerFish : MonoBehaviour
 {
     [SerializeField] private float _spawnCooldown = 2f;
     [SerializeField] private int _maxCountFish = 100;
-    
+
     private FishFactory _fishFactory;
     private RandomServer _random;
 
-    private List<Fish> _fishes = new List<Fish>();
-
-    private Coroutine _spawnCoroutine;
+    [SerializeField] private List<Fish> _fishes = new List<Fish>();
 
     public int MaxCountFish => _maxCountFish;
     public List<Fish> Fishes => _fishes;
 
-    private void Update() => 
+    private void Update() =>
         StartSpawn();
 
     public void Construct(FishFactory fishFactory, RandomServer random)
@@ -36,34 +32,10 @@ public class SpawnerFish : MonoBehaviour
         }
     }
 
-    public void StartWork()
-    {
-        StopWork();
-
-        _spawnCoroutine = StartCoroutine(Spawn());
-    }
-
-    private void StopWork()
-    {
-        if(_spawnCoroutine != null )
-            StopCoroutine(Spawn());
-    }
-
-    private IEnumerator Spawn()
-    {
-        while (_fishes.Count < _maxCountFish)
-        {
-            Fish fish = SpawnFishes();
-
-            AddFish(fish);
-
-            yield return new WaitForSeconds(_spawnCooldown);
-        }
-    }
-
     private Fish SpawnFishes()
     {
         Fish fish = _fishFactory.GetFish(_random.SpawnFishes(), _random.GetRandomPosition());
+        fish.transform.SetParent(this.transform);
         return fish;
     }
 

@@ -1,5 +1,4 @@
 ﻿using Assets.Project.CodeBase.SharkEnemy;
-using System;
 using UnityEngine;
 
 public class TriggerSharkEnemy : MonoBehaviour

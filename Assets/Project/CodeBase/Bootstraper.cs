@@ -12,7 +12,6 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private PositionStaticData _positionStaticData;
     [SerializeField] private SharkStaticData _sharkStaticData;
     [SerializeField] private PlayerView _playerView;
-    [SerializeField] private RespawnObject _respawnObject;
     [SerializeField] private SpawnPointEnemyBot _spawnPointEnemys;
     [SerializeField] private SpawnPointEnemyBot _spawnPointEnemy;
 

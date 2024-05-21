@@ -4161,7 +4161,7 @@ Transform:
   m_GameObject: {fileID: 1757678262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.949082, y: -16.794165, z: 36.589413}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4184,7 +4184,6 @@ MonoBehaviour:
   _positionStaticData: {fileID: 11400000, guid: c71aebaed73d14b4aa18e569fe8793fe, type: 2}
   _sharkStaticData: {fileID: 11400000, guid: 167da7f5af830a6409ab27b8f7eb1e5a, type: 2}
   _playerView: {fileID: 1033723640}
-  _respawnObject: {fileID: 0}
   _spawnPoints:
   - {fileID: 1351350039}
   - {fileID: 1691381032}

@@ -971,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnCooldown: 0.1
   _maxCountFish: 100
+  _fishes: []
 --- !u!1 &152253615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,7 +2295,6 @@ GameObject:
   - component: {fileID: 963194232}
   - component: {fileID: 963194231}
   - component: {fileID: 963194233}
-  - component: {fileID: 963194234}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2490,32 +2490,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d23c313f7be52e548aa5c509afe7a60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speedRotate: 80
   _zoomSpeed: 20
-  _playerView: {fileID: 0}
-  _smoothTime: 0.3
---- !u!114 &963194234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee78d2a8713295649a84cf936ccb805f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speedRotate: 5
-  _zoomSpeed: 2
-  _smoothTime: 0.4
-  _fixedYPosition: 10
-  _rotationDelay: 0.5
+  _mixZoomDistance: 5
+  _maxZoomDistance: 20
 --- !u!1 &978301905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4739622929547631326, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
@@ -2859,9 +2842,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4739622929547631326, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1033723638}
-    - targetCorrespondingSourceObject: {fileID: 4739622929547631326, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1033723640}
   m_SourcePrefab: {fileID: 100100000, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
 --- !u!4 &1033723632 stripped
@@ -2874,22 +2854,6 @@ CharacterController:
   m_CorrespondingSourceObject: {fileID: 2251948374992208705, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
   m_PrefabInstance: {fileID: 1033723631}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1033723638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978301905}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5ac5c1fb3701a14d9250e453c721629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: 5
-  _rotateSpeed: 8
-  _characterController: {fileID: 1033723636}
-  _joystickController: {fileID: 325995535}
 --- !u!114 &1033723639 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5797505303278054737, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
@@ -4220,9 +4184,10 @@ MonoBehaviour:
   _positionStaticData: {fileID: 11400000, guid: c71aebaed73d14b4aa18e569fe8793fe, type: 2}
   _sharkStaticData: {fileID: 11400000, guid: 167da7f5af830a6409ab27b8f7eb1e5a, type: 2}
   _playerView: {fileID: 1033723640}
-  _respawnObject: {fileID: 0}
-  _spawnPointEnemys: {fileID: 1691381032}
-  _spawnPointEnemy: {fileID: 1351350039}
+  _respawnObject: {fileID: 956305545}
+  _spawnPoints:
+  - {fileID: 1351350039}
+  - {fileID: 1691381032}
 --- !u!1 &1915624561
 GameObject:
   m_ObjectHideFlags: 0

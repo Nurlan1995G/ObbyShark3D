@@ -17,6 +17,8 @@ public class Bootstraper : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("Hey, yofv");
+
         AssetProvider assetProvider = new AssetProvider();
         RandomServer random = new RandomServer(_spawner);
 

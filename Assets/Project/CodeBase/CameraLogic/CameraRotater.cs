@@ -26,7 +26,10 @@ namespace Assets.CodeBase.CameraLogic
             _rotateInput.Enable();
 
             _cinemachine = GetComponent<CinemachineVirtualCamera>();
+        }
 
+        private void OnEnable()
+        {
             _rotateInput.Mouse.RightButton.performed += OnTouchPerformed;
             _rotateInput.Mouse.MouseSrollWheel.performed += OnTouchMouseScrollWheel;
         }

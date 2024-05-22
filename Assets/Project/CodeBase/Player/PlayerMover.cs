@@ -7,10 +7,12 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
 
     private PlayerInput _input;
+    private PlayerData _playerData;
 
     private void Awake()
     {
         _input = new PlayerInput();
+        _playerData = _gameConfig.playerData;
     }
 
     private void OnEnable()
@@ -52,7 +54,7 @@ public class PlayerMover : MonoBehaviour
     {
         Vector3 finalDirection = (cameraRotation * moveDirection).normalized;
 
-        _characterController.Move(_gameConfig.MoveSpeed * Time.deltaTime * finalDirection);
+        _characterController.Move(_playerData.MoveSpeed * Time.deltaTime * finalDirection);
     }
 
     public void RotateCharacter(Vector3 moveDirection, Quaternion cameraRotation)
@@ -62,7 +64,7 @@ public class PlayerMover : MonoBehaviour
             Vector3 finalDirection = (cameraRotation * moveDirection).normalized;
             Quaternion targetRotation = Quaternion.LookRotation(finalDirection);
 
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _gameConfig.RotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _playerData.RotateSpeed * Time.deltaTime);
         }
     }
 }

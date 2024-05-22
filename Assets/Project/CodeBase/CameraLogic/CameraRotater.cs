@@ -9,8 +9,11 @@ namespace Assets.CodeBase.CameraLogic
         [SerializeField] private float _speedRotate;
         [SerializeField] private float _zoomSpeed;
 
-        [SerializeField] private float _mixZoomDistance = 5;
+        [SerializeField] private float _minZoomDistance = 5;
         [SerializeField] private float _maxZoomDistance = 20;
+
+        [SerializeField] private VariableJoystick _variableJoystick;
+        [SerializeField] private float _zoomStep = 0.1f;
 
         private RotateInput _rotateInput;
         private Vector2 _lastDirection;
@@ -34,6 +37,14 @@ namespace Assets.CodeBase.CameraLogic
             _rotateInput.Mouse.MouseSrollWheel.performed += OnTouchMouseScrollWheel;
         }
 
+        private void Update()
+        {
+            Vector2 jostickDirection = _variableJoystick.JostickDirection;
+
+            if (jostickDirection != Vector2.zero)
+                Rotate(jostickDirection);
+        }
+
         private void OnDisable()
         {
             _rotateInput.Disable();
@@ -50,9 +61,9 @@ namespace Assets.CodeBase.CameraLogic
 
             if (framingTransposer != null)
             {
-                framingTransposer.m_CameraDistance -= scrollDelta * _zoomSpeed * Time.deltaTime;
-                framingTransposer.m_CameraDistance = Mathf.Clamp(framingTransposer.m_CameraDistance, _mixZoomDistance
-                    , _maxZoomDistance);
+                float targetDistance = framingTransposer.m_CameraDistance - scrollDelta * _zoomStep;
+                targetDistance = Mathf.Clamp(targetDistance, _minZoomDistance, _maxZoomDistance);
+                framingTransposer.m_CameraDistance = Mathf.Lerp(framingTransposer.m_CameraDistance, targetDistance, _zoomSpeed * Time.deltaTime);
             }
         }
 

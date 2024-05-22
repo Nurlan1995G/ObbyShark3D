@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class VariableJoystick : Joystick
@@ -11,6 +9,8 @@ public class VariableJoystick : Joystick
     [SerializeField] private JoystickType joystickType = JoystickType.Fixed;
 
     private Vector2 fixedPosition = Vector2.zero;
+    
+    public Vector2 JostickDirection { get { return Direction; } }
 
     public void SetMode(JoystickType joystickType)
     {

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnerFish : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class SpawnerFish : MonoBehaviour
 
     [SerializeField] private List<Fish> _fishes = new List<Fish>();
 
-    public int MaxCountFish => _maxCountFish;
     public List<Fish> Fishes => _fishes;
 
     private void Update() =>

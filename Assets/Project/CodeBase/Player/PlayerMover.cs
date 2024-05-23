@@ -22,6 +22,9 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log("Horizontal: " + Input.GetAxis("Horizontal"));
+        //Debug.Log("Vertical: " + Input.GetAxis("Vertical"));
+
         Vector2 moveDirection = _input.Player.Move.ReadValue<Vector2>();
         Move(moveDirection);
     }

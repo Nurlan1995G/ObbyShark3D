@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class RandomServer
 {
@@ -7,19 +7,16 @@ public class RandomServer
     private const int MaxCountPicassoFish = 3;
     private const int MaxCountNapoleonFish = 5;
     private const int MaxCountAngelFish = 7;
-    private const int maxCountHedgehogFish = 10;
+    private const int MaxCountHedgehogFish = 10;
     private const int MaxCountBelugaFish = 14;
     private const int MaxCountParrotFish = 17;
     private const int MaxCountClounFish = 20;
     private const int MaxCountBlueSergeonFish = 24;
 
-    private SpawnerFish _spawner;
-    
-    private float _nextSpawn;
+    public float NextSpawn;
     private float _randomSpawnX;
     private float _randomSpawnZ;
     private Vector3 _whereToSpawn;
-    private float _spawnCooldown;
 
     private int _lunaFish = 0;
     private int _napoleonFish = 0;
@@ -33,21 +30,8 @@ public class RandomServer
 
     public Vector3 WhereToSpawn => _whereToSpawn;
 
-    private readonly Dictionary<int, int> _fishProbabilities = new Dictionary<int, int>
-    {
-        { 1, 26 },
-        { 2, 20 },
-        { 4, 17 },
-        { 8, 14 },
-        { 16, 10 },
-        { 32, 7 },
-        { 64, 5 },
-        { 128, 2 }
-    };
-
     public RandomServer(SpawnerFish spawner)
     {
-        _spawner = spawner;
     }
 
     public TypeFish SpawnFishes()
@@ -80,7 +64,7 @@ public class RandomServer
                 return typeFish = TypeFish.Angel;
             }
 
-            if (_hedgehogFish < maxCountHedgehogFish)
+            if (_hedgehogFish < MaxCountHedgehogFish)
             {
                 _hedgehogFish++;
                 return typeFish = TypeFish.Hedgehog;
@@ -170,46 +154,24 @@ public class RandomServer
                 _blueSergeon--;
                 break;
         }
-
-    }
-
-    public int GetScoreToFish()
-    {
-        int randomValue = UnityEngine.Random.Range(1, 129); 
-
-        int cumulativeProbability = 0;
-
-        foreach (var fishProbab in _fishProbabilities)
-        {
-            cumulativeProbability += fishProbab.Value;
-
-            if (randomValue <= cumulativeProbability)
-            {
-                return fishProbab.Key; 
-            }
-        }
-
-        return 1;
-    }
-
-    public void GetRandomPositionFish()
-    {
-        if (Time.time > _nextSpawn)
-        {
-            _nextSpawn = Time.time + _spawnCooldown;
-
-            _randomSpawnX = UnityEngine.Random.Range(-40, 40);
-            _randomSpawnZ = UnityEngine.Random.Range(-40, 40);
-
-            _whereToSpawn = new Vector3(_randomSpawnX, 0.2f, _randomSpawnZ);
-        }
     }
 
     public Vector3 GetRandomPosition()
     {
-        _randomSpawnX = UnityEngine.Random.Range(-40, 40);
-        _randomSpawnZ = UnityEngine.Random.Range(-40, 40);
+        for (int i = 0; i < 10; i++) // try up to 10 times to find a valid position
+        {
+            _randomSpawnX = UnityEngine.Random.Range(-15, 120);
+            _randomSpawnZ = UnityEngine.Random.Range(-70, 80);
 
-        return _whereToSpawn = new Vector3(_randomSpawnX, 0.2f, _randomSpawnZ);
+            Vector3 randomPosition = new Vector3(_randomSpawnX, 6.2f, _randomSpawnZ);
+            if (NavMesh.SamplePosition(randomPosition, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
+            {
+                return _whereToSpawn = hit.position;
+            }
+        }
+
+        // If no valid position found after 10 attempts, return a default position
+        Debug.LogWarning("Failed to find a valid NavMesh position for spawning fish.");
+        return _whereToSpawn = Vector3.zero;
     }
 }

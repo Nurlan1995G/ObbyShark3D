@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78c13ce1307d8c4fba8da1a58efd001, type: 3}
   m_Name: PositionLevel
   m_EditorClassIdentifier: 
-  InitSharkOnePosition: {x: 29.5, y: 0, z: 14.2}
-  InitSharkTwoPosition: {x: -29.1, y: -0.7, z: 13.6}
-  InitPlayerPosition: {x: -7.8, y: 0, z: -32.2}
+  InitSharkOnePosition: {x: 13.358589, y: 6.4, z: -39.620506}
+  InitSharkTwoPosition: {x: 90.05859, y: 6.33, z: -28.620506}
+  InitPlayerPosition: {x: 12.18898, y: 4.45, z: 11.879494}

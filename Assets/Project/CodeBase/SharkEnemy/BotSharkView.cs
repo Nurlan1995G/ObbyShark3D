@@ -16,15 +16,11 @@ public class BotSharkView : MonoBehaviour
 
     [field: SerializeField] public BotSharkNickName NickName { get; private set; }
 
-    private void Start()
-    {
+    private void Start() =>
         _stateMashine = new SharkBotStateMachine(_agent, _sharkModel, _sharkStaticData, _player, _spawner);
-    }
 
-    private void Update()
-    {
+    private void Update() =>
         _stateMashine?.Update();
-    }
 
     public void Construct(SpawnerFish spawner, SharkStaticData sharkStaticData, PlayerView player)
     {

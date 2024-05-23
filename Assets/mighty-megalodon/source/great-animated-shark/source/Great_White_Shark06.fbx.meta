@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: greatwhiteshark
-    second: {fileID: 2800000, guid: 67ebda718dafab849a377b753704efb5, type: 3}
+    second: {fileID: 2800000, guid: f43b0bf2760e0e14f92848d2e17cd015, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: greatwhiteshark_Eye
-    second: {fileID: 2800000, guid: 0b893d6b7c3a29a4cb99c2bfc8e7e18a, type: 3}
+    second: {fileID: 2800000, guid: b037def06cf288a4c9dab8be8fa2c05a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: greatwhiteshark_teeth
-    second: {fileID: 2800000, guid: 7fc398eb06a02b04193268a04fb79434, type: 3}
+    second: {fileID: 2800000, guid: 61934f4b686ae6e4f8def16162932483, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

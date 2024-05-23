@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 4899378109248672778}
   - component: {fileID: 1980358066829547059}
   - component: {fileID: 125920886739772469}
-  - component: {fileID: -5124192022614463089}
   m_Layer: 0
   m_Name: BelugaFish
   m_TagString: Untagged
@@ -353,28 +352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1013733253786539008}
---- !u!195 &-5124192022614463089
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206852426022253465}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.48391253
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.0803335
-  m_BaseOffset: 0.04016675
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &3024658643347344275
 GameObject:
   m_ObjectHideFlags: 0

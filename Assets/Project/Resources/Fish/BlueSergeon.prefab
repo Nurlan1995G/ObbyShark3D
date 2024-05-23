@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8222625670074664619}
   - component: {fileID: 7395530054651700362}
   - component: {fileID: 5805172427011987509}
-  - component: {fileID: -8843964735583223456}
   m_Layer: 0
   m_Name: BlueSergeon
   m_TagString: Untagged
@@ -143,28 +142,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!195 &-8843964735583223456
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104517609856167801}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.39098388
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.2647459
-  m_BaseOffset: 0.13237295
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &4218373235194944785
 GameObject:
   m_ObjectHideFlags: 0

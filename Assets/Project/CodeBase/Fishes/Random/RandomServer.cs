@@ -7,12 +7,13 @@ public class RandomServer
     private const int MaxCountPicassoFish = 3;
     private const int MaxCountNapoleonFish = 5;
     private const int MaxCountAngelFish = 7;
-    private const int maxCountHedgehogFish = 10;
+    private const int MaxCountHedgehogFish = 10;
     private const int MaxCountBelugaFish = 14;
     private const int MaxCountParrotFish = 17;
     private const int MaxCountClounFish = 20;
     private const int MaxCountBlueSergeonFish = 24;
 
+    public float NextSpawn;
     private float _randomSpawnX;
     private float _randomSpawnZ;
     private Vector3 _whereToSpawn;
@@ -63,7 +64,7 @@ public class RandomServer
                 return typeFish = TypeFish.Angel;
             }
 
-            if (_hedgehogFish < maxCountHedgehogFish)
+            if (_hedgehogFish < MaxCountHedgehogFish)
             {
                 _hedgehogFish++;
                 return typeFish = TypeFish.Hedgehog;
@@ -157,20 +158,19 @@ public class RandomServer
 
     public Vector3 GetRandomPosition()
     {
-        for (int i = 0; i < 10; i++) 
+        for (int i = 0; i < 10; i++) // try up to 10 times to find a valid position
         {
-            _randomSpawnX = UnityEngine.Random.Range(-40, 40);
-            _randomSpawnZ = UnityEngine.Random.Range(-40, 40);
+            _randomSpawnX = UnityEngine.Random.Range(-15, 120);
+            _randomSpawnZ = UnityEngine.Random.Range(-70, 80);
 
-            Vector3 randomPosition = new Vector3(_randomSpawnX, 0.2f, _randomSpawnZ);
-            Debug.Log(randomPosition + " - randomPosition");
-
+            Vector3 randomPosition = new Vector3(_randomSpawnX, 6.2f, _randomSpawnZ);
             if (NavMesh.SamplePosition(randomPosition, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
             {
                 return _whereToSpawn = hit.position;
             }
         }
 
+        // If no valid position found after 10 attempts, return a default position
         Debug.LogWarning("Failed to find a valid NavMesh position for spawning fish.");
         return _whereToSpawn = Vector3.zero;
     }

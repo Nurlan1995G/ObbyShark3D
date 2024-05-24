@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedMove: 4
   RotateSpeed: 50
-  MinimalDistanceToObject: 10
+  MinimalDistanceToObject: 20

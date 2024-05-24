@@ -21,14 +21,14 @@ namespace Assets.CodeBase.CameraLogic
         private float _currentXRotation;
         private float _currentYRotation;
 
-        private CinemachineVirtualCamera _cinemachine;
+        [SerializeField] private CinemachineFreeLook _cinemachineFreeLook;
+
+        private Vector3 _currentMousePosition;
 
         private void Awake()
         {
             _rotateInput = new RotateInput();
             _rotateInput.Enable();
-
-            _cinemachine = GetComponent<CinemachineVirtualCamera>();
         }
 
         private void OnEnable()
@@ -39,10 +39,26 @@ namespace Assets.CodeBase.CameraLogic
 
         private void Update()
         {
-            Vector2 jostickDirection = _variableJoystick.JostickDirection;
+            ControlRotation();
+        }
 
-            if (jostickDirection != Vector2.zero)
-                Rotate(jostickDirection);
+        private void ControlRotation()
+        {
+            Debug.Log(_variableJoystick.Vertical);
+
+            if (_variableJoystick.enabled && _currentMousePosition != Input.mousePosition)
+            {
+
+                _cinemachineFreeLook.m_XAxis.m_InputAxisValue = _variableJoystick.Horizontal;
+                _cinemachineFreeLook.m_YAxis.m_InputAxisValue = _variableJoystick.Vertical;
+            }
+            else
+            {
+                _cinemachineFreeLook.m_XAxis.m_InputAxisValue = 0;
+                _cinemachineFreeLook.m_YAxis.m_InputAxisValue = 0;
+            }
+
+                _currentMousePosition = Input.mousePosition;
         }
 
         private void OnDisable()
@@ -55,15 +71,23 @@ namespace Assets.CodeBase.CameraLogic
 
         private void OnTouchMouseScrollWheel(InputAction.CallbackContext context)
         {
+            if (Application.isMobilePlatform)
+            {
+                Debug.Log("Mobile");
+            }
+            else
+            {
+                Debug.Log("Computer");
+            }
+
             float scrollDelta = context.ReadValue<float>();
 
-            var framingTransposer = _cinemachine.GetCinemachineComponent<CinemachineFramingTransposer>();
-
-            if (framingTransposer != null)
+            for (int i = 0; i < _cinemachineFreeLook.m_Orbits.Length; i++)
             {
-                float targetDistance = framingTransposer.m_CameraDistance - scrollDelta * _zoomStep;
-                targetDistance = Mathf.Clamp(targetDistance, _minZoomDistance, _maxZoomDistance);
-                framingTransposer.m_CameraDistance = Mathf.Lerp(framingTransposer.m_CameraDistance, targetDistance, _zoomSpeed * Time.deltaTime);
+                var orbit = _cinemachineFreeLook.m_Orbits[i];
+                orbit.m_Radius = Mathf.Clamp(orbit.m_Radius - scrollDelta * _zoomStep, _minZoomDistance, _maxZoomDistance);
+                orbit.m_Height = Mathf.Clamp(orbit.m_Height - scrollDelta * _zoomStep, _minZoomDistance / 2, _maxZoomDistance / 2);
+                _cinemachineFreeLook.m_Orbits[i] = orbit; 
             }
         }
 

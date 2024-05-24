@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitSharkOnePosition: {x: 13.358589, y: 6.4, z: -39.620506}
   InitSharkTwoPosition: {x: 90.05859, y: 6.33, z: -28.620506}
-  InitPlayerPosition: {x: 12.18898, y: 4.45, z: 11.879494}
+  InitPlayerPosition: {x: 12.18898, y: 6.24, z: 11.879494}

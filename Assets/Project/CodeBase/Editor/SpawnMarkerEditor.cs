@@ -1,5 +1,4 @@
-﻿using Assets.Project.CodeBase.SharkEnemy.Spawner;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(SpawnPointEnemyBot))]

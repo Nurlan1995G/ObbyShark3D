@@ -16,5 +16,6 @@ public class PlayerData
 {
     public float MoveSpeed;
     public float RotateSpeed;
+    public float Gravity;
 }
 

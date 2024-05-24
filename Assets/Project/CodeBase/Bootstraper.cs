@@ -22,7 +22,7 @@ public class Bootstraper : MonoBehaviour
         AssetProvider assetProvider = new AssetProvider();
         RandomServer random = new RandomServer(_spawner);
 
-        _spawner.Construct(new FishFactory(_fishStaticData, assetProvider), random);
+        _spawner.Construct(new FishFactory(_fishStaticData, assetProvider), random, _playerView);
 
         FactoryShark factoryShark = new FactoryShark(assetProvider);
         

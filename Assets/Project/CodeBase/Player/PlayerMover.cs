@@ -9,6 +9,8 @@ public class PlayerMover : MonoBehaviour
     private PlayerInput _input;
     private PlayerData _playerData;
 
+    private float _fallSpeed = 0f;
+
     private void Awake()
     {
         _input = new PlayerInput();
@@ -24,6 +26,7 @@ public class PlayerMover : MonoBehaviour
     {
         //Debug.Log("Horizontal: " + Input.GetAxis("Horizontal"));
         //Debug.Log("Vertical: " + Input.GetAxis("Vertical"));
+        ApplyGravity();
 
         Vector2 moveDirection = _input.Player.Move.ReadValue<Vector2>();
         Move(moveDirection);
@@ -69,5 +72,19 @@ public class PlayerMover : MonoBehaviour
 
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _playerData.RotateSpeed * Time.deltaTime);
         }
+    }
+
+    private void ApplyGravity()
+    {
+        if (!_characterController.isGrounded)
+        {
+            _fallSpeed += _playerData.Gravity * Time.deltaTime;
+        }
+        else
+        {
+            _fallSpeed = 0f;
+        }
+
+        _characterController.Move(Vector3.down * _fallSpeed * Time.deltaTime);
     }
 }

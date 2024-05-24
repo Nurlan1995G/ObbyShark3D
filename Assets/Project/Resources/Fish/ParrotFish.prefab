@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7395530054651700362}
   - component: {fileID: 5805172427011987509}
   - component: {fileID: 376226829369952971}
-  - component: {fileID: -8063045751431859423}
   m_Layer: 0
   m_Name: ParrotFish
   m_TagString: Untagged
@@ -143,19 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 5763489918133237862}
---- !u!114 &-8063045751431859423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104517609856167801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e25479c92c8344da0da9c0b51169d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speedRotate: 100
 --- !u!1 &4218373235194944785
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.08, y: 0.1}
+  m_AnchoredPosition: {x: -0.08, y: 0.7}
   m_SizeDelta: {x: 2, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3514603967652710027
@@ -400,7 +386,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5586695478768982943}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9e25479c92c8344da0da9c0b51169d1, type: 3}
   m_Name: 

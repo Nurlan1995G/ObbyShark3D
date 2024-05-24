@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.1}
+  m_AnchoredPosition: {x: 0, y: 0.4}
   m_SizeDelta: {x: 3.5, y: 2.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &382709014322888363
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332054203448069678}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9e25479c92c8344da0da9c0b51169d1, type: 3}
   m_Name: 
@@ -340,7 +340,6 @@ GameObject:
   - component: {fileID: -248252621069899272}
   - component: {fileID: 4347002057197663455}
   - component: {fileID: 6269830409842465090}
-  - component: {fileID: -149559886020058422}
   m_Layer: 0
   m_Name: PicassoFish
   m_TagString: Untagged
@@ -469,16 +468,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8431362, y: 0.47088835, z: 0.13835584}
   m_Center: {x: 0.026992401, y: 0.03643801, z: 0}
---- !u!114 &-149559886020058422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770584863604633872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e25479c92c8344da0da9c0b51169d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speedRotate: 100

@@ -23,6 +23,8 @@ namespace Assets.CodeBase.CameraLogic
 
         [SerializeField] private CinemachineFreeLook _cinemachineFreeLook;
 
+        private Vector3 _currentMousePosition;
+
         private void Awake()
         {
             _rotateInput = new RotateInput();
@@ -37,24 +39,26 @@ namespace Assets.CodeBase.CameraLogic
 
         private void Update()
         {
-            ControllRotation();
+            ControlRotation();
         }
 
-        private void ControllRotation()
+        private void ControlRotation()
         {
-            if (_variableJoystick.enabled)
+            Debug.Log(_variableJoystick.Vertical);
+
+            if (_variableJoystick.enabled && _currentMousePosition != Input.mousePosition)
             {
-                if (Application.isMobilePlatform)
-                {
-                    Debug.Log("Mobile");
-                }
-                else
-                {
-                    Debug.Log("Computer");
-                    _cinemachineFreeLook.m_XAxis.m_InputAxisValue = _variableJoystick.Horizontal;
-                    _cinemachineFreeLook.m_YAxis.m_InputAxisValue = _variableJoystick.Vertical;
-                }
+
+                _cinemachineFreeLook.m_XAxis.m_InputAxisValue = _variableJoystick.Horizontal;
+                _cinemachineFreeLook.m_YAxis.m_InputAxisValue = _variableJoystick.Vertical;
             }
+            else
+            {
+                _cinemachineFreeLook.m_XAxis.m_InputAxisValue = 0;
+                _cinemachineFreeLook.m_YAxis.m_InputAxisValue = 0;
+            }
+
+                _currentMousePosition = Input.mousePosition;
         }
 
         private void OnDisable()
@@ -82,7 +86,7 @@ namespace Assets.CodeBase.CameraLogic
             {
                 var orbit = _cinemachineFreeLook.m_Orbits[i];
                 orbit.m_Radius = Mathf.Clamp(orbit.m_Radius - scrollDelta * _zoomStep, _minZoomDistance, _maxZoomDistance);
-                orbit.m_Height = Mathf.Clamp(orbit.m_Height - scrollDelta * _zoomStep, _minZoomDistance, _maxZoomDistance / 2);
+                orbit.m_Height = Mathf.Clamp(orbit.m_Height - scrollDelta * _zoomStep, _minZoomDistance / 2, _maxZoomDistance / 2);
                 _cinemachineFreeLook.m_Orbits[i] = orbit; 
             }
         }

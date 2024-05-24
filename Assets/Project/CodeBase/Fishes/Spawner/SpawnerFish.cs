@@ -9,11 +9,12 @@ public class SpawnerFish : MonoBehaviour
     private FishFactory _fishFactory;
     private RandomServer _random;
 
+    private PlayerView _playerView;
+
     private float _nextSpawnTime;
     [SerializeField] private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
     [SerializeField] private List<Fish> _fishes = new List<Fish>();
 
-    public int MaxCountFish => _maxCountFish;
     public List<Fish> Fishes => _fishes;
     
     private void Awake()
@@ -30,10 +31,11 @@ public class SpawnerFish : MonoBehaviour
         }
     }
     
-    public void Construct(FishFactory fishFactory, RandomServer random)
+    public void Construct(FishFactory fishFactory, RandomServer random, PlayerView playerView)
     {
         _fishFactory = fishFactory;
         _random = random;
+        _playerView = playerView;
     }
 
     private void SpawnFishAtRandomPoint()
@@ -47,28 +49,17 @@ public class SpawnerFish : MonoBehaviour
         }
 
         SpawnPoint spawnPoint = availablePoints[UnityEngine.Random.Range(0, availablePoints.Count)];
+
+        spawnPoint.IsBusy = true;
+
         Vector3 spawnPosition = spawnPoint.transform.position;
 
         Fish fish = _fishFactory.GetFish(_random.SpawnFishes(), spawnPosition);
+
+        fish.Construct(_playerView);
         fish.transform.SetParent(this.transform);
 
         AddFish(fish);
-    }
-
-    private void StartSpawn()
-    {
-        while (_fishes.Count < _maxCountFish)
-        {
-            Fish fish = SpawnFishes();
-            //AddFish(fish);
-        }
-    }
-
-    private Fish SpawnFishes()
-    {
-        Fish fish = _fishFactory.GetFish(_random.SpawnFishes(), _random.GetRandomPosition());
-        fish.transform.SetParent(this.transform);
-        return fish;
     }
 
     private void AddFish(Fish fish)

@@ -18,10 +18,8 @@ public class PlayerView : MonoBehaviour
 
     private int _scoreCount;
 
-    private void Update()
-    {
+    private void Update() =>
         IncreasePlayer();
-    }
 
     private void IncreasePlayer()
     {
@@ -36,10 +34,8 @@ public class PlayerView : MonoBehaviour
         }
     }
 
-    public void Construct(PositionStaticData positionStaticData)
-    {
+    public void Construct(PositionStaticData positionStaticData) => 
         _positionStaticData = positionStaticData ?? throw new ArgumentNullException(nameof(positionStaticData));
-    }
 
     public void AddScore(int score)
     {

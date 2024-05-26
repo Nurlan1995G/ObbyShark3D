@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba906682c378c27408ff44bcc43f8b17, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  playerData:
+  PlayerData:
     MoveSpeed: 5
-    RotateSpeed: 3
+    RotateSpeed: 4
+    Gravity: 10
+  SharkBotData:
+    MoveSpeed: 5
+    RotateSpeed: 4
+    MinimalDistanceToObject: 15

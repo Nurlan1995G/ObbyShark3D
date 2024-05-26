@@ -34,9 +34,7 @@ namespace Assets.Project.CodeBase.SharkEnemy
             _scoreLevelBar.SetScore(_score);
         }
 
-        public void Destroys()
-        {
+        public void Destroys() =>
             Destroy(gameObject);
-        }
     }
 }

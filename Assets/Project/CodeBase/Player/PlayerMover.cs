@@ -3,7 +3,6 @@
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private CharacterController _characterController;
 
     private PlayerInput _input;
@@ -11,39 +10,31 @@ public class PlayerMover : MonoBehaviour
 
     private float _fallSpeed = 0f;
 
-    private void Awake()
-    {
+    private void Awake() => 
         _input = new PlayerInput();
-        _playerData = _gameConfig.playerData;
-    }
 
-    private void OnEnable()
-    {
+    private void OnEnable() => 
         _input.Enable();
-    }
 
     private void Update()
     {
-        //Debug.Log("Horizontal: " + Input.GetAxis("Horizontal"));
-        //Debug.Log("Vertical: " + Input.GetAxis("Vertical"));
-        ApplyGravity();
-
         Vector2 moveDirection = _input.Player.Move.ReadValue<Vector2>();
         Move(moveDirection);
+        
+        ApplyGravity();
     }
 
     private void OnDisable() =>
         _input.Disable();
 
-    public void CharacterControlEnab()
-    {
-        _characterController.enabled = true;
-    }
+    public void Construct(PlayerData playerData) =>
+        _playerData = playerData;
 
-    public void CharacterControlDis()
-    {
+    public void CharacterControlEnab() =>
+        _characterController.enabled = true;
+
+    public void CharacterControlDis() =>
         _characterController.enabled = false;
-    }
 
     private void Move(Vector2 direction)
     {

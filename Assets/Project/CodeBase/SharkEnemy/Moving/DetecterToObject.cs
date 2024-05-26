@@ -14,8 +14,8 @@ public class DetecterToObject
 
     private float _timeLastDetected;
     private float _chaseDuration = 10f;
-    private bool _isChasing = true;
     private float _cooldownTimer;
+    private bool _isChasing = true;
 
     public DetecterToObject( AgentMoveState agentMoveState,  SharkModel sharkModel)
     {
@@ -23,7 +23,7 @@ public class DetecterToObject
         _sharkModel = sharkModel;
     }
 
-    public void DetectObject(Transform transform, float detectionRadius)
+    public void DetectObject(Transform transform)
     {
         GameObject targetPlayer = StaticClassLogic.FindObject(PlayerTag);
 

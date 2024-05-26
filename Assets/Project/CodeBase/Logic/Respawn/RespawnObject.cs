@@ -1,5 +1,4 @@
-﻿using Assets.Project.CodeBase.SharkEnemy.Spawner;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Project.CodeBase.Logic.Respawn
@@ -14,7 +13,7 @@ namespace Assets.Project.CodeBase.Logic.Respawn
             "Shark2",
         };
 
-        private SpawnPointEnemy _loadLevelScene;
+        private SpawnPointEnemyBot _loadLevelScene;
 
         private void Update()
         {
@@ -26,7 +25,7 @@ namespace Assets.Project.CodeBase.Logic.Respawn
             FindMiddingShark();
         }
 
-        public void Construct(SpawnPointEnemy spawnPointEnemy)
+        public void Construct(SpawnPointEnemyBot spawnPointEnemy)
         {
             _loadLevelScene = spawnPointEnemy;
         }
@@ -40,7 +39,7 @@ namespace Assets.Project.CodeBase.Logic.Respawn
                 if(shark == null)
                 {
                     Debug.Log("RespawnShark - " + sharkTag);
-                    _loadLevelScene.RespawnBotShark(shark);
+                    //_loadLevelScene.RespawnBotShark(shark);
                 }
             }
         }

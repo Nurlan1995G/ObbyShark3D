@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class Fish : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _scoreText;
     private PlayerView _playerView;
+    private ScoreLevelBarFish _scoreLevelBarFish;
 
     public event Action<Fish> FishDied;
 
@@ -14,7 +14,7 @@ public abstract class Fish : MonoBehaviour
     private void Start()
     {
         WriteScoreLevel();
-        _scoreText.text = ScoreLevel.ToString();
+        _scoreLevelBarFish.ScoreText.text = ScoreLevel.ToString();
     }
 
     private void Update()
@@ -22,8 +22,11 @@ public abstract class Fish : MonoBehaviour
         UpdateScoreTextColor();
     }
 
-    public void Construct(PlayerView playerView) =>
+    public void Construct(PlayerView playerView, ScoreLevelBarFish scoreBarObject)
+    {
         _playerView = playerView;
+        _scoreLevelBarFish = scoreBarObject;
+    }
 
     public void Destroys()
     {
@@ -39,11 +42,11 @@ public abstract class Fish : MonoBehaviour
         {
             if (_playerView.ScoreLevel >= ScoreLevel)
             {
-                _scoreText.color = Color.green;
+                _scoreLevelBarFish.ScoreText.color = Color.green;
             }
             else
             {
-                _scoreText.color = Color.red;
+                _scoreLevelBarFish.ScoreText.color = Color.red;
             }
         }
     }

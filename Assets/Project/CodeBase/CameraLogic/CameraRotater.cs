@@ -39,13 +39,22 @@ namespace Assets.CodeBase.CameraLogic
 
         private void Update()
         {
-            ControlRotation();
+            if(Application.isMobilePlatform)
+                HandleTouchInput();
+            else
+                ControlRotation();
+        }
+
+        private void OnDisable()
+        {
+            _rotateInput.Disable();
+
+            _rotateInput.Mouse.RightButton.performed -= OnTouchPerformed;
+            _rotateInput.Mouse.MouseSrollWheel.performed -= OnTouchMouseScrollWheel;
         }
 
         private void ControlRotation()
         {
-            Debug.Log(_variableJoystick.Vertical);
-
             if (_variableJoystick.enabled && _currentMousePosition != Input.mousePosition)
             {
 
@@ -58,18 +67,50 @@ namespace Assets.CodeBase.CameraLogic
                 _cinemachineFreeLook.m_YAxis.m_InputAxisValue = 0;
             }
 
-                _currentMousePosition = Input.mousePosition;
+            _currentMousePosition = Input.mousePosition;
         }
 
-        private void OnDisable()
+        private void HandleTouchInput()
         {
-            _rotateInput.Disable();
+            if (Input.touchCount == 2)
+            {
+                Touch touch1 = Input.GetTouch(0);
+                Touch touch2 = Input.GetTouch(1);
 
-            _rotateInput.Mouse.RightButton.performed -= OnTouchPerformed;
-            _rotateInput.Mouse.MouseSrollWheel.performed -= OnTouchMouseScrollWheel;
+                if (_variableJoystick.enabled)
+                {
+                    Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
+                    Vector2 touch2PrevPos = touch2.position - touch2.deltaPosition;
+
+                    float prevTouchDeltaMag = (touch1PrevPos - touch2PrevPos).magnitude;
+                    float touchDeltaMag = (touch1.position - touch2.position).magnitude;
+
+                    float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+                    OnTouchZoom(deltaMagnitudeDiff);
+                }
+            }
         }
 
         private void OnTouchMouseScrollWheel(InputAction.CallbackContext context)
+        {
+            float scrollDelta = context.ReadValue<float>();
+
+            OnTouchZoom(scrollDelta);
+        }
+
+        private void OnTouchZoom(float deltaMagnitudeDiff)
+        {
+            for (int i = 0; i < _cinemachineFreeLook.m_Orbits.Length; i++)
+            {
+                var orbit = _cinemachineFreeLook.m_Orbits[i];
+                orbit.m_Radius = Mathf.Clamp(orbit.m_Radius - deltaMagnitudeDiff * _zoomStep, _minZoomDistance, _maxZoomDistance);
+                orbit.m_Height = Mathf.Clamp(orbit.m_Height - deltaMagnitudeDiff * _zoomStep, _minZoomDistance / 2, _maxZoomDistance / 2);
+                _cinemachineFreeLook.m_Orbits[i] = orbit;
+            }
+        }
+
+        /*private void OnTouchMouseScrollWheel(InputAction.CallbackContext context)
         {
             if (Application.isMobilePlatform)
             {
@@ -87,14 +128,12 @@ namespace Assets.CodeBase.CameraLogic
                 var orbit = _cinemachineFreeLook.m_Orbits[i];
                 orbit.m_Radius = Mathf.Clamp(orbit.m_Radius - scrollDelta * _zoomStep, _minZoomDistance, _maxZoomDistance);
                 orbit.m_Height = Mathf.Clamp(orbit.m_Height - scrollDelta * _zoomStep, _minZoomDistance / 2, _maxZoomDistance / 2);
-                _cinemachineFreeLook.m_Orbits[i] = orbit; 
+                _cinemachineFreeLook.m_Orbits[i] = orbit;
             }
-        }
+        }*/
 
-        public void OnTouchPerformed(InputAction.CallbackContext context)
-        {
+        public void OnTouchPerformed(InputAction.CallbackContext context) =>
             Rotate(context.ReadValue<Vector2>());
-        }
 
         private void Rotate(Vector2 direction)
         {

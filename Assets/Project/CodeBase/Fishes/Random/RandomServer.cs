@@ -158,7 +158,7 @@ public class RandomServer
 
     public Vector3 GetRandomPosition()
     {
-        for (int i = 0; i < 10; i++) // try up to 10 times to find a valid position
+        for (int i = 0; i < 10; i++) 
         {
             _randomSpawnX = UnityEngine.Random.Range(-15, 120);
             _randomSpawnZ = UnityEngine.Random.Range(-70, 80);
@@ -170,8 +170,6 @@ public class RandomServer
             }
         }
 
-        // If no valid position found after 10 attempts, return a default position
-        Debug.LogWarning("Failed to find a valid NavMesh position for spawning fish.");
         return _whereToSpawn = Vector3.zero;
     }
 }

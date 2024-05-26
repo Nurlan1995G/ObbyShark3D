@@ -3,20 +3,22 @@ using UnityEngine;
 
 public class SpawnerFish : MonoBehaviour
 {
+    [SerializeField] private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
+    [SerializeField] private List<Fish> _fishes = new List<Fish>();
+    [SerializeField] private List<ScoreLevelBarFish> _scoreLevelBars = new List<ScoreLevelBarFish>();
+
+    [SerializeField] private ScoreLevelBarFish _container;
     [SerializeField] private float _spawnCooldown = 0.1f;
     [SerializeField] private int _maxCountFish = 100;
 
     private FishFactory _fishFactory;
     private RandomServer _random;
-
     private PlayerView _playerView;
 
     private float _nextSpawnTime;
-    [SerializeField] private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
-    [SerializeField] private List<Fish> _fishes = new List<Fish>();
 
     public List<Fish> Fishes => _fishes;
-    
+
     private void Awake()
     {
         _nextSpawnTime = Time.time + _spawnCooldown;
@@ -43,23 +45,23 @@ public class SpawnerFish : MonoBehaviour
         List<SpawnPoint> availablePoints = _spawnPoints.FindAll(point => !point.IsBusy);
 
         if (availablePoints.Count == 0)
-        {
-            Debug.LogWarning("No available spawn points");
             return;
-        }
 
         SpawnPoint spawnPoint = availablePoints[UnityEngine.Random.Range(0, availablePoints.Count)];
-
         spawnPoint.IsBusy = true;
 
         Vector3 spawnPosition = spawnPoint.transform.position;
 
         Fish fish = _fishFactory.GetFish(_random.SpawnFishes(), spawnPosition);
-
-        fish.Construct(_playerView);
+        //fish.Construct(_playerView);
         fish.transform.SetParent(this.transform);
 
         AddFish(fish);
+
+        ScoreLevelBarFish scoreBarObject = Instantiate(_container, transform);
+        scoreBarObject.Construct(fish);
+        fish.Construct(_playerView, scoreBarObject);
+        _scoreLevelBars.Add(scoreBarObject);
     }
 
     private void AddFish(Fish fish)
@@ -79,6 +81,14 @@ public class SpawnerFish : MonoBehaviour
         if (spawnPoint != null)
         {
             spawnPoint.IsBusy = false;
+        }
+
+        ScoreLevelBarFish scoreBar = _scoreLevelBars.Find(bar => bar.GetFish() == fish);
+        
+        if (scoreBar != null)
+        {
+            _scoreLevelBars.Remove(scoreBar);
+            Destroy(scoreBar.gameObject);
         }
     }
 }

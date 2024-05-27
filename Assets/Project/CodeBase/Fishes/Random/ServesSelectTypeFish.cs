@@ -1,22 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 
-public class RandomServer
+public class ServesSelectTypeFish
 {
-    private const int MaxCountLunaFish = 1;
-    private const int MaxCountPicassoFish = 3;
-    private const int MaxCountNapoleonFish = 5;
-    private const int MaxCountAngelFish = 7;
-    private const int MaxCountHedgehogFish = 10;
-    private const int MaxCountBelugaFish = 14;
-    private const int MaxCountParrotFish = 17;
-    private const int MaxCountClounFish = 20;
-    private const int MaxCountBlueSergeonFish = 24;
-
-    public float NextSpawn;
-    private float _randomSpawnX;
-    private float _randomSpawnZ;
-    private Vector3 _whereToSpawn;
+    private FishCountData _countFishData;
 
     private int _lunaFish = 0;
     private int _napoleonFish = 0;
@@ -28,11 +14,8 @@ public class RandomServer
     private int _blueSergeon = 0;
     private int _clounFish = 0;
 
-    public Vector3 WhereToSpawn => _whereToSpawn;
-
-    public RandomServer(SpawnerFish spawner)
-    {
-    }
+    public ServesSelectTypeFish(ConfigFish configFish) =>
+        _countFishData = configFish.FishCountData;
 
     public TypeFish SpawnFishes()
     {
@@ -40,55 +23,55 @@ public class RandomServer
 
         while (true)
         {
-            if (_lunaFish < MaxCountLunaFish)
+            if (_lunaFish < _countFishData.MaxCountLunaFish)
             {
                 _lunaFish++;
                 return typeFish = TypeFish.Luna;
             }
 
-            if (_picassoFish < MaxCountPicassoFish)
+            if (_picassoFish < _countFishData.MaxCountPicassoFish)
             {
                 _picassoFish++;
                 return typeFish = TypeFish.Picasso;
             }
 
-            if (_napoleonFish < MaxCountNapoleonFish)
+            if (_napoleonFish < _countFishData.MaxCountNapoleonFish)
             {
                 _napoleonFish++;
                 return typeFish = TypeFish.Napoleon;
             }
 
-            if (_angelFish < MaxCountAngelFish)
+            if (_angelFish < _countFishData.MaxCountAngelFish)
             {
                 _angelFish++;
                 return typeFish = TypeFish.Angel;
             }
 
-            if (_hedgehogFish < MaxCountHedgehogFish)
+            if (_hedgehogFish < _countFishData.MaxCountHedgehogFish)
             {
                 _hedgehogFish++;
                 return typeFish = TypeFish.Hedgehog;
             }
 
-            if (_belugaFish < MaxCountBelugaFish)
+            if (_belugaFish < _countFishData.MaxCountBelugaFish)
             {
                 _belugaFish++;
                 return typeFish = TypeFish.Beluga;
             }
 
-            if (_parrotFish < MaxCountParrotFish)
+            if (_parrotFish < _countFishData.MaxCountParrotFish)
             {
                 _parrotFish++;
                 return typeFish = TypeFish.Parrot;
             }
 
-            if (_clounFish < MaxCountClounFish)
+            if (_clounFish < _countFishData.MaxCountClounFish)
             {
                 _clounFish++;
                 return typeFish = TypeFish.Cloun;
             }
 
-            if (_blueSergeon < MaxCountBlueSergeonFish)
+            if (_blueSergeon < _countFishData.MaxCountBlueSergeonFish)
             {
                 _blueSergeon++;
                 return typeFish = TypeFish.BlueSergeon;
@@ -154,22 +137,5 @@ public class RandomServer
                 _blueSergeon--;
                 break;
         }
-    }
-
-    public Vector3 GetRandomPosition()
-    {
-        for (int i = 0; i < 10; i++) 
-        {
-            _randomSpawnX = UnityEngine.Random.Range(-15, 120);
-            _randomSpawnZ = UnityEngine.Random.Range(-70, 80);
-
-            Vector3 randomPosition = new Vector3(_randomSpawnX, 6.2f, _randomSpawnZ);
-            if (NavMesh.SamplePosition(randomPosition, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
-            {
-                return _whereToSpawn = hit.position;
-            }
-        }
-
-        return _whereToSpawn = Vector3.zero;
     }
 }

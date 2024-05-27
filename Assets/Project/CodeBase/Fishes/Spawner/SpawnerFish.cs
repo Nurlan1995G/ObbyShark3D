@@ -8,12 +8,11 @@ public class SpawnerFish : MonoBehaviour
     [SerializeField] private List<ScoreLevelBarFish> _scoreLevelBars = new List<ScoreLevelBarFish>();
 
     [SerializeField] private ScoreLevelBarFish _container;
-    [SerializeField] private float _spawnCooldown = 0.1f;
-    [SerializeField] private int _maxCountFish = 100;
 
     private FishFactory _fishFactory;
-    private RandomServer _random;
+    private ServesSelectTypeFish _random;
     private PlayerView _playerView;
+    private SpawnerFishData _spawnerFishData;
 
     private float _nextSpawnTime;
 
@@ -21,23 +20,24 @@ public class SpawnerFish : MonoBehaviour
 
     private void Awake()
     {
-        _nextSpawnTime = Time.time + _spawnCooldown;
+        _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
     }
 
     private void Update()
     {
-        if (Time.time >= _nextSpawnTime && _fishes.Count < _maxCountFish)
+        if (Time.time >= _nextSpawnTime && _fishes.Count < _spawnerFishData.MaxCountFish)
         {
-            _nextSpawnTime = Time.time + _spawnCooldown;
+            _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
             SpawnFishAtRandomPoint();
         }
     }
     
-    public void Construct(FishFactory fishFactory, RandomServer random, PlayerView playerView)
+    public void Construct(FishFactory fishFactory, ServesSelectTypeFish random, PlayerView playerView, ConfigFish configFish)
     {
         _fishFactory = fishFactory;
         _random = random;
         _playerView = playerView;
+        _spawnerFishData = configFish.SpawnerFishData;
     }
 
     private void SpawnFishAtRandomPoint()
@@ -53,7 +53,6 @@ public class SpawnerFish : MonoBehaviour
         Vector3 spawnPosition = spawnPoint.transform.position;
 
         Fish fish = _fishFactory.GetFish(_random.SpawnFishes(), spawnPosition);
-        //fish.Construct(_playerView);
         fish.transform.SetParent(this.transform);
 
         AddFish(fish);

@@ -14,13 +14,14 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private PlayerView _playerView;
     [SerializeField] private List<SpawnPointEnemyBot> _spawnPoints;
     [SerializeField] private CameraRotater _cameraRotater;
+    [SerializeField] private ConfigFish _configFish;
 
     private void Awake()
     {
         AssetProvider assetProvider = new AssetProvider();
-        RandomServer random = new RandomServer(_spawner);
+        ServesSelectTypeFish random = new ServesSelectTypeFish(_configFish);
 
-        _spawner.Construct(new FishFactory(_fishStaticData, assetProvider), random, _playerView);
+        _spawner.Construct(new FishFactory(_fishStaticData, assetProvider), random, _playerView, _configFish);
 
         FactoryShark factoryShark = new FactoryShark(assetProvider);
         

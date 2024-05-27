@@ -9,6 +9,10 @@ TagManager:
   - Shark2
   - SharkPoint1
   - SharkPoint2
+  - Shark3
+  - Shark4
+  - SharkPoint3
+  - SharkPoint4
   layers:
   - Default
   - TransparentFX

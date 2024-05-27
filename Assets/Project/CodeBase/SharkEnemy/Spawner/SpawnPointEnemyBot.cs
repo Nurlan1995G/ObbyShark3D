@@ -15,6 +15,8 @@ public class SpawnPointEnemyBot : MonoBehaviour
     {
         "Shark1",
         "Shark2",
+        "Shark3",
+        "Shark4",
     };
 
     public void Construct(FactoryShark factoryShark, PositionStaticData sharkPositionStaticData,
@@ -57,6 +59,16 @@ public class SpawnPointEnemyBot : MonoBehaviour
         {
             position = _sharkPositionStaticData.InitSharkTwoPosition;
             sharkEnemy = AssetAdress.SharkEnemy2;
+        }
+        else if (sharkTag == "Shark3")
+        {
+            position = _sharkPositionStaticData.InitSharkThreePosition;
+            sharkEnemy = AssetAdress.SharkEnemy3;
+        }
+        else if (sharkTag == "Shark4")
+        {
+            position = _sharkPositionStaticData.InitSharkFourPosition;
+            sharkEnemy = AssetAdress.SharkEnemy4;
         }
         else
             return;

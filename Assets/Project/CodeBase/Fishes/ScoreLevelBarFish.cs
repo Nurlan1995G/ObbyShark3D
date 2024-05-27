@@ -4,7 +4,7 @@ using UnityEngine;
 public class ScoreLevelBarFish : MonoBehaviour
 {
     private Fish _fish;
-    private Vector3 _offset = new Vector3(0,1,0);
+    private Vector3 _offset = new Vector3(0f,2f,0f);
 
     [field: SerializeField] public TextMeshProUGUI ScoreText;
 

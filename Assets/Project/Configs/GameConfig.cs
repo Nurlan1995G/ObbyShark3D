@@ -6,6 +6,7 @@ public class GameConfig : ScriptableObject
 {
     public PlayerData PlayerData;
     public SharkBotData SharkBotData;
+    public CameraRotateData CameraRotateData;
 
     //[FoldoutGroup("Player")] public float MoveSpeed;
     //[FoldoutGroup("Player")] public float RotateSpeed;
@@ -27,3 +28,12 @@ public class SharkBotData
     public float MinimalDistanceToObject;
 }
 
+[Serializable]
+public class CameraRotateData
+{
+    public float RotateSpeed;
+    public float ZoomSpeed;
+    public float MinZoomDistance;
+    public float MaxZoomDistance;
+    public float ZoomStep;
+}

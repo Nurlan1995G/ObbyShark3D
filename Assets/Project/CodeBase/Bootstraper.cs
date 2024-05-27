@@ -1,4 +1,5 @@
-﻿using Assets.Project.AssetProviders;
+﻿using Assets.CodeBase.CameraLogic;
+using Assets.Project.AssetProviders;
 using Assets.Project.CodeBase.Fish.Factory;
 using Assets.Project.CodeBase.SharkEnemy.Factory;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private PlayerView _playerView;
     [SerializeField] private List<SpawnPointEnemyBot> _spawnPoints;
+    [SerializeField] private CameraRotater _cameraRotater;
 
     private void Awake()
     {
@@ -25,6 +27,8 @@ public class Bootstraper : MonoBehaviour
         WriteSpawnPoint(factoryShark);
 
         _playerView.Construct(_positionStaticData, _gameConfig);
+
+        _cameraRotater.Construct(_gameConfig);
     }
 
     private void WriteSpawnPoint(FactoryShark factoryShark)

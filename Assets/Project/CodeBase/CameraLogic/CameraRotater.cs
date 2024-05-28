@@ -99,7 +99,7 @@ namespace Assets.CodeBase.CameraLogic
         {
             for (int i = 0; i < _cinemachineFreeLook.m_Orbits.Length; i++)
             {
-                var orbit = _cinemachineFreeLook.m_Orbits[i];
+                CinemachineFreeLook.Orbit orbit = _cinemachineFreeLook.m_Orbits[i];
                 orbit.m_Radius = Mathf.Clamp(orbit.m_Radius - deltaMagnitudeDiff * _cameraRotateData.ZoomStep, _cameraRotateData.MinZoomDistance, _cameraRotateData.MaxZoomDistance);
                 orbit.m_Height = Mathf.Clamp(orbit.m_Height - deltaMagnitudeDiff * _cameraRotateData.ZoomStep, _cameraRotateData.MinZoomDistance / 3, _cameraRotateData.MaxZoomDistance / 3);
                 _cinemachineFreeLook.m_Orbits[i] = orbit;

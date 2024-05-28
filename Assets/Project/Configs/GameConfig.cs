@@ -32,7 +32,6 @@ public class SharkBotData
 public class CameraRotateData
 {
     public float RotateSpeed;
-    public float ZoomSpeed;
     public float MinZoomDistance;
     public float MaxZoomDistance;
     public float ZoomStep;

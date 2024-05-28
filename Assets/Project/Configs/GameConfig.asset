@@ -22,7 +22,7 @@ MonoBehaviour:
     MinimalDistanceToObject: 15
   CameraRotateData:
     RotateSpeed: 250
-    ZoomSpeed: 3
+    ZoomSpeed: 1
     MinZoomDistance: 8
     MaxZoomDistance: 25
-    ZoomStep: 0.1
+    ZoomStep: 0.01

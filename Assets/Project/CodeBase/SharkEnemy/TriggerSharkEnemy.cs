@@ -11,6 +11,7 @@ public class TriggerSharkEnemy : MonoBehaviour
          {
             if (_sharkModel.ScoreLevel >= fish.ScoreLevel)
             {
+                Debug.Log(fish.ScoreLevel + "Scorelevelfish");
                 _sharkModel.AddScore(fish.ScoreLevel);
                 fish.Destroys();
             }

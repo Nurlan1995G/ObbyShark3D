@@ -12,9 +12,5 @@ namespace Assets.Project.CodeBase.SharkEnemy
         private const string NickBot2 = "Неряха777";
         private const string NickBot3 = "Задроткин";
         private const string NickBot4 = "User43550004";
-
-
-
-
     }
 }

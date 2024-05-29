@@ -1,5 +1,4 @@
-﻿using Assets.Project.CodeBase.Fish;
-using Assets.Project.CodeBase.SharkEnemy;
+﻿using Assets.Project.CodeBase.SharkEnemy;
 using UnityEngine;
 
 public class PlayerTrigger : MonoBehaviour

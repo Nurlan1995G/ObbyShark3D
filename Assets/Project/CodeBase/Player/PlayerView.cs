@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Assets.Project.CodeBase.Player.Respawn;
+using Assets.Project.CodeBase.Player.UI;
+using Assets.Project.CodeBase.SharkEnemy;
+using System;
 using UnityEngine;
 
 public class PlayerView : MonoBehaviour
@@ -8,6 +11,9 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private PlayerMover _mover;
     [SerializeField] private float _localScaleX = 0.2f;
 
+    [SerializeField] private UIPopup _uiPopup;
+
+    private RespawnPlayer _respawn;
     private PositionStaticData _positionStaticData;
     private int _parametrRaising = 10;
     private int _score = 1;
@@ -16,6 +22,11 @@ public class PlayerView : MonoBehaviour
     public int ScoreLevel => _score;
    
     public Action<PlayerView> PlayerDied;
+
+    private void Start()
+    {
+        _respawn = new RespawnPlayer();
+    }
 
     private void Update() =>
         IncreasePlayer();
@@ -46,16 +57,30 @@ public class PlayerView : MonoBehaviour
         _scoreLevelBar.SetScore(_score);
     }
 
-    public void Destroys()
+    public void Destroys(SharkModel killerShark = null)
     {
         PlayerDied?.Invoke(this);
         gameObject.SetActive(false);
+
+        if (killerShark != null)
+        {
+            _respawn.SetKillerShark(killerShark,this,_uiPopup);
+        }
+
+        _respawn.SelectAction();
+    }
+
+    public void Destroyss()
+    {
+        PlayerDied?.Invoke(this);
+        gameObject.SetActive(false);
+        _respawn.SelectAction();
         Teleport();
     }
 
-    private void Teleport()
+    public void Teleport()
     {
-        _mover.CharacterControlDis();
+        _mover.AgentDisable();
         transform.position = _positionStaticData.InitPlayerPosition;
         transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         _score = 1;
@@ -63,6 +88,6 @@ public class PlayerView : MonoBehaviour
         _scoreCount = 0;
         _parametrRaising = 10;
         gameObject.SetActive(true);
-        _mover.CharacterControlEnab();
+        _mover.AgentEnable();
     }
 }

@@ -18,7 +18,7 @@ public class SpawnerFish : MonoBehaviour
 
     public List<Fish> Fishes => _fishes;
 
-    private void Awake()
+    private void Start()
     {
         _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
     }

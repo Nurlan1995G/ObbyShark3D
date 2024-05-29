@@ -8,6 +8,7 @@ namespace Assets.CodeBase.CameraLogic
     {
         [SerializeField] private VariableJoystick _variableJoystick;
         [SerializeField] private CinemachineFreeLook _cinemachineFreeLook;
+        [SerializeField] private GameObject _screenStick;
 
         private RotateInput _rotateInput;
         private CameraRotateData _cameraRotateData;
@@ -26,7 +27,7 @@ namespace Assets.CodeBase.CameraLogic
 
         private void OnEnable()
         {
-            _rotateInput.Mouse.RightButton.performed += OnTouchPerformed;
+            //_rotateInput.Mouse.RightButton.performed += OnTouchPerformed;
             _rotateInput.Mouse.MouseSrollWheel.performed += OnTouchMouseScrollWheel;
         }
 
@@ -35,14 +36,16 @@ namespace Assets.CodeBase.CameraLogic
             if(Application.isMobilePlatform)
                 HandleTouchInput();
             else
-                ControlRotation();
+                _screenStick.SetActive(false);   
+
+            ControlRotation();
         }
 
         private void OnDisable()
         {
             _rotateInput.Disable();
 
-            _rotateInput.Mouse.RightButton.performed -= OnTouchPerformed;
+           // _rotateInput.Mouse.RightButton.performed -= OnTouchPerformed;
             _rotateInput.Mouse.MouseSrollWheel.performed -= OnTouchMouseScrollWheel;
         }
 
@@ -100,13 +103,19 @@ namespace Assets.CodeBase.CameraLogic
             for (int i = 0; i < _cinemachineFreeLook.m_Orbits.Length; i++)
             {
                 CinemachineFreeLook.Orbit orbit = _cinemachineFreeLook.m_Orbits[i];
+
                 orbit.m_Radius = Mathf.Clamp(orbit.m_Radius - deltaMagnitudeDiff * _cameraRotateData.ZoomStep, _cameraRotateData.MinZoomDistance, _cameraRotateData.MaxZoomDistance);
-                orbit.m_Height = Mathf.Clamp(orbit.m_Height - deltaMagnitudeDiff * _cameraRotateData.ZoomStep, _cameraRotateData.MinZoomDistance / 3, _cameraRotateData.MaxZoomDistance / 3);
+
+                if (i == 2)
+                {
+                    orbit.m_Height = Mathf.Clamp(orbit.m_Height - deltaMagnitudeDiff * _cameraRotateData.ZoomStep, _cameraRotateData.MinZoomDistance, _cameraRotateData.MaxZoomDistance);
+                }
+
                 _cinemachineFreeLook.m_Orbits[i] = orbit;
             }
         }
 
-        public void OnTouchPerformed(InputAction.CallbackContext context) =>
+        /*public void OnTouchPerformed(InputAction.CallbackContext context) =>
             Rotate(context.ReadValue<Vector2>());
 
         private void Rotate(Vector2 direction)
@@ -124,6 +133,6 @@ namespace Assets.CodeBase.CameraLogic
                 transform.rotation = rotationX * rotationY;
                 _lastDirection = direction;
             }
-        }
+        }*/
     }
 }

@@ -7,11 +7,10 @@ public class TriggerSharkEnemy : MonoBehaviour
  
     private void OnTriggerEnter(Collider other) 
     {
-         if(other.TryGetComponent(out Fish fish))
+        if (other.TryGetComponent(out Fish fish))
          {
             if (_sharkModel.ScoreLevel >= fish.ScoreLevel)
             {
-                Debug.Log(fish.ScoreLevel + "Scorelevelfish");
                 _sharkModel.AddScore(fish.ScoreLevel);
                 fish.Destroys();
             }
@@ -22,8 +21,7 @@ public class TriggerSharkEnemy : MonoBehaviour
             if(_sharkModel.ScoreLevel >= playerView.ScoreLevel)
             {
                 _sharkModel.AddScore(playerView.ScoreLevel);
-                playerView.Destroys();
-                //playerView.PlayerDied += OnChangedDestoroys;
+                playerView.Destroys(_sharkModel);
             }
          }
 
@@ -35,10 +33,5 @@ public class TriggerSharkEnemy : MonoBehaviour
                 targetSharkModel.Destroys();
             }
         }
-    }
-
-    private void OnChangedDestoroys(PlayerView playerView)
-    {
-
     }
 }

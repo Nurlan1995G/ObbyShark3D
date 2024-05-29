@@ -1,0 +1,33 @@
+﻿using Assets.Project.CodeBase.Player.Respawn;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Assets.Project.CodeBase.Player.UI
+{
+    public class UIPopup : MonoBehaviour
+    {
+        [SerializeField] private Button respawnButton;
+        [SerializeField] private Button revengeButton;
+
+        private RespawnPlayer respawnPlayer;
+
+        public void Initialize(RespawnPlayer respawnPlayer)
+        {
+            this.respawnPlayer = respawnPlayer;
+            respawnButton.onClick.AddListener(OnRespawn);
+            revengeButton.onClick.AddListener(OnRevenge);
+        }
+
+        public void OnRespawn()
+        {
+            respawnPlayer.Respawn();
+            gameObject.SetActive(false);
+        }
+
+        public void OnRevenge()
+        {
+            respawnPlayer.Revenge();
+            gameObject.SetActive(false);
+        }
+    }
+}

@@ -18,6 +18,9 @@ public class PlayerData
     public float MoveSpeed;
     public float RotateSpeed;
     public float Gravity;
+    public float BoostMultiplier;
+    public float BoostDuration;
+    public float BoostRecoveryTime;
 }
 
 [Serializable]

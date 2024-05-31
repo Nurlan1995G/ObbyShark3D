@@ -25,27 +25,24 @@ namespace Assets.CodeBase.CameraLogic
             _rotateInput.Enable();
         }
 
-        private void OnEnable()
-        {
-            //_rotateInput.Mouse.RightButton.performed += OnTouchPerformed;
+        private void OnEnable() =>
             _rotateInput.Mouse.MouseSrollWheel.performed += OnTouchMouseScrollWheel;
-        }
 
         private void Update()
         {
             if(Application.isMobilePlatform)
                 HandleTouchInput();
             else
+            {
                 _screenStick.SetActive(false);   
-
-            ControlRotation();
+                ControlRotation();
+            }
         }
 
         private void OnDisable()
         {
             _rotateInput.Disable();
 
-           // _rotateInput.Mouse.RightButton.performed -= OnTouchPerformed;
             _rotateInput.Mouse.MouseSrollWheel.performed -= OnTouchMouseScrollWheel;
         }
 
@@ -56,9 +53,10 @@ namespace Assets.CodeBase.CameraLogic
         {
             if (_variableJoystick.enabled && _currentMousePosition != Input.mousePosition)
             {
-
                 _cinemachineFreeLook.m_XAxis.m_InputAxisValue = _variableJoystick.Horizontal;
                 _cinemachineFreeLook.m_YAxis.m_InputAxisValue = _variableJoystick.Vertical;
+                
+                _currentMousePosition = Input.mousePosition;
             }
             else
             {
@@ -66,7 +64,6 @@ namespace Assets.CodeBase.CameraLogic
                 _cinemachineFreeLook.m_YAxis.m_InputAxisValue = 0;
             }
 
-            _currentMousePosition = Input.mousePosition;
         }
 
         private void HandleTouchInput()
@@ -88,6 +85,10 @@ namespace Assets.CodeBase.CameraLogic
 
                     OnTouchZoom(deltaMagnitudeDiff);
                 }
+            }
+            else if(Input.touchCount == 1)
+            {
+                ControlRotation();
             }
         }
 
@@ -115,7 +116,7 @@ namespace Assets.CodeBase.CameraLogic
             }
         }
 
-        /*public void OnTouchPerformed(InputAction.CallbackContext context) =>
+        public void OnTouchPerformed(InputAction.CallbackContext context) =>
             Rotate(context.ReadValue<Vector2>());
 
         private void Rotate(Vector2 direction)
@@ -133,6 +134,6 @@ namespace Assets.CodeBase.CameraLogic
                 transform.rotation = rotationX * rotationY;
                 _lastDirection = direction;
             }
-        }*/
+        }
     }
 }

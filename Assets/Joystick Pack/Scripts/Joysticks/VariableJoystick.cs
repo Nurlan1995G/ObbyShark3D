@@ -10,8 +10,6 @@ public class VariableJoystick : Joystick
 
     private Vector2 fixedPosition = Vector2.zero;
     
-    public Vector2 JostickDirection { get { return Direction; } }
-
     public void SetMode(JoystickType joystickType)
     {
         this.joystickType = joystickType;

@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Boost",
+                    "type": "Value",
+                    "id": "6d30a922-5a60-4bd3-a1de-ac8ba05bfa5b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -136,60 +145,15 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Look",
-            "id": "035b3ad8-f72f-4dd5-abeb-c23656f3108e",
-            "actions": [
-                {
-                    "name": "RotateCamera",
-                    "type": "Button",
-                    "id": "090bdcef-8032-4b46-809a-cfb08e680d71",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "a7e7df4e-baaf-49b2-967d-06d98c9e1a09",
-                    "path": "<Gamepad>/rightStick/right",
+                    "id": "50d6ba66-1228-4af8-aa85-b4ccfa2ba5ba",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "RotateCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Mouse",
-            "id": "adfd4f02-bc21-42aa-975e-e9578558dd3d",
-            "actions": [
-                {
-                    "name": "Rotate",
-                    "type": "PassThrough",
-                    "id": "0cb53a8c-3ac4-4d2f-870f-9a1ae220a29f",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "3dda57af-689a-4a02-8300-1b08163970c1",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
+                    "groups": "Keyboard",
+                    "action": "Boost",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

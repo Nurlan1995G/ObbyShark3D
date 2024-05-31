@@ -1,6 +1,5 @@
 ﻿using Assets.Project.CodeBase.Player.UI;
 using Assets.Project.CodeBase.SharkEnemy;
-using UnityEngine;
 
 namespace Assets.Project.CodeBase.Player.Respawn
 {
@@ -23,19 +22,13 @@ namespace Assets.Project.CodeBase.Player.Respawn
             _uiPopup.gameObject.SetActive(true);
         }
 
-        public void Respawn()
-        {
-            Debug.Log("Player respawned");
+        public void Respawn() =>
             _playerView.Teleport();
-        }
 
         public void Revenge()
         {
             if (_killerShark != null)
-            {
                 _killerShark.Destroys();
-                Debug.Log("Отомстили!");
-            }
 
             Respawn();
         }

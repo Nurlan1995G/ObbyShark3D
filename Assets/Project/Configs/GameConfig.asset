@@ -17,8 +17,8 @@ MonoBehaviour:
     RotateSpeed: 4
     Gravity: 10
     BoostMultiplier: 2
-    BoostDuration: 5
-    BoostRecoveryTime: 3
+    BoostDuration: 3
+    BoostRecoveryTime: 5
   SharkBotData:
     MoveSpeed: 5
     RotateSpeed: 4

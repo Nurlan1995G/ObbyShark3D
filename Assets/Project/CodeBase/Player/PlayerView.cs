@@ -12,6 +12,7 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private float _localScaleX = 0.2f;
 
     [SerializeField] private UIPopup _uiPopup;
+    [SerializeField] private BoostButtonUI _boostButtonUI;
 
     private RespawnPlayer _respawn;
     private PositionStaticData _positionStaticData;
@@ -26,6 +27,7 @@ public class PlayerView : MonoBehaviour
     private void Start()
     {
         _respawn = new RespawnPlayer();
+        _boostButtonUI.Initialize(_mover);
     }
 
     private void Update() =>

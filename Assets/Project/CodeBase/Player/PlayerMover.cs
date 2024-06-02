@@ -18,8 +18,8 @@ public class PlayerMover : MonoBehaviour
     private void OnEnable()
     {
         _input.Enable();
-        _input.Player.Boost.started += OnBoostStarted;
-        _input.Player.Boost.canceled += OnBoostCanceled;
+        _input.Player.Boost.started += OnBoostInputStarted;
+        _input.Player.Boost.canceled += OnBoostInputCanceled;
     }
 
     private void Update()
@@ -30,26 +30,12 @@ public class PlayerMover : MonoBehaviour
         CheckDelayBoost();
     }
 
-    private void CheckDelayBoost()
-    {
-        if (_isBoosting)
-        {
-            _boostTimeRemaining -= Time.deltaTime;
-            if (_boostTimeRemaining <= 0)
-            {
-                _isBoosting = false;
-                _boostTimeRemaining = 0;
-            }
-        }
-        else if (_boostTimeRemaining < _playerData.BoostDuration)
-            _boostTimeRemaining += Time.deltaTime / _playerData.BoostRecoveryTime * _playerData.BoostDuration;
-    }
 
     private void OnDisable()
     {
         _input.Disable();
-        _input.Player.Boost.started -= OnBoostStarted;
-        _input.Player.Boost.canceled -= OnBoostCanceled;
+        _input.Player.Boost.started -= OnBoostInputStarted;
+        _input.Player.Boost.canceled -= OnBoostInputCanceled;
     }
 
     public void Construct(PlayerData playerData) =>
@@ -60,6 +46,17 @@ public class PlayerMover : MonoBehaviour
 
     public void AgentDisable() =>
         _agent.enabled = false;
+
+    public void OnBoostStarted()
+    {
+        if (_boostTimeRemaining > 0)
+        {
+            _isBoosting = true;
+        }
+    }
+
+    public void OnBoostCanceled() =>
+        _isBoosting = false;
 
     private void MoveAgent(Vector2 direction)
     {
@@ -78,7 +75,7 @@ public class PlayerMover : MonoBehaviour
         _agent.Move(finalDirection * currentSpeed * Time.deltaTime);
     }
 
-    public void RotateCharacter(Vector3 moveDirection, Quaternion cameraRotation)
+    private void RotateCharacter(Vector3 moveDirection, Quaternion cameraRotation)
     {
         if (Vector3.Angle(transform.forward, moveDirection) > 0)
         {
@@ -88,17 +85,25 @@ public class PlayerMover : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _playerData.RotateSpeed * Time.deltaTime);
         }
     }
-
-    private void OnBoostStarted(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    
+    private void CheckDelayBoost()
     {
-        if (_boostTimeRemaining > 0)
+        if (_isBoosting)
         {
-            _isBoosting = true;
+            _boostTimeRemaining -= Time.deltaTime;
+            if (_boostTimeRemaining <= 0)
+            {
+                _isBoosting = false;
+                _boostTimeRemaining = 0;
+            }
         }
+        else if (_boostTimeRemaining < _playerData.BoostDuration)
+            _boostTimeRemaining += Time.deltaTime / _playerData.BoostRecoveryTime * _playerData.BoostDuration;
     }
 
-    private void OnBoostCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
-    {
-        _isBoosting = false;
-    }
+    private void OnBoostInputStarted(UnityEngine.InputSystem.InputAction.CallbackContext context) =>
+        OnBoostStarted();
+
+    private void OnBoostInputCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context) =>
+        OnBoostCanceled();
 }

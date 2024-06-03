@@ -22,7 +22,7 @@ namespace Assets.Project.CodeBase.SharkEnemy.StateMashine.State
 
             _agent.speed = _sharkBotConfig.MoveSpeed;
 
-            _detecterToObject = new DetecterToObject(this, sharkModel);
+            _detecterToObject = new DetecterToObject(this, sharkModel,sharkBotConfig);
             _detectorFish = new DetectorFish(sharkModel,this);
         }
 

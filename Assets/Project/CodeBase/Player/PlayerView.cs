@@ -11,11 +11,11 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private PlayerMover _mover;
     [SerializeField] private float _localScaleX = 0.2f;
 
-    [SerializeField] private UIPopup _uiPopup;
-    [SerializeField] private BoostButtonUI _boostButtonUI;
+    private UIPopup _uiPopup;
 
     private RespawnPlayer _respawn;
     private PositionStaticData _positionStaticData;
+
     private int _parametrRaising = 10;
     private int _score = 1;
     private int _scoreCount;
@@ -24,11 +24,8 @@ public class PlayerView : MonoBehaviour
    
     public Action<PlayerView> PlayerDied;
 
-    private void Start()
-    {
+    private void Start() =>
         _respawn = new RespawnPlayer();
-        _boostButtonUI.Initialize(_mover);
-    }
 
     private void Update() =>
         IncreasePlayer();
@@ -46,11 +43,12 @@ public class PlayerView : MonoBehaviour
         }
     }
 
-    public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig)
+    public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig, UIPopup uiPopup
+        , BoostButtonUI boostButtonUI)
     {
         _positionStaticData = positionStaticData ?? throw new ArgumentNullException(nameof(positionStaticData));
-
-        _mover.Construct(gameConfig.PlayerData);
+        _uiPopup = uiPopup;
+        _mover.Construct(gameConfig.PlayerData, boostButtonUI);
     }
 
     public void AddScore(int score)
@@ -65,9 +63,7 @@ public class PlayerView : MonoBehaviour
         gameObject.SetActive(false);
 
         if (killerShark != null)
-        {
             _respawn.SetKillerShark(killerShark,this,_uiPopup);
-        }
 
         _respawn.SelectAction();
     }

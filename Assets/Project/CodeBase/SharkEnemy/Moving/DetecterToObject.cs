@@ -2,6 +2,7 @@
 using Assets.Project.CodeBase.SharkEnemy;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Project.AssetProviders;
 
 public class DetecterToObject
 {
@@ -9,18 +10,17 @@ public class DetecterToObject
 
     private readonly AgentMoveState _agentMoveState;
     private readonly SharkModel _sharkModel;
-
-    private List<string> _sharkBotsTag = new List<string> { "Shark1", "Shark2" };
+    private readonly SharkBotData _sharkBotData;
 
     private float _timeLastDetected;
-    private float _chaseDuration = 10f;
     private float _cooldownTimer;
     private bool _isChasing = true;
 
-    public DetecterToObject( AgentMoveState agentMoveState,  SharkModel sharkModel)
+    public DetecterToObject( AgentMoveState agentMoveState,  SharkModel sharkModel, SharkBotData sharkBotData)
     {
         _agentMoveState = agentMoveState;
         _sharkModel = sharkModel;
+        _sharkBotData = sharkBotData;
     }
 
     public void DetectObject(Transform transform)
@@ -59,7 +59,7 @@ public class DetecterToObject
 
     private void FindMissingShark(Transform transform, GameObject targetPlayer)
     {
-        foreach (var sharkTag in _sharkBotsTag)
+        foreach (var sharkTag in AssetAdress.SharkBotsTag)
         {
             GameObject targetShark = StaticClassLogic.FindObject(sharkTag);
 
@@ -99,7 +99,7 @@ public class DetecterToObject
         {
             if (positionShark.GetComponent<SharkModel>().ScoreLevel < _sharkModel.ScoreLevel)
             {
-                if (_timeLastDetected < _chaseDuration)
+                if (_timeLastDetected < _sharkBotData.StoppingTimeChase)
                 {
                     _agentMoveState.MoveTo(positionShark.transform.position, transform);
 
@@ -117,7 +117,7 @@ public class DetecterToObject
         {
             if (positionTarget.GetComponent<PlayerView>().ScoreLevel < _sharkModel.ScoreLevel)
             {
-                if (_timeLastDetected < _chaseDuration)
+                if (_timeLastDetected < _sharkBotData.StoppingTimeChase)
                 {
                     _agentMoveState.MoveTo(positionTarget.transform.position, transform);
 
@@ -133,6 +133,6 @@ public class DetecterToObject
     {
         _timeLastDetected = 0;
         _isChasing = false;
-        _cooldownTimer = _chaseDuration / 2;
+        _cooldownTimer = _sharkBotData.StoppingTimeChase / 2;
     }
 }

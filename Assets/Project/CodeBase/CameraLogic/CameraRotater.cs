@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +9,8 @@ namespace Assets.CodeBase.CameraLogic
     {
         [SerializeField] private VariableJoystick _variableJoystick;
         [SerializeField] private CinemachineFreeLook _cinemachineFreeLook;
-        [SerializeField] private GameObject _screenStick;
+
+        [SerializeField] private float _hideDistance = 20f;
 
         private RotateInput _rotateInput;
         private CameraRotateData _cameraRotateData;
@@ -19,10 +21,16 @@ namespace Assets.CodeBase.CameraLogic
         private Vector2 _lastDirection;
         private Vector3 _currentMousePosition;
 
+        private List<ScoreLevelBarFish> _scoreLevelBarFishes = new List<ScoreLevelBarFish>();
+        private float _updateInterval = 1f; 
+        private float _nextUpdate;
+
         private void Awake()
         {
             _rotateInput = new RotateInput();
             _rotateInput.Enable();
+
+            UpdateScoreLevelBarFishes();
         }
 
         private void OnEnable() =>
@@ -30,13 +38,18 @@ namespace Assets.CodeBase.CameraLogic
 
         private void Update()
         {
-            if(Application.isMobilePlatform)
+            if (Time.time >= _nextUpdate)
+            {
+                UpdateScoreLevelBarFishes();
+                _nextUpdate = Time.time + _updateInterval;
+            }
+
+            CheckScoreLevelBarFishDistances();
+            
+            if (Application.isMobilePlatform)
                 HandleTouchInput();
             else
-            {
-                _screenStick.SetActive(false);   
                 ControlRotation();
-            }
         }
 
         private void OnDisable()
@@ -133,6 +146,20 @@ namespace Assets.CodeBase.CameraLogic
 
                 transform.rotation = rotationX * rotationY;
                 _lastDirection = direction;
+            }
+        }
+
+        private void UpdateScoreLevelBarFishes() => 
+            _scoreLevelBarFishes.AddRange(FindObjectsOfType<ScoreLevelBarFish>());
+
+        private void CheckScoreLevelBarFishDistances()
+        {
+            _scoreLevelBarFishes.RemoveAll(fish => fish == null);
+
+            foreach (var fish in _scoreLevelBarFishes)
+            {
+                float distance = Vector3.Distance(transform.position, fish.transform.position);
+                fish.gameObject.SetActive(distance <= _hideDistance);
             }
         }
     }

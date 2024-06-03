@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+﻿using Assets.Project.CodeBase.Player.UI;
+using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private GameObject _screenStick;
 
     private PlayerInput _input;
     private PlayerData _playerData;
-
+    private BoostButtonUI _boostButtonUI;
     private bool _isBoosting;
     private float _boostTimeRemaining;
 
@@ -24,6 +26,9 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
+        if (Application.isMobilePlatform)
+            _boostButtonUI.gameObject.SetActive(true);
+
         Vector2 moveDirection = _input.Player.Move.ReadValue<Vector2>();
         MoveAgent(moveDirection);
 
@@ -38,8 +43,11 @@ public class PlayerMover : MonoBehaviour
         _input.Player.Boost.canceled -= OnBoostInputCanceled;
     }
 
-    public void Construct(PlayerData playerData) =>
+    public void Construct(PlayerData playerData, BoostButtonUI boostButtonUI)
+    {
         _playerData = playerData;
+        _boostButtonUI = boostButtonUI;
+    }
 
     public void AgentEnable() =>
         _agent.enabled = true;
@@ -50,9 +58,7 @@ public class PlayerMover : MonoBehaviour
     public void OnBoostStarted()
     {
         if (_boostTimeRemaining > 0)
-        {
             _isBoosting = true;
-        }
     }
 
     public void OnBoostCanceled() =>
@@ -91,6 +97,7 @@ public class PlayerMover : MonoBehaviour
         if (_isBoosting)
         {
             _boostTimeRemaining -= Time.deltaTime;
+
             if (_boostTimeRemaining <= 0)
             {
                 _isBoosting = false;

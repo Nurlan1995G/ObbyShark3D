@@ -11,14 +11,6 @@ public class SpawnPointEnemyBot : MonoBehaviour
     private SpawnerFish _spawnerFish;
     private SharkBotData _sharkBotData;
 
-    private List<string> _sharkTags = new List<string>()
-    {
-        "Shark1",
-        "Shark2",
-        "Shark3",
-        "Shark4",
-    };
-
     public void Construct(FactoryShark factoryShark, PositionStaticData sharkPositionStaticData,
         PlayerView playerView, SpawnerFish spawnerFish, GameConfig gameConfig)
     { 
@@ -36,7 +28,7 @@ public class SpawnPointEnemyBot : MonoBehaviour
 
     private void FindMissingSharks()
     {
-        foreach (var sharkTag in _sharkTags)
+        foreach (var sharkTag in AssetAdress.SharkBotsTag)
         {
             GameObject shark = StaticClassLogic.FindObject(sharkTag);
 

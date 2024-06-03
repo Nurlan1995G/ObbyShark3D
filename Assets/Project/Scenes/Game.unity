@@ -3191,7 +3191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &302239525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3255,20 +3255,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 302239527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 302239529}
-        m_TargetAssemblyTypeName: Assets.Project.CodeBase.Player.UI.BoostButtonUI,
-          Assembly-CSharp
-        m_MethodName: OnBoostButtonReleased
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &302239527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3516,7 +3503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _variableJoystick: {fileID: 1136555221}
   _cinemachineFreeLook: {fileID: 113185021}
-  _screenStick: {fileID: 441787027}
+  _hideDistance: 50
 --- !u!114 &341800127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4494,11 +4481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f2c307b708eb544939047fc552e291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &441787027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5827178133226174938, guid: 5ddd1374d50c1c041926a1911e339c57, type: 3}
-  m_PrefabInstance: {fileID: 625716710}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &453937238
 GameObject:
   m_ObjectHideFlags: 0
@@ -9315,6 +9297,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 60219087}
     - target: {fileID: 4127180605222727964, guid: f4dd1551f927ed348b6c0b37439fa175, type: 3}
+      propertyPath: _uiPopup
+      value: 
+      objectReference: {fileID: 1934583761}
+    - target: {fileID: 4127180605222727964, guid: f4dd1551f927ed348b6c0b37439fa175, type: 3}
       propertyPath: _configFish
       value: 
       objectReference: {fileID: 11400000, guid: 24492dd3ed5f8e24288f5c934b639d3c, type: 2}
@@ -9326,6 +9312,10 @@ PrefabInstance:
       propertyPath: _playerView
       value: 
       objectReference: {fileID: 707422470}
+    - target: {fileID: 4127180605222727964, guid: f4dd1551f927ed348b6c0b37439fa175, type: 3}
+      propertyPath: _boostButtonUI
+      value: 
+      objectReference: {fileID: 302239529}
     - target: {fileID: 4127180605222727964, guid: f4dd1551f927ed348b6c0b37439fa175, type: 3}
       propertyPath: _cameraRotater
       value: 
@@ -14610,7 +14600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8209575508832789257, guid: 0834183d1f8ba0a408b31e272acdf7f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8979655187345981797, guid: 0834183d1f8ba0a408b31e272acdf7f1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -15941,7 +15931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891418089}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.273211, y: 0.12842552, z: -0.03683195, w: 0.9526312}
+  m_LocalRotation: {x: 0.273211, y: 0.1284255, z: -0.036831956, w: 0.9526311}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

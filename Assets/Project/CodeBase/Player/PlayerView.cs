@@ -68,17 +68,8 @@ public class PlayerView : MonoBehaviour
         _respawn.SelectAction();
     }
 
-    public void Destroyss()
-    {
-        PlayerDied?.Invoke(this);
-        gameObject.SetActive(false);
-        _respawn.SelectAction();
-        Teleport();
-    }
-
     public void Teleport()
     {
-        _mover.AgentDisable();
         transform.position = _positionStaticData.InitPlayerPosition;
         transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         _score = 1;
@@ -86,6 +77,5 @@ public class PlayerView : MonoBehaviour
         _scoreCount = 0;
         _parametrRaising = 10;
         gameObject.SetActive(true);
-        _mover.AgentEnable();
     }
 }

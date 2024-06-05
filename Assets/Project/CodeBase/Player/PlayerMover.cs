@@ -27,7 +27,10 @@ public class PlayerMover : MonoBehaviour
     private void Update()
     {
         if (Application.isMobilePlatform)
+        {
             _boostButtonUI.gameObject.SetActive(true);
+            _screenStick.gameObject.SetActive(true);
+        }
 
         Vector2 moveDirection = _input.Player.Move.ReadValue<Vector2>();
         MoveAgent(moveDirection);
@@ -47,6 +50,8 @@ public class PlayerMover : MonoBehaviour
     {
         _playerData = playerData;
         _boostButtonUI = boostButtonUI;
+
+        _boostButtonUI.Initialize(this);
     }
 
     public void AgentEnable() =>

@@ -1,13 +1,10 @@
 ﻿using Assets.Project.CodeBase.SharkEnemy.StateMashine.State;
 using Assets.Project.CodeBase.SharkEnemy;
-using System.Collections.Generic;
 using UnityEngine;
 using Assets.Project.AssetProviders;
 
 public class DetecterToObject
 {
-    public const string PlayerTag = "Player";
-
     private readonly AgentMoveState _agentMoveState;
     private readonly SharkModel _sharkModel;
     private readonly SharkBotData _sharkBotData;
@@ -25,13 +22,13 @@ public class DetecterToObject
 
     public void DetectObject(Transform transform)
     {
-        GameObject targetPlayer = StaticClassLogic.FindObject(PlayerTag);
+        GameObject targetPlayer = StaticClassLogic.FindObject(AssetAdress.PlayerTag);
 
         FindMissingShark(transform, targetPlayer);
 
         if (targetPlayer != null)
         {
-            if (_agentMoveState.IsObjectNotReached(targetPlayer, transform) && targetPlayer.CompareTag(PlayerTag))
+            if (_agentMoveState.IsObjectNotReached(targetPlayer, transform) && targetPlayer.CompareTag(AssetAdress.PlayerTag))
             {
                 if (_isChasing)
                 {

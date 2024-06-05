@@ -12,5 +12,6 @@ namespace Assets.Project.AssetProviders
         public const string SharkEnemy4 = "SharkEnemy/SharkEnemy4";
 
         public static readonly List<string> SharkBotsTag = new List<string> { "Shark1", "Shark2", "Shark3", "Shark4" };
+        public const string PlayerTag = "Player";
     }
 }

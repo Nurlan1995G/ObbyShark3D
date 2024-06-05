@@ -31,4 +31,20 @@ public class Shark : MonoBehaviour
         _score += score;
         _scoreLevelBar.SetScore(_score);
     }
+
+    public void DestroyShark()
+    {
+        Destroy(gameObject);
+    }
+
+    public void RespawnShark(Vector3 newPosition, Vector3 newScale)
+    {
+        transform.position = newPosition;
+        transform.localScale = newScale;
+        _score = 1;
+        _scoreLevelBar.SetScore(_score);
+        _scoreCount = 0;
+        _parametrRaising = 10;
+        gameObject.SetActive(true);
+    }
 }

@@ -27,17 +27,16 @@ public class TopSharksManager
     public void SetUI(TopSharksUI topSharksUI)
     {
         _topSharksUI = topSharksUI;
-        UpdateTopSharks(); 
+        UpdateTopSharks();
     }
 
     private void UpdateTopSharks()
     {
         var sortedSharks = _sharks.OrderByDescending(s => s.ScoreLevel).ToList();
-        var topShark = sortedSharks.FirstOrDefault();
 
         foreach (var shark in _sharks)
         {
-            shark.SetCrown(shark == topShark);
+            shark.SetCrown(shark == sortedSharks.FirstOrDefault());
         }
 
         _topSharksUI?.UpdateSharkList(sortedSharks);

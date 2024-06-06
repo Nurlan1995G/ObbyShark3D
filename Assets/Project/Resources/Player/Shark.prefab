@@ -275,10 +275,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43645de6e79f6f945a2057fb38b30fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreLevelBar: {fileID: 6600075312943573738}
+  ScoreLevelBar: {fileID: 0}
+  _localScaleX: 0.2
+  crown: {fileID: 0}
   _playerTrigger: {fileID: 2574513300687058018}
   _mover: {fileID: 5797505303278054737}
-  _localScaleX: 0.2
 --- !u!195 &4266955402589244901
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -525,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 512233569549977542, guid: 3724c6b82cb54f94093c1bdd5114f0c2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1502226008449694106, guid: 3724c6b82cb54f94093c1bdd5114f0c2, type: 3}
       propertyPath: m_Pivot.x
@@ -698,17 +699,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedRotate: 100
---- !u!114 &6600075312943573738 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 758849831649290530, guid: 3724c6b82cb54f94093c1bdd5114f0c2, type: 3}
-  m_PrefabInstance: {fileID: 5845624358646678472}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6198085405067117582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed6d3e4cf3de254987998b1ffa4e892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8960674595819241413
 PrefabInstance:
   m_ObjectHideFlags: 0

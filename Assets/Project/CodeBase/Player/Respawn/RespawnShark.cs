@@ -3,16 +3,17 @@ using Assets.Project.CodeBase.SharkEnemy;
 
 namespace Assets.Project.CodeBase.Player.Respawn
 {
-    public class RespawnPlayer
+    public class RespawnShark
     {
         private UIPopup _uiPopup;
+        private PositionStaticData _positionPlayer;
         private SharkModel _killerShark;
         private PlayerView _playerView;
 
-        public void SetKillerShark(SharkModel sharkModel, PlayerView playerView, UIPopup uIPopup)
+        public void SetKillerShark(SharkModel sharkModel, PlayerView sharkPlayer, UIPopup uIPopup)
         {
             _killerShark = sharkModel;
-            _playerView = playerView;
+            _playerView = sharkPlayer;
             _uiPopup = uIPopup;
         }
 

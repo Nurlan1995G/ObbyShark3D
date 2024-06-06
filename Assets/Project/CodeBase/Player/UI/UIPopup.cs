@@ -9,9 +9,9 @@ namespace Assets.Project.CodeBase.Player.UI
         [SerializeField] private Button respawnButton;
         [SerializeField] private Button revengeButton;
 
-        private RespawnPlayer respawnPlayer;
+        private RespawnShark respawnPlayer;
 
-        public void Initialize(RespawnPlayer respawnPlayer)
+        public void Initialize(RespawnShark respawnPlayer)
         {
             this.respawnPlayer = respawnPlayer;
             respawnButton.onClick.AddListener(OnRespawn);

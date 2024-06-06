@@ -18,26 +18,31 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private ConfigFish _configFish;
     [SerializeField] private UIPopup _uiPopup;
     [SerializeField] private BoostButtonUI _boostButtonUI;
+    [SerializeField] private TopSharksUI _topSharksUI;
 
     private void Awake()
     {
         AssetProvider assetProvider = new AssetProvider();
         ServesSelectTypeFish random = new ServesSelectTypeFish(_configFish);
+        TopSharksManager topSharksManager = new TopSharksManager();
 
         _spawner.Construct(new FishFactory(_fishStaticData, assetProvider), random, _playerView, _configFish);
 
         FactoryShark factoryShark = new FactoryShark(assetProvider);
         
-        WriteSpawnPoint(factoryShark);
+        WriteSpawnPoint(factoryShark, topSharksManager);
 
         _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI);
+        _playerView.Init(topSharksManager);
 
         _cameraRotater.Construct(_gameConfig);
+
+        _topSharksUI.Construct(topSharksManager);
     }
 
-    private void WriteSpawnPoint(FactoryShark factoryShark)
+    private void WriteSpawnPoint(FactoryShark factoryShark, TopSharksManager topSharksManager)
     {
         foreach (SpawnPointEnemyBot spawnPoint in _spawnPoints)
-            spawnPoint.Construct(factoryShark, _positionStaticData, _playerView, _spawner, _gameConfig);
+            spawnPoint.Construct(factoryShark, _positionStaticData, _playerView, _spawner, _gameConfig, topSharksManager);
     }
 }

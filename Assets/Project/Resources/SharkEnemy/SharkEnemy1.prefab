@@ -181,9 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5767d07b626ecca478e0575cc5fb8890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreLevelBar: {fileID: 3756863155439319414}
-  _triggerSharkEnemy: {fileID: 8003580807271023714}
+  ScoreLevelBar: {fileID: 3756863155439319414}
   _localScaleX: 0.2
+  _crown: {fileID: 6019769857992676378}
+  _triggerSharkEnemy: {fileID: 8003580807271023714}
 --- !u!143 &2176283812651334510
 CharacterController:
   m_ObjectHideFlags: 0
@@ -777,9 +778,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6636732209693367137}
     m_Modifications:
+    - target: {fileID: 505564060032996752, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+      propertyPath: m_text
+      value: '1
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 505564060032996752, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+      propertyPath: m_fontSize
+      value: 2.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2380352999744107047, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383335749766001465, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7872709744743446641, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
       propertyPath: m_Pivot.x
@@ -882,3 +897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed6d3e4cf3de254987998b1ffa4e892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6019769857992676378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383335749766001465, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+  m_PrefabInstance: {fileID: 8024913611108607779}
+  m_PrefabAsset: {fileID: 0}

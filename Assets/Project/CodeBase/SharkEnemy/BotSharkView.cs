@@ -19,10 +19,11 @@ public class BotSharkView : MonoBehaviour
     private void Update() =>
         _stateMashine?.Update();
 
-    public void Construct(SpawnerFish spawner, SharkBotData sharkBotData, PlayerView player)
+    public void Construct(SpawnerFish spawner, SharkBotData sharkBotData, PlayerView player, TopSharksManager topSharksManager)
     {
         _spawner = spawner;
         _sharkBotData = sharkBotData;
         _player = player;
+        _sharkModel.Init(topSharksManager);
     }
 }

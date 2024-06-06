@@ -86,9 +86,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5767d07b626ecca478e0575cc5fb8890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreLevelBar: {fileID: 6245737591930010976}
-  _triggerSharkEnemy: {fileID: 8464984542310782974}
+  ScoreLevelBar: {fileID: 6245737591930010976}
   _localScaleX: 0.2
+  _crown: {fileID: 3532188627565924364}
+  _triggerSharkEnemy: {fileID: 8464984542310782974}
 --- !u!143 &8769981377146148659
 CharacterController:
   m_ObjectHideFlags: 0
@@ -218,9 +219,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2530547386869019064}
     m_Modifications:
+    - target: {fileID: 505564060032996752, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+      propertyPath: m_text
+      value: '1
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 505564060032996752, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+      propertyPath: m_fontSize
+      value: 2.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2380352999744107047, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383335749766001465, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7154156179999034921, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
       propertyPath: m_text
@@ -311,6 +326,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+--- !u!1 &3532188627565924364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383335749766001465, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}
+  m_PrefabInstance: {fileID: 995408167421567797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6245737591930010976 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6592486228273520213, guid: 362fc1417cc95a747a1a06a42a68946a, type: 3}

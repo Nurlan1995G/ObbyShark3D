@@ -1,6 +1,5 @@
 ﻿using Assets.Project.AssetProviders;
 using Assets.Project.CodeBase.SharkEnemy.Factory;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnPointEnemyBot : MonoBehaviour
@@ -10,15 +9,17 @@ public class SpawnPointEnemyBot : MonoBehaviour
     private PlayerView _playerView;
     private SpawnerFish _spawnerFish;
     private SharkBotData _sharkBotData;
+    private TopSharksManager _topSharkManager;
 
     public void Construct(FactoryShark factoryShark, PositionStaticData sharkPositionStaticData,
-        PlayerView playerView, SpawnerFish spawnerFish, GameConfig gameConfig)
+        PlayerView playerView, SpawnerFish spawnerFish, GameConfig gameConfig, TopSharksManager topSharksManager)
     { 
         _factoryShark = factoryShark;
         _sharkPositionStaticData = sharkPositionStaticData;
         _playerView = playerView;
         _spawnerFish = spawnerFish;
         _sharkBotData = gameConfig.SharkBotData;
+        _topSharkManager = topSharksManager;
     }
 
     private void Update()
@@ -66,7 +67,7 @@ public class SpawnPointEnemyBot : MonoBehaviour
             return;
 
         BotSharkView botShark = CreateSharkScene(position, sharkEnemy);
-        botShark.Construct(_spawnerFish, _sharkBotData, _playerView);
+        botShark.Construct(_spawnerFish, _sharkBotData, _playerView, _topSharkManager);
     }
 
     private BotSharkView CreateSharkScene(Vector3 positionShark, string sharkEnemy)

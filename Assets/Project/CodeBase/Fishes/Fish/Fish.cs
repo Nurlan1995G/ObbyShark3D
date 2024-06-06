@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Fish : MonoBehaviour
 {
-    private PlayerView _playerView;
+    private Shark _playerView;
     private ScoreLevelBarFish _scoreLevelBarFish;
 
     public event Action<Fish> FishDied;
@@ -22,7 +22,7 @@ public abstract class Fish : MonoBehaviour
         UpdateScoreTextColor();
     }
 
-    public void Construct(PlayerView playerView, ScoreLevelBarFish scoreBarObject)
+    public void Construct(Shark playerView, ScoreLevelBarFish scoreBarObject)
     {
         _playerView = playerView;
         _scoreLevelBarFish = scoreBarObject;

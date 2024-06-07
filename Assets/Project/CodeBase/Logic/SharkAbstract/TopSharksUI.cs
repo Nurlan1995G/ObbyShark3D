@@ -5,9 +5,8 @@ using UnityEngine;
 public class TopSharksUI : MonoBehaviour
 {
     [SerializeField] private Transform _contentPanel;
-    [SerializeField] private TextMeshProUGUI _sharkText;
+    [SerializeField] private List<TextMeshProUGUI> _sharkTexts = new List<TextMeshProUGUI>();
 
-    private List<TextMeshProUGUI> _entries = new List<TextMeshProUGUI>();
     private TopSharksManager _topSharksManager;
 
     private void Start()
@@ -17,20 +16,19 @@ public class TopSharksUI : MonoBehaviour
 
     public void UpdateSharkList(List<Shark> sharks)
     {
-        foreach (var entry in _entries)
+        foreach (var sharkText in _sharkTexts)
         {
-            Destroy(entry);
+            sharkText.text = string.Empty;
         }
-        _entries.Clear();
 
-        foreach (var shark in sharks)
+        for (int i = 0; i < sharks.Count && i < _sharkTexts.Count; i++)
         {
-            var newEntry = Instantiate(_sharkText, _contentPanel);
-            newEntry.text = $"{shark.name} - {shark.ScoreLevel}";
-            _entries.Add(newEntry);
+            _sharkTexts[i].text = $"{sharks[i].name} - {sharks[i].ScoreLevel}";
         }
     }
 
-    public void Construct(TopSharksManager topSharksManager) =>
+    public void Construct(TopSharksManager topSharksManager)
+    {
         _topSharksManager = topSharksManager;
+    }
 }

@@ -1,4 +1,5 @@
-﻿using Assets.Project.CodeBase.Player.Respawn;
+﻿using Assets.Project.AssetProviders;
+using Assets.Project.CodeBase.Player.Respawn;
 using Assets.Project.CodeBase.Player.UI;
 using Assets.Project.CodeBase.SharkEnemy;
 using System;
@@ -15,12 +16,11 @@ public class PlayerView : Shark
 
     public Action<PlayerView> PlayerDied;
 
-    private void Start() =>
-        _respawn = new RespawnShark();
-
     public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig, UIPopup uiPopup
         , BoostButtonUI boostButtonUI)
     {
+        _respawn = new RespawnShark();
+
         _positionStaticData = positionStaticData ?? throw new ArgumentNullException(nameof(positionStaticData));
         _uiPopup = uiPopup;
         _mover.Construct(gameConfig.PlayerData, boostButtonUI);
@@ -46,5 +46,11 @@ public class PlayerView : Shark
         ScoreCount = 0;
         ParametrRaising = 10;
         gameObject.SetActive(true);
+    }
+
+    public override string GetSharkName()
+    {
+        NickName.NickNameText.text = AssetAdress.NickPlayer;
+        return AssetAdress.NickPlayer;
     }
 }

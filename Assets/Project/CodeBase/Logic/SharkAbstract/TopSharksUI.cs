@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Project.AssetProviders;
+using Assets.Project.CodeBase.SharkEnemy;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -23,7 +25,16 @@ public class TopSharksUI : MonoBehaviour
 
         for (int i = 0; i < sharks.Count && i < _sharkTexts.Count; i++)
         {
-            _sharkTexts[i].text = $"{sharks[i].name} - {sharks[i].ScoreLevel}";
+            _sharkTexts[i].text = $"{sharks[i].GetSharkName()} - {sharks[i].ScoreLevel}";
+
+            if (sharks[i].GetSharkName() == AssetAdress.NickPlayer)
+            {
+                _sharkTexts[i].color = new Color(130 / 255f, 0, 0, 1); 
+            }
+            else
+            {
+                _sharkTexts[i].color = Color.black;
+            }
         }
     }
 

@@ -42,32 +42,38 @@ public class SpawnPointEnemyBot : MonoBehaviour
     {
         Vector3 position;
         string sharkEnemy;
+        string nickName;
 
         if (sharkTag == "Shark1")
         {
             position = _sharkPositionStaticData.InitSharkOnePosition;
             sharkEnemy = AssetAdress.SharkEnemy1;
+            nickName = AssetAdress.NickBot1;
         }
         else if (sharkTag == "Shark2")
         {
             position = _sharkPositionStaticData.InitSharkTwoPosition;
             sharkEnemy = AssetAdress.SharkEnemy2;
+            nickName = AssetAdress.NickBot2;
         }
         else if (sharkTag == "Shark3")
         {
             position = _sharkPositionStaticData.InitSharkThreePosition;
             sharkEnemy = AssetAdress.SharkEnemy3;
+            nickName = AssetAdress.NickBot3;
         }
         else if (sharkTag == "Shark4")
         {
             position = _sharkPositionStaticData.InitSharkFourPosition;
             sharkEnemy = AssetAdress.SharkEnemy4;
+            nickName = AssetAdress.NickBot4;
         }
         else
             return;
 
         BotSharkView botShark = CreateSharkScene(position, sharkEnemy);
         botShark.Construct(_spawnerFish, _sharkBotData, _playerView, _topSharkManager);
+        botShark.SetNickname(nickName);
     }
 
     private BotSharkView CreateSharkScene(Vector3 positionShark, string sharkEnemy)

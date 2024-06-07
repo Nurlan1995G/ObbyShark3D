@@ -1,25 +1,26 @@
-﻿using System;
+﻿using Assets.Project.CodeBase.SharkEnemy;
+using System;
 using UnityEngine;
 
 public abstract class Shark : MonoBehaviour
 {
     [field: SerializeField] protected ScoreLevelBar ScoreLevelBar;
+    [SerializeField] protected NickName NickName;
     [SerializeField] private float _localScaleX = 0.2f;
     [SerializeField] private GameObject _crown;
+    
+    private TopSharksManager _topSharkManager;
 
     protected int Score = 1;
     protected int ParametrRaising = 10;
     protected int ScoreCount;
-    private TopSharksManager _topSharkManager;
 
     public int ScoreLevel => Score;
 
     public event Action OnScoreChanged;
 
-    private void Start()
-    {
+    private void Start() =>
         _topSharkManager.RegisterShark(this);
-    }
 
     private void Update() =>
         IncreaseSize();
@@ -27,10 +28,10 @@ public abstract class Shark : MonoBehaviour
     private void OnDestroy() =>
         _topSharkManager.UnregisterShark(this);
 
-    public void Init(TopSharksManager topSharksManager)
-    {
+    public void Init(TopSharksManager topSharksManager) =>
         _topSharkManager = topSharksManager;
-    }
+
+    public abstract string GetSharkName();
 
     public void AddScore(int score)
     {

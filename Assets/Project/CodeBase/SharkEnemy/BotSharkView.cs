@@ -26,4 +26,7 @@ public class BotSharkView : MonoBehaviour
         _player = player;
         _sharkModel.Init(topSharksManager);
     }
+
+    public void SetNickname(string nickName) =>
+        _sharkModel.SetNickName(nickName);
 }

@@ -1,5 +1,4 @@
 ﻿using Assets.Project.AssetProviders;
-using Assets.Project.CodeBase.SharkEnemy;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;

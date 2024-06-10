@@ -17,7 +17,8 @@ MonoBehaviour:
   _pathTrailConfig: Assets/Game/LevelTools/Shop/Configs/Trails
   _pathAnimalConfig: Assets/Game/LevelTools/Shop/Configs/Animals
   _pathSoftConfig: Assets/Game/LevelTools/Shop/Configs/Soft
-  _skinItemInfos: []
+  _skinItemInfos:
+  - {fileID: 11400000, guid: 58d664d421328b542a5f2ab599be00a6, type: 2}
   _objectItemInfos: []
   _trailItemInfos: []
   _animalItemInfos: []

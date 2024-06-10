@@ -13,6 +13,12 @@ TagManager:
   - Shark4
   - SharkPoint3
   - SharkPoint4
+  - SharkPoint5
+  - SharkPoint6
+  - SharkPoint7
+  - Shark5
+  - Shark6
+  - Shark7
   layers:
   - Default
   - TransparentFX

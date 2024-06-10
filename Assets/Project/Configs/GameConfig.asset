@@ -20,12 +20,12 @@ MonoBehaviour:
     BoostDuration: 2
     BoostRecoveryTime: 8
   SharkBotData:
-    MoveSpeed: 5
+    MoveSpeed: 6
     RotateSpeed: 4
     MinimalDistanceToObject: 15
     StoppingTimeChase: 15
   CameraRotateData:
     RotateSpeed: 250
-    MinZoomDistance: 8
-    MaxZoomDistance: 25
+    MinZoomDistance: 10
+    MaxZoomDistance: 30
     ZoomStep: 0.01

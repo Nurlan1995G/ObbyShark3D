@@ -30,7 +30,7 @@ namespace YG
             Coin = 0;
             IsMute = false;
 
-            SelectedSkin = 0;
+            SelectedSkin = -191806;
             SelectedObject = 0;
             SelectedTrail = 0;
             SelectedAnimal = 0;
@@ -46,9 +46,6 @@ namespace YG
 
         public void OpenItem(int id)
         {
-            if (OpenItemsInfoId.Contains(id))
-                throw new ArithmeticException(nameof(id));
-
             OpenItemsInfoId.Add(id);
         }
 

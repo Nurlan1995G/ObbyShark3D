@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "NewGameConfig", menuName = "GameConfig")]
+public class GameConfig : ScriptableObject
+{
+    public PlayerData PlayerData;
+    public SharkBotData SharkBotData;
+    public CameraRotateData CameraRotateData;
+    public HatManagerData HatManagerData;
+}
+
+[Serializable]
+public class PlayerData
+{
+    public float MoveSpeed;
+    public float RotateSpeed;
+    public float Gravity;
+    public float BoostMultiplier;
+    public float BoostDuration;
+    public float BoostRecoveryTime;
+}
+
+[Serializable]
+public class SharkBotData
+{
+    public float MoveSpeed;
+    public float RotateSpeed;
+    public float MinimalDistanceToObject;
+    public float StoppingTimeChase;
+}
+
+[Serializable]
+public class CameraRotateData
+{
+    public float RotateSpeed;
+    public float MinZoomDistance;
+    public float MaxZoomDistance;
+    public float ZoomStep;
+}
+
+[Serializable]
+public class HatManagerData
+{
+    public List<GameObject> Hats = new List<GameObject>();
+    public Transform HatPosition;
+}

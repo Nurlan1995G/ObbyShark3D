@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
-using YG.Utils.Pay;
 
 public class Shop : MonoBehaviour
 {
@@ -29,8 +28,8 @@ public class Shop : MonoBehaviour
     #region CATEGORY_BUTTONS
     [SerializeField] private ShopCategoryButton _skinButton;
     [SerializeField] private ShopCategoryButton _objectButton;
-    [SerializeField] private ShopCategoryButton _trailButton;
-    [SerializeField] private ShopCategoryButton _animalButton;
+    //[SerializeField] private ShopCategoryButton _trailButton;
+    //[SerializeField] private ShopCategoryButton _animalButton;
     //[SerializeField] private ShopCategoryButton _softButton;
     #endregion
 
@@ -42,12 +41,12 @@ public class Shop : MonoBehaviour
         if (_objectButton != null)
             _objectButton.Click += OnObjectButtonClick;
 
-        if (_trailButton != null)
-            _trailButton.Click += OnTrailButtonClick;
+        /*if (_trailButton != null)
+            _trailButton.Click += OnTrailButtonClick;*/
 
-        if (_animalButton != null)
+        /*if (_animalButton != null)
             _animalButton.Click += OnAnimalButtonClick;
-
+*/
         /*if (_skinButton != null)
             _softButton.Click += OnSoftButtonClick;*/
 
@@ -69,11 +68,11 @@ public class Shop : MonoBehaviour
         if (_objectButton != null)
             _objectButton.Click -= OnObjectButtonClick;
 
-        if (_trailButton != null)
-            _trailButton.Click -= OnTrailButtonClick;
+        /*if (_trailButton != null)
+            _trailButton.Click -= OnTrailButtonClick;*/
 
-        if (_animalButton != null)
-            _animalButton.Click -= OnAnimalButtonClick;
+        /*if (_animalButton != null)
+            _animalButton.Click -= OnAnimalButtonClick;*/
 
         /*if (_skinButton != null)
             _softButton.Click -= OnSoftButtonClick;*/
@@ -247,8 +246,8 @@ public class Shop : MonoBehaviour
     {
         _skinButton.Select();
         _objectButton.UnSelect();
-        _trailButton.UnSelect();
-        _animalButton.UnSelect();
+        //_trailButton.UnSelect();
+        //_animalButton.UnSelect();
         //_softButton.UnSelect();
 
         _shopPanel.Show(_shopContent.SkinItemInfos.Cast<ItemInfo>());
@@ -258,8 +257,8 @@ public class Shop : MonoBehaviour
     {
         _skinButton.UnSelect();
         _objectButton.Select();
-        _trailButton.UnSelect();
-        _animalButton.UnSelect();
+        //_trailButton.UnSelect();
+        //_animalButton.UnSelect();
         //_softButton.UnSelect();
 
         _shopPanel.Show(_shopContent.ObjectItemInfos.Cast<ItemInfo>());
@@ -269,8 +268,8 @@ public class Shop : MonoBehaviour
     {
         _skinButton.UnSelect();
         _objectButton.UnSelect();
-        _trailButton.Select();
-        _animalButton.UnSelect();
+        //_trailButton.Select();
+        //_animalButton.UnSelect();
         //_softButton.UnSelect();
 
         _shopPanel.Show(_shopContent.TrailItemInfos.Cast<ItemInfo>());
@@ -280,8 +279,8 @@ public class Shop : MonoBehaviour
     {
         _skinButton.UnSelect();
         _objectButton.UnSelect();
-        _trailButton.UnSelect();
-        _animalButton.Select();
+        //_trailButton.UnSelect();
+        //_animalButton.Select();
         //_softButton.UnSelect();
 
         _shopPanel.Show(_shopContent.AnimalItemInfos.Cast<ItemInfo>());
@@ -291,8 +290,8 @@ public class Shop : MonoBehaviour
     {
         _skinButton.UnSelect();
         _objectButton.UnSelect();
-        _trailButton.UnSelect();
-        _animalButton.UnSelect();
+        //_trailButton.UnSelect();
+        //_animalButton.UnSelect();
         //_softButton.Select();
 
         _shopPanel.Show(_shopContent.SoftItemInfos.Cast<ItemInfo>());

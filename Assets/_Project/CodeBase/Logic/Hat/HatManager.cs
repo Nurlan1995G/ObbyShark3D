@@ -4,7 +4,6 @@ using UnityEngine;
 public class HatManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _hats = new List<GameObject>();
-    [SerializeField] private Transform _hatPosition;
 
     private GameObject _currentHat;
 
@@ -22,9 +21,6 @@ public class HatManager : MonoBehaviour
         }
 
         _currentHat = _hats[hatIndex];
-        _currentHat.transform.SetParent(_hatPosition);
-        _currentHat.transform.localPosition = Vector3.zero;
-        _currentHat.transform.localRotation = Quaternion.identity;
         _currentHat.SetActive(true);
     }
 }

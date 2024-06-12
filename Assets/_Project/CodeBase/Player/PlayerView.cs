@@ -17,16 +17,6 @@ public class PlayerView : Shark
 
     public Action<PlayerView> PlayerDied;
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Q))
-        {
-            int count = 0;
-            OnHatButtonPress(count);
-            count++;
-        }
-    }
-
     public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig, UIPopup uiPopup
         , BoostButtonUI boostButtonUI)
     {

@@ -50,6 +50,7 @@ public abstract class Shark : MonoBehaviour
 
         if (ScoreCount >= 2)
         {
+            Debug.Log("Акула увеличилась - " + gameObject.name);
             transform.localScale += new Vector3(_localScaleX, _localScaleX, _localScaleX);
             ParametrRaising *= 3;
         }

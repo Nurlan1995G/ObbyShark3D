@@ -1,21 +1,16 @@
-﻿using Assets.Project.AssetProviders;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class HatManager 
+public class HatManager : MonoBehaviour
 {
-    private GameObject _currentHat;
-    private HatManagerData _hatManagerData;
-    private AssetProvider _assetProvider;
+    [SerializeField] private List<GameObject> _hats = new List<GameObject>();
+    [SerializeField] private Transform _hatPosition;
 
-    public void Construct(GameConfig gameConfig, AssetProvider assetProvider)
-    {
-        _hatManagerData = gameConfig.HatManagerData;
-        _assetProvider = assetProvider;
-    }
+    private GameObject _currentHat;
 
     public void ChangeHat(int hatIndex)
     {
-        if (hatIndex < 0 || hatIndex >= _hatManagerData.Hats.Count)
+        if (hatIndex < 0 || hatIndex >= _hats.Count)
         {
             Debug.LogError("Invalid hat index");
             return;
@@ -23,11 +18,13 @@ public class HatManager
 
         if (_currentHat != null)
         {
-            //Destroy(_currentHat);
+            _currentHat.SetActive(false);
         }
 
-        _currentHat = _assetProvider.Instantiate(_hatManagerData.Hats[hatIndex], _hatManagerData.HatPosition);
+        _currentHat = _hats[hatIndex];
+        _currentHat.transform.SetParent(_hatPosition);
         _currentHat.transform.localPosition = Vector3.zero;
         _currentHat.transform.localRotation = Quaternion.identity;
+        _currentHat.SetActive(true);
     }
 }

@@ -22,6 +22,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b241e020af34b643b623039741d14b8, type: 2}
   - {fileID: 11400000, guid: f07c69aaf3809a640a5ca077bc239ca5, type: 2}
   - {fileID: 11400000, guid: e385f9b8b1b638e48a862d52bfcfa286, type: 2}
+  - {fileID: 11400000, guid: dfb9adffbac8c5a419f22ec7c9af75e5, type: 2}
+  - {fileID: 11400000, guid: 2c5c5b28de20aec46ac932be6e420f1a, type: 2}
   _objectItemInfos:
   - {fileID: 11400000, guid: a18b3c71f15087b4296d9f1bc7eb24b0, type: 2}
   - {fileID: 11400000, guid: 9d3bc6b3c6c4f7644b2f2881360f0a6c, type: 2}

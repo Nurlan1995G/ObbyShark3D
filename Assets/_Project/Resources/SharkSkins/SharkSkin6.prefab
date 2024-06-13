@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742469015213997497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SharkSkin6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,9 +80,69 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7709613880258534578, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -7023014902357544376, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4876808054094043266, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4284072681715225326, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2441662336575131333, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1768814455128836201, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -93171958787594768, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -56236647717719052, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
       propertyPath: m_Name
       value: untitled
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735553637547402604, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014599802114907803, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532660243750991573, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700499369467597123, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900407406852587038, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695102370209620527, guid: f2d81bb1512ee3847b37709daab9d311, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d631be9d69eb44098e6800739789d3, type: 3}
   m_Name: SkinItemInfo2
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 31482
   ItemType: 0
   CashType: 1
   Price: 0
   Icon: {fileID: 21300000, guid: 758e0dd6a3dc8ae4a833fc77be3fe4e0, type: 3}
-  ShopPreview: {fileID: 0}
+  ShopPreview: {fileID: 1257757803749624264, guid: 086ea1d9933565340a31683703a0ae93, type: 3}
   YanId: 0
   IsDynamic: 1
-  MainMenuPreview: {fileID: 0}
+  MainMenuPreview: {fileID: 1257757803749624264, guid: 086ea1d9933565340a31683703a0ae93, type: 3}

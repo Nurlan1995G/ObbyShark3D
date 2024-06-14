@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class Shop : MonoBehaviour
     private ShopItemView _shopItemView;
 
     public bool IsInitialized { get; private set; }
+    
+    public Action SkinCangedInShop;
 
     #region SHOP_PANEL_BUTTONS
     [SerializeField] private BuyButton _buyButton;
@@ -111,9 +114,9 @@ public class Shop : MonoBehaviour
 
             SetPurchasedProducts(_shopContent.SkinItemInfos.FirstOrDefault(itemInfo => itemInfo.YanId == valueId));
             SetPurchasedProducts(_shopContent.ObjectItemInfos.FirstOrDefault(itemInfo => itemInfo.YanId == valueId));
-            SetPurchasedProducts(_shopContent.TrailItemInfos.FirstOrDefault(itemInfo => itemInfo.YanId == valueId));
-            SetPurchasedProducts(_shopContent.AnimalItemInfos.FirstOrDefault(itemInfo => itemInfo.YanId == valueId));
-            SetPurchasedProducts(_shopContent.SoftItemInfos.FirstOrDefault(itemInfo => itemInfo.YanId == valueId));
+            /*SetPurchasedProducts(_shopContent.TrailItemInfos.FirstOrDefault(itemInfo => itemInfo.YanId == valueId));*/
+            /*SetPurchasedProducts(_shopContent.AnimalItemInfos.FirstOrDefault(itemInfo => itemInfo.YanId == valueId));*/
+            /*SetPurchasedProducts(_shopContent.SoftItemInfos.FirstOrDefault(itemInfo => itemInfo.YanId == valueId));*/
         });
 
         YandexSDK.Instance.Save();
@@ -135,6 +138,7 @@ public class Shop : MonoBehaviour
             {
                 _itemUnlocker.Visit(itemInfo);
                 _shopItemView.UnLock();
+                SkinCangedInShop?.Invoke();
             }
         }
     }
@@ -300,6 +304,7 @@ public class Shop : MonoBehaviour
     private void SelectItem()
     {
         _itemSelector.Visit(_shopItemView.ItemInfo);
+        SkinCangedInShop?.Invoke();
         _shopPanel.Select(_shopItemView);
         ShowSelectedButton();
     }

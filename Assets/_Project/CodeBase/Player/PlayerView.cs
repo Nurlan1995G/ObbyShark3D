@@ -9,7 +9,6 @@ public class PlayerView : Shark
 {
     [SerializeField] private PlayerTrigger _playerTrigger;
     [SerializeField] private PlayerMover _mover;
-    private HatManager _hatManager;
 
     private UIPopup _uiPopup;
     private RespawnShark _respawn;
@@ -53,10 +52,5 @@ public class PlayerView : Shark
     {
         NickName.NickNameText.text = AssetAdress.NickPlayer;
         return AssetAdress.NickPlayer;
-    }
-
-    public void OnHatButtonPress(int hatIndex)
-    {
-        _hatManager.ChangeHat(hatIndex);
     }
 }

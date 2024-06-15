@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class Shop : MonoBehaviour
     private ShopItemView _shopItemView;
 
     public bool IsInitialized { get; private set; }
+
+    public Action SkinCangedInShop;
 
     #region SHOP_PANEL_BUTTONS
     [SerializeField] private BuyButton _buyButton;
@@ -130,6 +133,7 @@ public class Shop : MonoBehaviour
             {
                 var softItemInfo = itemInfo as SoftItemInfo;
                 Wallet.Add(softItemInfo.Reward);
+                SkinCangedInShop?.Invoke();
             }
             else
             {
@@ -300,6 +304,7 @@ public class Shop : MonoBehaviour
     private void SelectItem()
     {
         _itemSelector.Visit(_shopItemView.ItemInfo);
+        SkinCangedInShop?.Invoke();
         _shopPanel.Select(_shopItemView);
         ShowSelectedButton();
     }

@@ -20,7 +20,7 @@ public class Shop : MonoBehaviour
 
     public bool IsInitialized { get; private set; }
 
-    public Action SkinCangedInShop;
+    public event Action SkinCangedInShop;
 
     #region SHOP_PANEL_BUTTONS
     [SerializeField] private BuyButton _buyButton;
@@ -133,12 +133,12 @@ public class Shop : MonoBehaviour
             {
                 var softItemInfo = itemInfo as SoftItemInfo;
                 Wallet.Add(softItemInfo.Reward);
-                SkinCangedInShop?.Invoke();
             }
             else
             {
                 _itemUnlocker.Visit(itemInfo);
                 _shopItemView.UnLock();
+                SkinCangedInShop?.Invoke();
             }
         }
     }

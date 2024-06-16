@@ -17,7 +17,7 @@ MonoBehaviour:
   CashType: 1
   Price: 0
   Icon: {fileID: 21300000, guid: 758e0dd6a3dc8ae4a833fc77be3fe4e0, type: 3}
-  ShopPreview: {fileID: 1257757803749624264, guid: 086ea1d9933565340a31683703a0ae93, type: 3}
+  ShopPreview: {fileID: 5134901062858199325, guid: 69b5d760c7ccfb743a476c9358feb472, type: 3}
   YanId: 0
   IsDynamic: 1
-  MainMenuPreview: {fileID: 1257757803749624264, guid: 086ea1d9933565340a31683703a0ae93, type: 3}
+  MainMenuPreview: {fileID: 5134901062858199325, guid: 69b5d760c7ccfb743a476c9358feb472, type: 3}

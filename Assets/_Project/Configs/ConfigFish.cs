@@ -4,8 +4,8 @@ using System;
 [CreateAssetMenu(fileName = "Fish", menuName = "ConfigFish")]
 public class ConfigFish : ScriptableObject
 {
-    public FishCountData FishCountData;
     public SpawnerFishData SpawnerFishData;
+    public FishStaticData FishStaticData;
 }
 
 [Serializable]
@@ -16,15 +16,41 @@ public class SpawnerFishData
 }
 
 [Serializable]
-public class FishCountData
+public class FishStaticData
 {
-    public int MaxCountLunaFish = 2;
-    public int MaxCountPicassoFish = 5;
-    public int MaxCountNapoleonFish = 8;
-    public int MaxCountAngelFish = 12;
+    [Header("HedgehogPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public HedgehogFish HedgehogPrefab;
     public int MaxCountHedgehogFish = 15;
-    public int MaxCountBelugaFish = 20;
-    public int MaxCountParrotFish = 24;
-    public int MaxCountClounFish = 30;
+
+    [Header("BlueSergeonPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public BlueSergeonFish BlueSergeonPrefab;
     public int MaxCountBlueSergeonFish = 34;
+
+    [Header("ClounPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public ClounFish ClounPrefab;
+    public int MaxCountClounFish = 30;
+
+    [Header("AngelFishPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public AngelFish AngelFishPrefab;
+    public int MaxCountAngelFish = 12;
+
+    [Header("BelugaFishPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public BelugaFish BelugaFishPrefab;
+    public int MaxCountBelugaFish = 20;
+
+    [Header("PicassoFishPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public PicassoFish PicassoFishPrefab;
+    public int MaxCountPicassoFish = 5;
+
+    [Header("ParrotFishPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public ParrotFish ParrotFishPrefab;
+    public int MaxCountParrotFish = 24;
+
+    [Header("NapoleonFishPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public NapoleonFish NapoleonFishPrefab;
+    public int MaxCountNapoleonFish = 8;
+
+    [Header("LunaFishPrefab и максимальное кол-во рыбок")]
+    [field: SerializeField] public LunaFish LunaFishPrefab;
+    public int MaxCountLunaFish = 2;
 }

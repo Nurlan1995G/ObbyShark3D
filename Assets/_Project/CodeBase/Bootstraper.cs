@@ -1,6 +1,5 @@
 ﻿using Assets.CodeBase.CameraLogic;
 using Assets.Project.AssetProviders;
-using Assets.Project.CodeBase.Fish.Factory;
 using Assets.Project.CodeBase.Player.UI;
 using Assets.Project.CodeBase.SharkEnemy.Factory;
 using System.Collections.Generic;
@@ -26,7 +25,7 @@ public class Bootstraper : MonoBehaviour
         ServesSelectTypeFish random = new ServesSelectTypeFish(_configFish);
         TopSharksManager topSharksManager = new TopSharksManager();
 
-        _spawner.Construct(new FishFactory(_fishStaticData, assetProvider), random, _playerView, _configFish);
+        _spawner.Construct(new FishFactory(_configFish, assetProvider), random, _playerView, _configFish);
 
         FactoryShark factoryShark = new FactoryShark(assetProvider);
         

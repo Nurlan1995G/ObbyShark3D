@@ -12,17 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9882611e25b0a7b4c9e8b825536568ef, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  FishCountData:
-    MaxCountLunaFish: 2
-    MaxCountPicassoFish: 5
-    MaxCountNapoleonFish: 8
-    MaxCountAngelFish: 12
-    MaxCountHedgehogFish: 15
-    MaxCountBelugaFish: 20
-    MaxCountParrotFish: 24
-    MaxCountClounFish: 30
-    MaxCountBlueSergeonFish: 34
   SpawnerFishData:
     SpawnCooldown: 0.1
     MaxCountFish: 150
-  MoveSpeed: 0
+  FishStaticData:
+    HedgehogPrefab: {fileID: 1975488316660557988, guid: 5900a2104010eb144a4dee8ab45e2a0f, type: 3}
+    MaxCountHedgehogFish: 15
+    BlueSergeonPrefab: {fileID: 8222625670074664619, guid: 7eb84179a7b5c6440a2cc3472fce1b58, type: 3}
+    MaxCountBlueSergeonFish: 34
+    ClounPrefab: {fileID: 7145479808271592400, guid: 6eb9f08cbf78f854b9976a70fe6408c7, type: 3}
+    MaxCountClounFish: 30
+    AngelFishPrefab: {fileID: 4876050476916441270, guid: 33ea324d333992f48aa34dde0a60ee48, type: 3}
+    MaxCountAngelFish: 12
+    BelugaFishPrefab: {fileID: 125920886739772469, guid: c8f8d1bcf136b834096b3f32354c7123, type: 3}
+    MaxCountBelugaFish: 20
+    PicassoFishPrefab: {fileID: -248252621069899272, guid: 687e7e9ba2a83244f9bebdb0f918828b, type: 3}
+    MaxCountPicassoFish: 5
+    ParrotFishPrefab: {fileID: 376226829369952971, guid: c563d31fc303250499c2e23c6516d139, type: 3}
+    MaxCountParrotFish: 24
+    NapoleonFishPrefab: {fileID: 1402715104061062102, guid: 31b04700869355441bc3314eb074fa07, type: 3}
+    MaxCountNapoleonFish: 8
+    LunaFishPrefab: {fileID: 7568679899376936800, guid: cc3474825a122194ca8a02fc1bc0a83e, type: 3}
+    MaxCountLunaFish: 2

@@ -70,21 +70,21 @@ public class SpawnPointEnemyBot : MonoBehaviour
         }
         else if (sharkTag == "Shark5")
         {
-            position = _sharkPositionStaticData.InitSharkFourPosition;
+            position = _sharkPositionStaticData.InitSharkFivePosition;
             sharkEnemy = AssetAdress.SharkEnemy5;
-            nickName = AssetAdress.NickBot4;
+            nickName = AssetAdress.NickBot5;
         }
         else if (sharkTag == "Shark6")
         {
-            position = _sharkPositionStaticData.InitSharkFourPosition;
+            position = _sharkPositionStaticData.InitSharkSixPosition;
             sharkEnemy = AssetAdress.SharkEnemy6;
-            nickName = AssetAdress.NickBot4;
+            nickName = AssetAdress.NickBot6;
         }
         else if (sharkTag == "Shark7")
         {
-            position = _sharkPositionStaticData.InitSharkFourPosition;
+            position = _sharkPositionStaticData.InitSharkSevenPosition;
             sharkEnemy = AssetAdress.SharkEnemy7;
-            nickName = AssetAdress.NickBot4;
+            nickName = AssetAdress.NickBot7;
         }
         else
             return;

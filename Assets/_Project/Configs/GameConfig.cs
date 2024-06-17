@@ -8,7 +8,6 @@ public class GameConfig : ScriptableObject
     public PlayerData PlayerData;
     public SharkBotData SharkBotData;
     public CameraRotateData CameraRotateData;
-    public HatManagerData HatManagerData;
 }
 
 [Serializable]
@@ -38,11 +37,4 @@ public class CameraRotateData
     public float MinZoomDistance;
     public float MaxZoomDistance;
     public float ZoomStep;
-}
-
-[Serializable]
-public class HatManagerData
-{
-    public List<GameObject> Hats = new List<GameObject>();
-    public Transform HatPosition;
 }

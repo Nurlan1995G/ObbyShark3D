@@ -1,5 +1,5 @@
 {
-    "idSave": 35,
+    "idSave": 38,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -29,10 +29,13 @@
         31620,
         31482,
         32128,
-        31510
+        31510,
+        32430,
+        31460,
+        31570
     ],
-    "SelectedSkin": 31482,
-    "SelectedObject": -289118,
+    "SelectedSkin": 31570,
+    "SelectedObject": 31460,
     "SelectedTrail": 0,
     "SelectedAnimal": 0
 }

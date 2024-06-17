@@ -44,7 +44,8 @@ namespace Assets.Project.CodeBase.SharkEnemy.StateMashine.State
             Vector3 targetDirection = (targetPosition - transform.position).normalized;
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,
+                rotateSpeed * Time.deltaTime);
         }
 
         public virtual void Update()

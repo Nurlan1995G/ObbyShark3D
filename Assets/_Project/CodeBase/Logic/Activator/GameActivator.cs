@@ -6,11 +6,6 @@ public class GameActivator : MonoBehaviour
     [SerializeField] private Button _startButton;
     [SerializeField] private Button _shopButton;
 
-    private void Awake()
-    {
-        Time.timeScale = 0;
-    }
-
     private void OnEnable()
     {
         _startButton.onClick.AddListener(ActivateGame);

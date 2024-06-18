@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skins1
       objectReference: {fileID: 0}
+    - target: {fileID: 7164392845230799568, guid: d7d489ec186c04746978bfdc74ce1bd2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 609409385aa516249843007d71af4eec, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

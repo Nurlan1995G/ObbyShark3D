@@ -13,22 +13,25 @@ public class PlayerView : Shark
     private UIPopup _uiPopup;
     private RespawnShark _respawn;
     private PositionStaticData _positionStaticData;
+    private SoundHandler _soundhandler;
 
     public Action<PlayerView> PlayerDied;
 
     public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig, UIPopup uiPopup
-        , BoostButtonUI boostButtonUI)
+        , BoostButtonUI boostButtonUI, SoundHandler soundHandler)
     {
         _respawn = new RespawnShark();
 
         _positionStaticData = positionStaticData ?? throw new ArgumentNullException(nameof(positionStaticData));
         _uiPopup = uiPopup;
+        _soundhandler = soundHandler;
         _mover.Construct(gameConfig.PlayerData, boostButtonUI);
     }
 
     public void Destroys(SharkModel killerShark = null)
     {
         PlayerDied?.Invoke(this);
+        _soundhandler.PlayLose();
         gameObject.SetActive(false);
 
         if (killerShark != null)

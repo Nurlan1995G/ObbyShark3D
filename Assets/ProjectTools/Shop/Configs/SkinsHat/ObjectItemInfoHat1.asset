@@ -20,4 +20,4 @@ MonoBehaviour:
   ShopPreview: {fileID: 9021554652608086931, guid: 49e919a1ed4a2524ea8b4cf3f52cd692, type: 3}
   YanId: 0
   IsDynamic: 1
-  MainMenuPreview: {fileID: 9021554652608086931, guid: 49e919a1ed4a2524ea8b4cf3f52cd692, type: 3}
+  MainMenuPreview: {fileID: 1691433023253278004, guid: 5315b6847e5aece4e80c7ed31baabc4e, type: 3}

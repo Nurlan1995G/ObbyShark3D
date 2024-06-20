@@ -49,6 +49,7 @@ public class PlayerView : Shark
         ScoreCount = 0;
         ParametrRaising = 10;
         gameObject.SetActive(true);
+        _soundhandler.PlayWin();
     }
 
     public override string GetSharkName()

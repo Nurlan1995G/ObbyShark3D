@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using Assets._Project.CodeBase.Player.Skin;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SkinHandler : MonoBehaviour
 {
     [SerializeField] private Shop _shop;
-    [SerializeField] private List<RewardModel> _playerSkins;
-    [SerializeField] private List<RewardModel> _hatSkins;
+    [SerializeField] private List<PlayerSkin> _playerSkins;
+    //[SerializeField] private List<RewardModel> _hatSkins;
+
+    //private Dictionary<int, List<RewardModel>> _selectSkinHat = new Dictionary<int, List<RewardModel>>();
 
     private void OnEnable()
     {
@@ -22,19 +25,29 @@ public class SkinHandler : MonoBehaviour
 
     private void LoadSkins()
     {
-        var selectedSkin = YandexSDK.Instance.Data.SelectedSkin;
-        var selectedObject = YandexSDK.Instance.Data.SelectedObject;
+        int selectedSkin = YandexSDK.Instance.Data.SelectedSkin;
+        int selectedObject = YandexSDK.Instance.Data.SelectedObject;
 
-        Load(selectedSkin, _playerSkins);
-        Load(selectedObject, _hatSkins);
+        Load(selectedSkin,selectedObject, _playerSkins);
+        //Load(selectedObject, _hatSkins);
     }
 
-    private void Load(int id, List<RewardModel> skins)
+    private void Load(int idSkinPlayer, int idHat, List<PlayerSkin> skins)
     {
         foreach (var skin in skins)
         {
-            if (id == skin.ItemInfo.Id)
+            if (idSkinPlayer == skin.ItemInfo.Id)
+            {
                 skin.ChangeState(true);
+
+                foreach (var skinHat in skin.SkinHats)
+                {
+                    if (idHat == skinHat.ItemInfo.Id)
+                        skinHat.ChangeState(true);
+                    else
+                        skinHat.ChangeState(false);
+                }
+            }
             else
                 skin.ChangeState(false);
         }

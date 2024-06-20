@@ -18,6 +18,7 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private UIPopup _uiPopup;
     [SerializeField] private BoostButtonUI _boostButtonUI;
     [SerializeField] private TopSharksUI _topSharksUI;
+    [SerializeField] private SoundHandler _soundHandler;
 
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class Bootstraper : MonoBehaviour
         
         WriteSpawnPoint(factoryShark, topSharksManager);
 
-        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI);
+        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler);
         _playerView.Init(topSharksManager);
 
         _cameraRotater.Construct(_gameConfig);

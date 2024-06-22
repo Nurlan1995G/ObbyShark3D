@@ -21,7 +21,7 @@ namespace Assets.Project.AssetProviders
         public const string NickBot1 = "Клоун-убица";
         public const string NickBot2 = "Неряха777";
         public const string NickBot3 = "Задроткин";
-        public const string NickBot4 = "User43550004";
+        public const string NickBot4 = "Пользователь001";
         public const string NickBot5 = "Тихоня";
         public const string NickBot6 = "Николя";
         public const string NickBot7 = "Наполеон";

@@ -18,7 +18,7 @@ public class TriggerSharkEnemy : MonoBehaviour
 
          if(other.TryGetComponent(out PlayerView playerView))
          {
-            if(_sharkModel.ScoreLevel >= playerView.ScoreLevel)
+            if(_sharkModel.ScoreLevel >= playerView.ScoreLevel && playerView.ScoreLevel > 1)
             {
                 _sharkModel.AddScore(playerView.ScoreLevel);
                 playerView.Destroys(_sharkModel);
@@ -27,7 +27,8 @@ public class TriggerSharkEnemy : MonoBehaviour
 
         if (other.TryGetComponent(out SharkModel targetSharkModel))
         {
-            if (_sharkModel.ScoreLevel > targetSharkModel.ScoreLevel && _sharkModel != targetSharkModel)
+            if (_sharkModel.ScoreLevel > targetSharkModel.ScoreLevel && _sharkModel != targetSharkModel
+                && targetSharkModel.ScoreLevel > 1)
             {
                 _sharkModel.AddScore(targetSharkModel.ScoreLevel);
                 targetSharkModel.Destroys();

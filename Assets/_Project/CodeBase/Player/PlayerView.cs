@@ -43,7 +43,7 @@ public class PlayerView : Shark
     public void Teleport()
     {
         transform.position = _positionStaticData.InitPlayerPosition;
-        transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        SharkSkin.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         Score = 1;
         ScoreLevelBar.SetScore(Score);
         ScoreCount = 0;

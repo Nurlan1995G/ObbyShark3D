@@ -71,7 +71,8 @@ public class DetecterToObject
                     {
                         if (_isChasing)
                         {
-                            if (sharkModel.ScoreLevel > _sharkModel.ScoreLevel)
+                            if (sharkModel.ScoreLevel > _sharkModel.ScoreLevel
+                                && _sharkModel.ScoreLevel > 1)
                                 FleeFromObject(sharkModel.gameObject, transform);
                             else
                                 PositionSharkObject(sharkModel.gameObject, transform);
@@ -94,7 +95,8 @@ public class DetecterToObject
     {
         if (_isChasing)
         {
-            if (positionShark.GetComponent<SharkModel>().ScoreLevel < _sharkModel.ScoreLevel)
+            if (positionShark.GetComponent<SharkModel>().ScoreLevel < _sharkModel.ScoreLevel
+                && positionShark.GetComponent<SharkModel>().ScoreLevel > 1)
             {
                 if (_timeLastDetected < _sharkBotData.StoppingTimeChase)
                 {
@@ -112,7 +114,8 @@ public class DetecterToObject
     {
         if (_isChasing)
         {
-            if (positionTarget.GetComponent<PlayerView>().ScoreLevel < _sharkModel.ScoreLevel)
+            if (positionTarget.GetComponent<PlayerView>().ScoreLevel < _sharkModel.ScoreLevel
+                && positionTarget.GetComponent<PlayerView>().ScoreLevel > 1)
             {
                 if (_timeLastDetected < _sharkBotData.StoppingTimeChase)
                 {

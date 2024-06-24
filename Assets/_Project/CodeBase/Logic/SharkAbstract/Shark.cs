@@ -8,6 +8,7 @@ public abstract class Shark : MonoBehaviour
     [SerializeField] protected NickName NickName;
     [SerializeField] private float _localScaleX = 0.2f;
     [SerializeField] private GameObject _crown;
+    [SerializeField] protected GameObject SharkSkin;
     
     private TopSharksManager _topSharkManager;
 
@@ -50,7 +51,7 @@ public abstract class Shark : MonoBehaviour
 
         if (ScoreCount >= 2)
         {
-            transform.localScale += new Vector3(_localScaleX, _localScaleX, _localScaleX);
+            SharkSkin.transform.localScale += new Vector3(_localScaleX, _localScaleX, _localScaleX);
             ParametrRaising *= 3;
         }
     }

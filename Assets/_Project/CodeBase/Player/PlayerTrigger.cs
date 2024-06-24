@@ -18,7 +18,7 @@ public class PlayerTrigger : MonoBehaviour
 
         if(other.TryGetComponent(out SharkModel sharkModel))
         {
-            if(_playerView.ScoreLevel > sharkModel.ScoreLevel && sharkModel.ScoreLevel > 1)
+            if(_playerView.ScoreLevel > sharkModel.ScoreLevel)
             {
                 _playerView.AddScore(sharkModel.ScoreLevel);
                 sharkModel.Destroys();

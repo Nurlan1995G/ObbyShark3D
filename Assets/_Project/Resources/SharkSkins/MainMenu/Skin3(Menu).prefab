@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1146461213132975496}
+  - component: {fileID: 3668724803985628619}
   m_Layer: 6
   m_Name: Skin3(Menu)
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 5920549216015635124}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3668724803985628619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740057838652259244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4cab649df5ea5c47be76f7a7193c2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shop: {fileID: 7283716965968324083, guid: 73421a7d9b3a55645b46638ac2a4e765, type: 3}
+  _playerSkins:
+  - {fileID: 8494611317360670362}
 --- !u!1 &6406612774145241097
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,6 +100,10 @@ PrefabInstance:
     - target: {fileID: 2089089115341189934, guid: 9a1c827a59ea0704badcdc7bc08250f6, type: 3}
       propertyPath: m_Name
       value: PajamaHatSkin6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089089115341189934, guid: 9a1c827a59ea0704badcdc7bc08250f6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2089089115341189934, guid: 9a1c827a59ea0704badcdc7bc08250f6, type: 3}
       propertyPath: m_IsActive
@@ -151,6 +171,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2089089115341221646, guid: 9a1c827a59ea0704badcdc7bc08250f6, type: 3}
   m_PrefabInstance: {fileID: 1285922689807635293}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1873694106048034140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8369886017604999679, guid: 9a1c827a59ea0704badcdc7bc08250f6, type: 3}
+  m_PrefabInstance: {fileID: 1285922689807635293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2336194060863961333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,6 +247,10 @@ PrefabInstance:
       value: SombreroSkin10
       objectReference: {fileID: 0}
     - target: {fileID: 2024665282523251919, guid: 9a8afbefc6b945d40a896a6caf52d8df, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024665282523251919, guid: 9a8afbefc6b945d40a896a6caf52d8df, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -224,6 +259,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a8afbefc6b945d40a896a6caf52d8df, type: 3}
+--- !u!114 &329619673279042299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6559247364099708402, guid: 9a8afbefc6b945d40a896a6caf52d8df, type: 3}
+  m_PrefabInstance: {fileID: 2336194060863961333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4355783784037523482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2024665282523093231, guid: 9a8afbefc6b945d40a896a6caf52d8df, type: 3}
@@ -240,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 908127357310630860, guid: 9ce579a334649814ca2ee28f2de43745, type: 3}
       propertyPath: m_Name
       value: CrownSkin2
+      objectReference: {fileID: 0}
+    - target: {fileID: 908127357310630860, guid: 9ce579a334649814ca2ee28f2de43745, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 908127357310630860, guid: 9ce579a334649814ca2ee28f2de43745, type: 3}
       propertyPath: m_IsActive
@@ -307,6 +357,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 908127357311117292, guid: 9ce579a334649814ca2ee28f2de43745, type: 3}
   m_PrefabInstance: {fileID: 2914686585211400746}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4530266942901133159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1634157719106497869, guid: 9ce579a334649814ca2ee28f2de43745, type: 3}
+  m_PrefabInstance: {fileID: 2914686585211400746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4480105839938426909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,6 +379,10 @@ PrefabInstance:
     - target: {fileID: 2408566594201992089, guid: 18aed4832ab22f844ba201d23e9c11f8, type: 3}
       propertyPath: m_Name
       value: ShowerCapSkin9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2408566594201992089, guid: 18aed4832ab22f844ba201d23e9c11f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2408566594201992089, guid: 18aed4832ab22f844ba201d23e9c11f8, type: 3}
       propertyPath: m_IsActive
@@ -385,6 +450,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2408566594202478521, guid: 18aed4832ab22f844ba201d23e9c11f8, type: 3}
   m_PrefabInstance: {fileID: 4480105839938426909}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4368789101709235784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -9039421487469769131, guid: 18aed4832ab22f844ba201d23e9c11f8, type: 3}
+  m_PrefabInstance: {fileID: 4480105839938426909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5520784723639870837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -450,6 +526,10 @@ PrefabInstance:
       value: CowboyHatSkin1
       objectReference: {fileID: 0}
     - target: {fileID: 5737101578078686347, guid: 2eaec85a00c88224e9695acb460cbcc8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737101578078686347, guid: 2eaec85a00c88224e9695acb460cbcc8, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -463,6 +543,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5737101578078326955, guid: 2eaec85a00c88224e9695acb460cbcc8, type: 3}
   m_PrefabInstance: {fileID: 5520784723639870837}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6354227159573310436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1491671810753990289, guid: 2eaec85a00c88224e9695acb460cbcc8, type: 3}
+  m_PrefabInstance: {fileID: 5520784723639870837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6170139682692216159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -764,6 +855,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32f255a5fd9a26748bb2c0ad6c11f057, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2476856511469938506}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32f255a5fd9a26748bb2c0ad6c11f057, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8494611317360670362}
   m_SourcePrefab: {fileID: 100100000, guid: 32f255a5fd9a26748bb2c0ad6c11f057, type: 3}
 --- !u!4 &949163524163832786 stripped
 Transform:
@@ -933,6 +1027,30 @@ MonoBehaviour:
   - {fileID: 3583036439722203458}
   - {fileID: 2396146965165279543}
   - {fileID: 4179726891856094913}
+--- !u!114 &8494611317360670362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440662623324473358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f08ba607a679b04ebabd5368aa2d882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemInfo: {fileID: 11400000, guid: f07c69aaf3809a640a5ca077bc239ca5, type: 2}
+  SkinHats:
+  - {fileID: 6354227159573310436}
+  - {fileID: 4530266942901133159}
+  - {fileID: 9071460310599122384}
+  - {fileID: 2751250993525704481}
+  - {fileID: 1873694106048034140}
+  - {fileID: 1580503383055924250}
+  - {fileID: 8994338069060657037}
+  - {fileID: 4368789101709235784}
+  - {fileID: 329619673279042299}
+  - {fileID: 8071897088932274916}
 --- !u!4 &6523433521925507542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8131432331205935991, guid: 32f255a5fd9a26748bb2c0ad6c11f057, type: 3}
@@ -964,6 +1082,10 @@ PrefabInstance:
     - target: {fileID: 2768951765559202771, guid: 71081a3742b3e034b9c40a980eb576f8, type: 3}
       propertyPath: m_Name
       value: MagicianHatSkin3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768951765559202771, guid: 71081a3742b3e034b9c40a980eb576f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2768951765559202771, guid: 71081a3742b3e034b9c40a980eb576f8, type: 3}
       propertyPath: m_IsActive
@@ -1031,6 +1153,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2768951765559627763, guid: 71081a3742b3e034b9c40a980eb576f8, type: 3}
   m_PrefabInstance: {fileID: 6226875512203536149}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9071460310599122384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6084922337656251707, guid: 71081a3742b3e034b9c40a980eb576f8, type: 3}
+  m_PrefabInstance: {fileID: 6226875512203536149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6742072675807599123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1042,6 +1175,10 @@ PrefabInstance:
     - target: {fileID: 1864503669892399132, guid: e40d8a280d208eb439379d2689d2ee52, type: 3}
       propertyPath: m_Name
       value: VikingHelmetSkin11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864503669892399132, guid: e40d8a280d208eb439379d2689d2ee52, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1864503669892399132, guid: e40d8a280d208eb439379d2689d2ee52, type: 3}
       propertyPath: m_IsActive
@@ -1109,6 +1246,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1864503669892766780, guid: e40d8a280d208eb439379d2689d2ee52, type: 3}
   m_PrefabInstance: {fileID: 6742072675807599123}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8071897088932274916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3284677472300333303, guid: e40d8a280d208eb439379d2689d2ee52, type: 3}
+  m_PrefabInstance: {fileID: 6742072675807599123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6967203038138661363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,6 +1322,10 @@ PrefabInstance:
       value: MinerHatSkin4
       objectReference: {fileID: 0}
     - target: {fileID: 2523013280842021476, guid: 5598cdaaf9c07af488978fbb96db3450, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523013280842021476, guid: 5598cdaaf9c07af488978fbb96db3450, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1182,6 +1334,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5598cdaaf9c07af488978fbb96db3450, type: 3}
+--- !u!114 &2751250993525704481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4134847563062001966, guid: 5598cdaaf9c07af488978fbb96db3450, type: 3}
+  m_PrefabInstance: {fileID: 6967203038138661363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4878507846463856567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2523013280841721412, guid: 5598cdaaf9c07af488978fbb96db3450, type: 3}
@@ -1198,6 +1361,10 @@ PrefabInstance:
     - target: {fileID: 6497783513472033815, guid: 5506124d9cbc64e4fa3aa3741fe91765, type: 3}
       propertyPath: m_Name
       value: PillboxHatSkin7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497783513472033815, guid: 5506124d9cbc64e4fa3aa3741fe91765, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6497783513472033815, guid: 5506124d9cbc64e4fa3aa3741fe91765, type: 3}
       propertyPath: m_IsActive
@@ -1260,6 +1427,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5506124d9cbc64e4fa3aa3741fe91765, type: 3}
+--- !u!114 &1580503383055924250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1107810712302789126, guid: 5506124d9cbc64e4fa3aa3741fe91765, type: 3}
+  m_PrefabInstance: {fileID: 7300149681945321952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4567658106618403287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6497783513472071735, guid: 5506124d9cbc64e4fa3aa3741fe91765, type: 3}
@@ -1330,6 +1508,10 @@ PrefabInstance:
       value: PoliceCapSkin8
       objectReference: {fileID: 0}
     - target: {fileID: 2760726266310977367, guid: 714b95f7338374549822f78aa65dea83, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760726266310977367, guid: 714b95f7338374549822f78aa65dea83, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1343,3 +1525,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2760726266310687607, guid: 714b95f7338374549822f78aa65dea83, type: 3}
   m_PrefabInstance: {fileID: 7906903878161638581}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8994338069060657037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -7968915037394191560, guid: 714b95f7338374549822f78aa65dea83, type: 3}
+  m_PrefabInstance: {fileID: 7906903878161638581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef436c0fb0c7ca45bba6975f5f158a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

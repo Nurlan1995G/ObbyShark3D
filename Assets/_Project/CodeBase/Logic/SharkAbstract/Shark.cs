@@ -53,6 +53,7 @@ public abstract class Shark : MonoBehaviour
         {
             SharkSkin.transform.localScale += new Vector3(_localScaleX, _localScaleX, _localScaleX);
             ParametrRaising *= 3;
+            ScoreLevelBar.IncreasePositionY();
         }
     }
 }

@@ -6,9 +6,7 @@ public class SkinHandler : MonoBehaviour
 {
     [SerializeField] private Shop _shop;
     [SerializeField] private List<PlayerSkin> _playerSkins;
-    //[SerializeField] private List<RewardModel> _hatSkins;
-
-    //private Dictionary<int, List<RewardModel>> _selectSkinHat = new Dictionary<int, List<RewardModel>>();
+    [SerializeField] private List<RewardModel> _hatSkins;
 
     private void OnEnable()
     {

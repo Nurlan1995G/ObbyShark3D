@@ -30,7 +30,7 @@ namespace YG
             IsMute = false;
 
             SelectedSkin = 32438;
-            SelectedObject = 0;
+            SelectedObject = -6585282;
             SelectedTrail = 0;
             SelectedAnimal = 0;
 

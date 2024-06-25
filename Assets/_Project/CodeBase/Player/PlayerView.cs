@@ -33,6 +33,7 @@ public class PlayerView : Shark
         PlayerDied?.Invoke(this);
         _soundhandler.PlayLose();
         gameObject.SetActive(false);
+        ScoreLevelBar.SetInitialPositionY();
 
         if (killerShark != null)
             _respawn.SetKillerShark(killerShark, this, _uiPopup);

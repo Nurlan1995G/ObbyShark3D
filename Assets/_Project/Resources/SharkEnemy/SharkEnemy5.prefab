@@ -84,7 +84,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4739622929547631326}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -116,8 +116,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 1, z: 4}
-  m_Center: {x: 0, y: 0, z: -0.93}
+  m_Size: {x: 1.1, y: 0.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: -0.52}
 --- !u!114 &2049939341089989529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,11 +270,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 834278616134500465, guid: ad7a87015c05e76438b8910149f48aa1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.43
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 834278616134500465, guid: ad7a87015c05e76438b8910149f48aa1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.06
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 834278616134500465, guid: ad7a87015c05e76438b8910149f48aa1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -565,6 +565,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8693897820540530362}
     m_Modifications:
+    - target: {fileID: 677424592387324590, guid: aa41c34d8ff67114f8f85e88e26c1b3c, type: 3}
+      propertyPath: CanvasRectTransform
+      value: 
+      objectReference: {fileID: 6165412633050152014}
+    - target: {fileID: 677424592387324590, guid: aa41c34d8ff67114f8f85e88e26c1b3c, type: 3}
+      propertyPath: _canvasRectTransform
+      value: 
+      objectReference: {fileID: 6165412633050152014}
     - target: {fileID: 4565241089179098250, guid: aa41c34d8ff67114f8f85e88e26c1b3c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -644,6 +652,10 @@ PrefabInstance:
     - target: {fileID: 4565241089179098250, guid: aa41c34d8ff67114f8f85e88e26c1b3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697731708351649187, guid: aa41c34d8ff67114f8f85e88e26c1b3c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7984664418471073730, guid: aa41c34d8ff67114f8f85e88e26c1b3c, type: 3}
       propertyPath: m_IsActive

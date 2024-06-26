@@ -29,8 +29,8 @@ namespace YG
             Coin = 0;
             IsMute = false;
 
-            SelectedSkin = 31602;
-            SelectedObject = 32856;
+            SelectedSkin = 32444;
+            SelectedObject = 31706;
             SelectedTrail = 0;
             SelectedAnimal = 0;
 

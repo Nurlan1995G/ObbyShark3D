@@ -43,6 +43,8 @@ public abstract class Shark : MonoBehaviour
 
     public void SetCrown(bool isActive) => 
         _crown.SetActive(isActive);
+
+    public virtual void SetBoxCollider() { }
     
     private void IncreaseSize()
     {
@@ -54,6 +56,7 @@ public abstract class Shark : MonoBehaviour
             SharkSkin.transform.localScale += new Vector3(_localScaleX, _localScaleX, _localScaleX);
             ParametrRaising *= 3;
             ScoreLevelBar.IncreasePositionY();
+            SetBoxCollider();
         }
     }
 }

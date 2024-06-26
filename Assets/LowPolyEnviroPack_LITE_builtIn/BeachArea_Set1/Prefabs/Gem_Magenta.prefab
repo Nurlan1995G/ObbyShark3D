@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33920866373090456}
   - component: {fileID: 23817427659090486}
   - component: {fileID: 65295348670893806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gem_Magenta
   m_TagString: Untagged
   m_Icon: {fileID: 0}

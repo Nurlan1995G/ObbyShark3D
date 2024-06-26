@@ -20,7 +20,7 @@ MonoBehaviour:
     BoostDuration: 2
     BoostRecoveryTime: 8
   SharkBotData:
-    MoveSpeed: 6
+    MoveSpeed: 5
     RotateSpeed: 4
     MinimalDistanceToObject: 15
     StoppingTimeChase: 15

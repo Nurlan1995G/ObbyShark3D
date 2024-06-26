@@ -4,6 +4,8 @@ using TMPro;
 [RequireComponent(typeof(CanvasGroup))]
 public class ADTimer : MonoBehaviour
 {
+    [SerializeField] private Shop _shop;
+    [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private float _totalSecondToShowAd = 60;
     [SerializeField] private float _timeToShowDisplay = 5f;
     [SerializeField] private TMP_Text _timerText;
@@ -23,6 +25,9 @@ public class ADTimer : MonoBehaviour
 
     private void Update()
     {
+        if (IsMenuOpened())
+            return;
+
         if (_currentTime > 0f)
         {
             _currentTime -= Time.unscaledDeltaTime;
@@ -47,6 +52,9 @@ public class ADTimer : MonoBehaviour
             }
         }
     }
+
+    private bool IsMenuOpened() =>
+       _shop.gameObject.activeSelf || _mainMenu.gameObject.activeSelf;
 
     private void StartTimer()
     {

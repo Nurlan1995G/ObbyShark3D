@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2448449811603781172}
+  - component: {fileID: 4742955635190012803}
   m_Layer: 0
   m_Name: Skins
   m_TagString: Untagged
@@ -37,6 +38,27 @@ Transform:
   - {fileID: 7998330714868466081}
   m_Father: {fileID: 8693897820540530362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4742955635190012803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688417661052610803}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5, y: 0.5, z: 5}
+  m_Center: {x: 0, y: 0, z: -1.34}
 --- !u!1 &4739622929547631326
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,7 +69,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8693897820540530362}
   - component: {fileID: 8109398792378984824}
-  - component: {fileID: 30856896726280627}
   - component: {fileID: 2049939341089989529}
   - component: {fileID: 7593662852087828466}
   - component: {fileID: 9076634309372285180}
@@ -98,27 +119,6 @@ NavMeshAgent:
   m_BaseOffset: 0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &30856896726280627
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4739622929547631326}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.3, y: 0.5, z: 1.5}
-  m_Center: {x: -0.1, y: 0, z: -0.56}
 --- !u!114 &2049939341089989529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sharkModel: {fileID: 7593662852087828466}
+  _boxCollider: {fileID: 4742955635190012803}
 --- !u!1001 &844653410901130841
 PrefabInstance:
   m_ObjectHideFlags: 0

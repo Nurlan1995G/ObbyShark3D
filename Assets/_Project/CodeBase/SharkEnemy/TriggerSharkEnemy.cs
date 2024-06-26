@@ -4,7 +4,6 @@ using UnityEngine;
 public class TriggerSharkEnemy : MonoBehaviour
 {
     [SerializeField] private SharkModel _sharkModel;
-    [SerializeField] private BoxCollider _boxCollider;
  
     private void OnTriggerEnter(Collider other) 
     {

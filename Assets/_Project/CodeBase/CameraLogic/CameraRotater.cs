@@ -88,21 +88,30 @@ namespace Assets.CodeBase.CameraLogic
 
                 if (_variableJoystick.enabled)
                 {
-                    Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
-                    Vector2 touch2PrevPos = touch2.position - touch2.deltaPosition;
+                    if (IsTouchWithinJoystick(touch1.position) && IsTouchWithinJoystick(touch2.position))
+                    {
+                        Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
+                        Vector2 touch2PrevPos = touch2.position - touch2.deltaPosition;
 
-                    float prevTouchDeltaMag = (touch1PrevPos - touch2PrevPos).magnitude;
-                    float touchDeltaMag = (touch1.position - touch2.position).magnitude;
+                        float prevTouchDeltaMag = (touch1PrevPos - touch2PrevPos).magnitude;
+                        float touchDeltaMag = (touch1.position - touch2.position).magnitude;
 
-                    float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+                        float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
-                    OnTouchZoom(deltaMagnitudeDiff);
+                        OnTouchZoom(deltaMagnitudeDiff);
+                    }
                 }
             }
-            else if(Input.touchCount == 1)
+            else if (Input.touchCount == 1)
             {
                 ControlRotation();
             }
+        }
+
+        private bool IsTouchWithinJoystick(Vector2 touchPosition)
+        {
+            RectTransform joystickRect = _variableJoystick.GetComponent<RectTransform>();
+            return RectTransformUtility.RectangleContainsScreenPoint(joystickRect, touchPosition, null);
         }
 
         private void OnTouchMouseScrollWheel(InputAction.CallbackContext context)

@@ -28,8 +28,8 @@ public class PlayerMover : MonoBehaviour
     {
         if (Application.isMobilePlatform)
         {
-            _boostButtonUI.gameObject.SetActive(true);
             _screenStick.gameObject.SetActive(true);
+            _boostButtonUI.gameObject.SetActive(true);
         }
 
         Vector2 moveDirection = _input.Player.Move.ReadValue<Vector2>();

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2448449811603781172}
-  - component: {fileID: 5832654835795121624}
   m_Layer: 0
   m_Name: Skins
   m_TagString: Untagged
@@ -37,27 +36,6 @@ Transform:
   - {fileID: 7998330714868466081}
   m_Father: {fileID: 8693897820540530362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5832654835795121624
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3688417661052610803}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3, y: 1, z: 5}
-  m_Center: {x: 0, y: 0, z: -1.39}
 --- !u!1 &4739622929547631326
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,8 +48,9 @@ GameObject:
   - component: {fileID: 8109398792378984824}
   - component: {fileID: 2049939341089989529}
   - component: {fileID: 7593662852087828466}
-  - component: {fileID: 9076634309372285180}
   - component: {fileID: 5197311987298961051}
+  - component: {fileID: 3915301488895882457}
+  - component: {fileID: 6713539313627272280}
   m_Layer: 0
   m_Name: SharkEnemy5
   m_TagString: Shark5
@@ -105,7 +84,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4739622929547631326}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -150,7 +129,21 @@ MonoBehaviour:
   _crown: {fileID: 295607486831539974}
   SharkSkin: {fileID: 3688417661052610803}
   _triggerSharkEnemy: {fileID: 5197311987298961051}
---- !u!54 &9076634309372285180
+  _boxCollider: {fileID: 6713539313627272280}
+--- !u!114 &5197311987298961051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739622929547631326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782c2b732f8e0694fba1aa2903e35ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sharkModel: {fileID: 7593662852087828466}
+--- !u!54 &3915301488895882457
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,20 +170,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5197311987298961051
-MonoBehaviour:
+--- !u!65 &6713539313627272280
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4739622929547631326}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782c2b732f8e0694fba1aa2903e35ec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sharkModel: {fileID: 7593662852087828466}
-  _boxCollider: {fileID: 5832654835795121624}
+  serializedVersion: 3
+  m_Size: {x: 0.8, y: 0.3, z: 1.5}
+  m_Center: {x: 0, y: 0, z: -0.45}
 --- !u!1001 &844653410901130841
 PrefabInstance:
   m_ObjectHideFlags: 0

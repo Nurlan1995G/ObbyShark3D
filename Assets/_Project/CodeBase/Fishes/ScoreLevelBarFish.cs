@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ScoreLevelBarFish : MonoBehaviour
 {
+    [field: SerializeField] public TextMeshProUGUI ScoreText;
+
     private Fish _fish;
     private Vector3 _offset = new Vector3(0f,2f,0f);
-
-    [field: SerializeField] public TextMeshProUGUI ScoreText;
 
     public void Construct(Fish fish)
     {

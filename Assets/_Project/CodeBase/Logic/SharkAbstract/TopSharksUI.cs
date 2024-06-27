@@ -32,7 +32,7 @@ public class TopSharksUI : MonoBehaviour
             }
             else
             {
-                _sharkTexts[i].color = Color.black;
+                _sharkTexts[i].color = Color.white;
             }
         }
     }

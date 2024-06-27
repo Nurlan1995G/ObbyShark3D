@@ -5,9 +5,9 @@ public class SpawnerFish : MonoBehaviour
 {
     [SerializeField] private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
     [SerializeField] private List<Fish> _fishes = new List<Fish>();
-    [SerializeField] private List<ScoreLevelBarFish> _scoreLevelBars = new List<ScoreLevelBarFish>();
+    //[SerializeField] private List<ScoreLevelBarFish> _scoreLevelBars = new List<ScoreLevelBarFish>();
 
-    [SerializeField] private ScoreLevelBarFish _container;
+    //[SerializeField] private ScoreLevelBarFish _container;
 
     private FishFactory _fishFactory;
     private ServesSelectTypeFish _random;
@@ -57,10 +57,10 @@ public class SpawnerFish : MonoBehaviour
 
         AddFish(fish);
 
-        ScoreLevelBarFish scoreBarObject = Instantiate(_container, transform);
-        scoreBarObject.Construct(fish);
-        fish.Construct(_playerView, scoreBarObject);
-        _scoreLevelBars.Add(scoreBarObject);
+        //ScoreLevelBarFish scoreBarObject = Instantiate(_container, transform);
+        //scoreBarObject.Construct(fish);
+        fish.Construct(_playerView);
+       //_scoreLevelBars.Add(scoreBarObject);
     }
 
     private void AddFish(Fish fish)
@@ -82,12 +82,12 @@ public class SpawnerFish : MonoBehaviour
             spawnPoint.IsBusy = false;
         }
 
-        ScoreLevelBarFish scoreBar = _scoreLevelBars.Find(bar => bar.GetFish() == fish);
+       /* ScoreLevelBarFish scoreBar = _scoreLevelBars.Find(bar => bar.GetFish() == fish);
         
         if (scoreBar != null)
         {
             _scoreLevelBars.Remove(scoreBar);
             Destroy(scoreBar.gameObject);
-        }
+        }*/
     }
 }

@@ -22,48 +22,48 @@ public class FishFactory
         {
             case TypeFish.Hedgehog:
                 fish = _assetProvider.Instantiate(_fishStaticData.HedgehogPrefab, whereToSpawn, Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabHedgehog;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabHedgehog;
                 return fish;
 
             case TypeFish.BlueSergeon:
                 fish = _assetProvider.Instantiate(_fishStaticData.BlueSergeonPrefab, whereToSpawn
                         , Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabBlue;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabBlue;
                 return fish;
 
             case TypeFish.Cloun:
                 fish = _assetProvider.Instantiate(_fishStaticData.ClounPrefab, whereToSpawn, Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabCloun;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabCloun;
                 return fish;
 
             case TypeFish.Angel:
                 fish = _assetProvider.Instantiate(_fishStaticData.AngelFishPrefab, whereToSpawn, Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabAngel;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabAngel;
                 return fish;
 
             case TypeFish.Beluga:
                 fish = _assetProvider.Instantiate(_fishStaticData.BelugaFishPrefab, whereToSpawn, Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabBeluga;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabBeluga;
                 return fish;
 
             case TypeFish.Picasso:
                 fish = _assetProvider.Instantiate(_fishStaticData.PicassoFishPrefab, whereToSpawn, Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabPicasso;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabPicasso;
                 return fish;
 
             case TypeFish.Parrot:
                 fish = _assetProvider.Instantiate(_fishStaticData.ParrotFishPrefab, whereToSpawn, Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabParrot;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabParrot;
                 return fish;
 
             case TypeFish.Napoleon:
                 fish = _assetProvider.Instantiate(_fishStaticData.NapoleonFishPrefab, whereToSpawn, Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabNapoleon;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabNapoleon;
                 return fish;
 
             case TypeFish.Luna:
                 fish = _assetProvider.Instantiate(_fishStaticData.LunaFishPrefab, whereToSpawn, Quaternion.identity);
-                fish.transform.localScale = _fishStaticData.ScalePreefabLuna;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabLuna;
                 return fish;
 
             default:

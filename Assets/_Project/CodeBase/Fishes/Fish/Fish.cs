@@ -3,8 +3,10 @@ using UnityEngine;
 
 public abstract class Fish : MonoBehaviour
 {
+    [SerializeField] protected ScoreLevelBarFish ScoreLevelBarFish;
+    [field: SerializeField] public GameObject FishScale;
+
     private Shark _playerView;
-    private ScoreLevelBarFish _scoreLevelBarFish;
 
     public event Action<Fish> FishDied;
 
@@ -13,7 +15,7 @@ public abstract class Fish : MonoBehaviour
     private void Start()
     {
         WriteScoreLevel();
-        _scoreLevelBarFish.ScoreText.text = ScoreLevel.ToString();
+        ScoreLevelBarFish.ScoreText.text = ScoreLevel.ToString();
     }
 
     private void Update()
@@ -21,10 +23,9 @@ public abstract class Fish : MonoBehaviour
         UpdateScoreTextColor();
     }
 
-    public void Construct(Shark playerView, ScoreLevelBarFish scoreBarObject)
+    public void Construct(Shark playerView)
     {
         _playerView = playerView;
-        _scoreLevelBarFish = scoreBarObject;
     }
 
     public void Destroys()
@@ -41,11 +42,11 @@ public abstract class Fish : MonoBehaviour
         {
             if (_playerView.ScoreLevel >= ScoreLevel)
             {
-                _scoreLevelBarFish.ScoreText.color = Color.green;
+                ScoreLevelBarFish.ScoreText.color = Color.green;
             }
             else
             {
-                _scoreLevelBarFish.ScoreText.color = Color.red;
+                ScoreLevelBarFish.ScoreText.color = Color.red;
             }
         }
     }

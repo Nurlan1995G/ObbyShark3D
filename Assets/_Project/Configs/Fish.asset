@@ -16,30 +16,30 @@ MonoBehaviour:
     SpawnCooldown: 0.1
     MaxCountFish: 150
   FishStaticData:
-    HedgehogPrefab: {fileID: 8176278661040338670, guid: f5705086177343149b6fecd050f2101f, type: 3}
-    ScalePreefabHedgehog: {x: 1, y: 1, z: 1}
+    HedgehogPrefab: {fileID: 1900581034119686073, guid: fa22c446cfe4fc94f8441891389fca7c, type: 3}
+    ScalePreefabHedgehog: {x: 2.5, y: 2.5, z: 2.5}
     MaxCountHedgehogFish: 15
-    BlueSergeonPrefab: {fileID: 7698953414800465426, guid: 3d5f34189dea3fc41bb781c77aa4bcb8, type: 3}
+    BlueSergeonPrefab: {fileID: 5492680800263378879, guid: 6b7cfff2bdb904f4eaa84e79f12e321f, type: 3}
     ScalePreefabBlue: {x: 1.5, y: 1.5, z: 1.5}
     MaxCountBlueSergeonFish: 34
-    ClounPrefab: {fileID: 8402097771812002810, guid: ed8a48d08c63b704c97f18bafd4f7097, type: 3}
-    ScalePreefabCloun: {x: 1.5, y: 1.5, z: 1.5}
+    ClounPrefab: {fileID: 7986896476076527674, guid: 5f0e897e2df40c64eadf4391780ffaaf, type: 3}
+    ScalePreefabCloun: {x: 1.8, y: 1.8, z: 1.8}
     MaxCountClounFish: 30
-    AngelFishPrefab: {fileID: 1218426577121791329, guid: c49be3a8b9c843e42870d9274659127a, type: 3}
-    ScalePreefabAngel: {x: 1, y: 1, z: 1}
+    AngelFishPrefab: {fileID: 1259568223514426481, guid: d9bea778b2dad8345ba9e47e5c95ec1f, type: 3}
+    ScalePreefabAngel: {x: 3, y: 3, z: 3}
     MaxCountAngelFish: 12
-    BelugaFishPrefab: {fileID: 4665485241225333218, guid: cfbba6b23534ab74683c6da6f602f389, type: 3}
-    ScalePreefabBeluga: {x: 3, y: 3, z: 3}
+    BelugaFishPrefab: {fileID: 7124553967949000089, guid: f4fbffbc592ba204fac2c7ade131b78f, type: 3}
+    ScalePreefabBeluga: {x: 2.5, y: 2.5, z: 2.5}
     MaxCountBelugaFish: 20
-    PicassoFishPrefab: {fileID: -4927590227900185516, guid: 7ab376dbe401b3846ac847b189ff2706, type: 3}
-    ScalePreefabPicasso: {x: 2.5, y: 2.5, z: 2.5}
+    PicassoFishPrefab: {fileID: 839996186582208080, guid: 6a6858836e3ce5b4f98cfd5c29af44a5, type: 3}
+    ScalePreefabPicasso: {x: 4.5, y: 4.5, z: 4.5}
     MaxCountPicassoFish: 5
-    ParrotFishPrefab: {fileID: 3985975479882076831, guid: 1f8ce0002735ad1479b8b28265412e2b, type: 3}
-    ScalePreefabParrot: {x: 1, y: 1, z: 1}
+    ParrotFishPrefab: {fileID: 775303006540750218, guid: 2ce9004d26a4dc44f9d18bca5149a9df, type: 3}
+    ScalePreefabParrot: {x: 2.5, y: 2.5, z: 2.5}
     MaxCountParrotFish: 24
-    NapoleonFishPrefab: {fileID: 7577260710157870128, guid: 3e75d8bb8e2689140a60d53325abcc13, type: 3}
-    ScalePreefabNapoleon: {x: 2.5, y: 2.5, z: 2.5}
+    NapoleonFishPrefab: {fileID: 5466823672502588683, guid: 265a6ab36c639f74bbab9ffd4864389f, type: 3}
+    ScalePreefabNapoleon: {x: 3.5, y: 3.5, z: 3.5}
     MaxCountNapoleonFish: 8
-    LunaFishPrefab: {fileID: 8210899106808041140, guid: 1d9d63865d86d184aadc15071f91c0b9, type: 3}
-    ScalePreefabLuna: {x: 3, y: 3, z: 3}
+    LunaFishPrefab: {fileID: 5335724572520048908, guid: 5fe21c7ca75bc5a4c8f85c4b2a12007a, type: 3}
+    ScalePreefabLuna: {x: 6, y: 6, z: 6}
     MaxCountLunaFish: 2

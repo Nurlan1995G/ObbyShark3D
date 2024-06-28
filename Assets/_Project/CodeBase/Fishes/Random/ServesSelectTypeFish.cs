@@ -23,46 +23,10 @@ public class ServesSelectTypeFish
 
         while (true)
         {
-            if (_lunaFish < _countFishData.MaxCountLunaFish)
+            if (_blueSergeon < _countFishData.MaxCountBlueSergeonFish)
             {
-                _lunaFish++;
-                return typeFish = TypeFish.Luna;
-            }
-
-            if (_picassoFish < _countFishData.MaxCountPicassoFish)
-            {
-                _picassoFish++;
-                return typeFish = TypeFish.Picasso;
-            }
-
-            if (_napoleonFish < _countFishData.MaxCountNapoleonFish)
-            {
-                _napoleonFish++;
-                return typeFish = TypeFish.Napoleon;
-            }
-
-            if (_angelFish < _countFishData.MaxCountAngelFish)
-            {
-                _angelFish++;
-                return typeFish = TypeFish.Angel;
-            }
-
-            if (_hedgehogFish < _countFishData.MaxCountHedgehogFish)
-            {
-                _hedgehogFish++;
-                return typeFish = TypeFish.Hedgehog;
-            }
-
-            if (_belugaFish < _countFishData.MaxCountBelugaFish)
-            {
-                _belugaFish++;
-                return typeFish = TypeFish.Beluga;
-            }
-
-            if (_parrotFish < _countFishData.MaxCountParrotFish)
-            {
-                _parrotFish++;
-                return typeFish = TypeFish.Parrot;
+                _blueSergeon++;
+                return typeFish = TypeFish.BlueSergeon;
             }
 
             if (_clounFish < _countFishData.MaxCountClounFish)
@@ -71,10 +35,46 @@ public class ServesSelectTypeFish
                 return typeFish = TypeFish.Cloun;
             }
 
-            if (_blueSergeon < _countFishData.MaxCountBlueSergeonFish)
+            if (_parrotFish < _countFishData.MaxCountParrotFish)
             {
-                _blueSergeon++;
-                return typeFish = TypeFish.BlueSergeon;
+                _parrotFish++;
+                return typeFish = TypeFish.Parrot;
+            }
+
+            if (_belugaFish < _countFishData.MaxCountBelugaFish)
+            {
+                _belugaFish++;
+                return typeFish = TypeFish.Beluga;
+            }
+
+            if (_hedgehogFish < _countFishData.MaxCountHedgehogFish)
+            {
+                _hedgehogFish++;
+                return typeFish = TypeFish.Hedgehog;
+            }
+
+            if (_angelFish < _countFishData.MaxCountAngelFish)
+            {
+                _angelFish++;
+                return typeFish = TypeFish.Angel;
+            }
+
+            if (_napoleonFish < _countFishData.MaxCountNapoleonFish)
+            {
+                _napoleonFish++;
+                return typeFish = TypeFish.Napoleon;
+            }
+
+            if (_picassoFish < _countFishData.MaxCountPicassoFish)
+            {
+                _picassoFish++;
+                return typeFish = TypeFish.Picasso;
+            }
+
+            if (_lunaFish < _countFishData.MaxCountLunaFish)
+            {
+                _lunaFish++;
+                return typeFish = TypeFish.Luna;
             }
         }
     }
@@ -83,24 +83,24 @@ public class ServesSelectTypeFish
     {
         TypeFish fishType;
 
-        if (fish is LunaFish)
-            fishType = TypeFish.Luna;
-        else if (fish is PicassoFish)
-            fishType = TypeFish.Picasso;
-        else if (fish is NapoleonFish)
-            fishType = TypeFish.Napoleon;
-        else if (fish is AngelFish)
-            fishType = TypeFish.Angel;
-        else if (fish is HedgehogFish)
-            fishType = TypeFish.Hedgehog;
-        else if (fish is BelugaFish)
-            fishType = TypeFish.Beluga;
-        else if (fish is ParrotFish)
-            fishType = TypeFish.Parrot;
+         if (fish is BlueSergeonFish)
+            fishType = TypeFish.BlueSergeon;
         else if (fish is ClounFish)
             fishType = TypeFish.Cloun;
-        else if (fish is BlueSergeonFish)
-            fishType = TypeFish.BlueSergeon;
+        else if (fish is ParrotFish)
+            fishType = TypeFish.Parrot;
+        else if (fish is BelugaFish)
+            fishType = TypeFish.Beluga;
+        else if (fish is HedgehogFish)
+            fishType = TypeFish.Hedgehog;
+        else if (fish is AngelFish)
+            fishType = TypeFish.Angel;
+        else if (fish is NapoleonFish)
+            fishType = TypeFish.Napoleon;
+        else if (fish is PicassoFish)
+            fishType = TypeFish.Picasso;
+        else if (fish is LunaFish)
+            fishType = TypeFish.Luna;
         else
         {
             Debug.LogWarning("Неизвестный вид рыбы!");

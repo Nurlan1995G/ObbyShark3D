@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnerFishData:
     SpawnCooldown: 0.1
-    MaxCountFish: 150
+    MaxCountFish: 160
   FishStaticData:
     HedgehogPrefab: {fileID: 1900581034119686073, guid: fa22c446cfe4fc94f8441891389fca7c, type: 3}
     ScalePreefabHedgehog: {x: 2.5, y: 2.5, z: 2.5}
     MaxCountHedgehogFish: 15
     BlueSergeonPrefab: {fileID: 5492680800263378879, guid: 6b7cfff2bdb904f4eaa84e79f12e321f, type: 3}
     ScalePreefabBlue: {x: 1.5, y: 1.5, z: 1.5}
-    MaxCountBlueSergeonFish: 34
+    MaxCountBlueSergeonFish: 44
     ClounPrefab: {fileID: 7986896476076527674, guid: 5f0e897e2df40c64eadf4391780ffaaf, type: 3}
     ScalePreefabCloun: {x: 1.8, y: 1.8, z: 1.8}
     MaxCountClounFish: 30

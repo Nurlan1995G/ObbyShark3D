@@ -8,6 +8,7 @@ namespace Assets.Project.CodeBase.Player.UI
     {
         [SerializeField] private Button respawnButton;
         [SerializeField] private Button revengeButton;
+        [SerializeField] private ADTimer _adTimer;
 
         private RespawnShark respawnPlayer;
 
@@ -27,6 +28,7 @@ namespace Assets.Project.CodeBase.Player.UI
         public void OnRevenge()
         {
             respawnPlayer.Revenge();
+            _adTimer.ResetAndStartTimer();
             gameObject.SetActive(false);
         }
     }

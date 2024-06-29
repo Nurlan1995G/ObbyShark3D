@@ -53,6 +53,21 @@ public class ADTimer : MonoBehaviour
         }
     }
 
+    public void ResetAndStartTimer()
+    {
+        _currentTime = _totalSecondToShowAd;
+        _canvasGroup.alpha = 0f;
+        _canvas.sortingOrder = -1;
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        UpdateTimerText();
+
+        if (YandexSDK.Instance != null)
+        {
+            YandexSDK.Instance.ChangeStateTimerVisible(false);
+        }
+    }
+
     private bool IsMenuOpened() =>
        _shop.gameObject.activeSelf || _mainMenu.gameObject.activeSelf;
 

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: -289118
   ItemType: 3
-  CashType: 1
-  Price: 0
+  CashType: 0
+  Price: 3000
   Icon: {fileID: 21300000, guid: fe7ee9da0d2b5664ea271a52feb16ae7, type: 3}
   ShopPreview: {fileID: 701232299872422663, guid: 980197364d8811641b4b9025a0d0d5e8, type: 3}
   YanId: 0

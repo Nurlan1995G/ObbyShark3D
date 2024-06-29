@@ -26,12 +26,7 @@ public abstract class Shark : MonoBehaviour
 
     private void Awake()
     {
-        _centerZ = -0.35f;
-        _sizeX = 0.8f;
-        _sizeZ = 1.5f;
-
-        BoxCollider.center = new Vector3(0, 0, _centerZ);
-        BoxCollider.size = new Vector3(_sizeX, 0.3f, _sizeZ);
+        SetInitialSizeBox();
     }
 
     private void Start() =>
@@ -46,6 +41,16 @@ public abstract class Shark : MonoBehaviour
     public void Init(TopSharksManager topSharksManager) =>
         _topSharkManager = topSharksManager;
 
+    public void SetInitialSizeBox()
+    {
+        _centerZ = -0.35f;
+        _sizeX = 0.8f;
+        _sizeZ = 1.5f;
+
+        BoxCollider.center = new Vector3(0, 0, _centerZ);
+        BoxCollider.size = new Vector3(_sizeX, 0.3f, _sizeZ);
+    }
+
     public abstract string GetSharkName();
 
     public void SetCrown(bool isActive) => 
@@ -55,11 +60,11 @@ public abstract class Shark : MonoBehaviour
     {
         Score += score;
         ScoreLevelBar.SetScore(Score);
-        SetPlayerViewWallet(score);
+        SetPlayerViewWallet();
         OnScoreChanged?.Invoke();
     }
 
-    public virtual void SetPlayerViewWallet(int score) { }
+    public virtual void SetPlayerViewWallet() { }
 
     public void SetBoxCollider() 
     {

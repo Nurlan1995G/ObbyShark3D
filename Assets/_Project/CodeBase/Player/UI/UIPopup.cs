@@ -28,6 +28,7 @@ namespace Assets.Project.CodeBase.Player.UI
         public void OnRevenge()
         {
             respawnPlayer.Revenge();
+            _adTimer.ShowAdvertisement();
             _adTimer.ResetAndStartTimer();
             gameObject.SetActive(false);
         }

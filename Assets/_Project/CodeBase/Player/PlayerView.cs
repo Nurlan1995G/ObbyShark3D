@@ -32,6 +32,7 @@ public class PlayerView : Shark
     {
         PlayerDied?.Invoke(this);
         _soundhandler.PlayLose();
+        SetInitialSizeBox();
         gameObject.SetActive(false);
         ScoreLevelBar.SetInitialPositionY();
 
@@ -53,11 +54,11 @@ public class PlayerView : Shark
         _soundhandler.PlayWin();
     }
 
-    public override void SetPlayerViewWallet(int score)
+    public override void SetPlayerViewWallet()
     {
-        base.SetPlayerViewWallet(score);
+        base.SetPlayerViewWallet();
 
-        Wallet.Add(score);
+        Wallet.Add(15);
     }
 
     public override string GetSharkName()

@@ -12,10 +12,7 @@ public static class Wallet
     static Wallet()
     {
         if (YandexSDK.Instance != null)
-        {
             CoinValue = YandexSDK.Instance.Data.Coin;
-            Debug.Log(CoinValue + " - Wallet - Construct");
-        }
     }
 
     public static void Add(int value)

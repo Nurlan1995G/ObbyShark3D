@@ -21,6 +21,7 @@ public class PlayerTrigger : MonoBehaviour
             if(_playerView.ScoreLevel > sharkModel.ScoreLevel && sharkModel.ScoreLevel > 1)
             {
                 _playerView.AddScore(sharkModel.ScoreLevel);
+                Debug.Log("Соприкосновение с ботом");
                 sharkModel.Destroys();
             }
         }

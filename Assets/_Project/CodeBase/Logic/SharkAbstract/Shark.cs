@@ -9,16 +9,30 @@ public abstract class Shark : MonoBehaviour
     [SerializeField] private float _localScaleX = 0.2f;
     [SerializeField] private GameObject _crown;
     [SerializeField] protected GameObject SharkSkin;
-    
+    [SerializeField] protected BoxCollider BoxCollider;
+
     private TopSharksManager _topSharkManager;
 
     protected int Score = 1;
     protected int ParametrRaising = 10;
     protected int ScoreCount;
 
-    public int ScoreLevel => Score;
+    private float _centerZ = -0.35f;
+    private float _sizeX = 0.8f;
+    private float _sizeZ = 1.5f;
 
+    public int ScoreLevel => Score;
     public event Action OnScoreChanged;
+
+    private void Awake()
+    {
+        _centerZ = -0.35f;
+        _sizeX = 0.8f;
+        _sizeZ = 1.5f;
+
+        BoxCollider.center = new Vector3(0, 0, _centerZ);
+        BoxCollider.size = new Vector3(_sizeX, 0.3f, _sizeZ);
+    }
 
     private void Start() =>
         _topSharkManager.RegisterShark(this);
@@ -34,17 +48,28 @@ public abstract class Shark : MonoBehaviour
 
     public abstract string GetSharkName();
 
+    public void SetCrown(bool isActive) => 
+        _crown.SetActive(isActive);
+
     public void AddScore(int score)
     {
         Score += score;
         ScoreLevelBar.SetScore(Score);
+        SetPlayerViewWallet(score);
         OnScoreChanged?.Invoke();
     }
 
-    public void SetCrown(bool isActive) => 
-        _crown.SetActive(isActive);
+    public virtual void SetPlayerViewWallet(int score) { }
 
-    public virtual void SetBoxCollider() { }
+    public void SetBoxCollider() 
+    {
+        _centerZ -= 0.3f;
+        _sizeX += 0.5f;
+        _sizeZ += 1f;
+
+        BoxCollider.center = new Vector3(0, 0, _centerZ);
+        BoxCollider.size = new Vector3(_sizeX, 0.5f, _sizeZ);
+    }
     
     private void IncreaseSize()
     {

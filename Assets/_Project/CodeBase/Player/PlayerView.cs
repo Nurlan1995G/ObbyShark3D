@@ -53,6 +53,13 @@ public class PlayerView : Shark
         _soundhandler.PlayWin();
     }
 
+    public override void SetPlayerViewWallet(int score)
+    {
+        base.SetPlayerViewWallet(score);
+
+        Wallet.Add(score);
+    }
+
     public override string GetSharkName()
     {
         NickName.NickNameText.text = AssetAdress.NickPlayer;

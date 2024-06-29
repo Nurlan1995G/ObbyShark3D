@@ -1,11 +1,11 @@
 {
-    "idSave": 433,
+    "idSave": 781,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
     "CurrentLevel": 0,
     "CurrentLevelIndex": 0,
-    "Coin": 10000,
+    "Coin": 12228,
     "IsMute": false,
     "OpenItemsInfoId": [
         -191806,
@@ -63,9 +63,10 @@
         -6585282,
         32818,
         32444,
-        31706
+        31706,
+        32450
     ],
-    "SelectedSkin": 32424,
+    "SelectedSkin": 32450,
     "SelectedObject": 31706,
     "SelectedTrail": 0,
     "SelectedAnimal": 0

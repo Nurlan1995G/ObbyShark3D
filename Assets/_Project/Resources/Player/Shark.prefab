@@ -108,6 +108,7 @@ MonoBehaviour:
   _localScaleX: 0.2
   _crown: {fileID: 1303977951348462313}
   SharkSkin: {fileID: 3688417661052610803}
+  BoxCollider: {fileID: 30856896726280627}
   _playerTrigger: {fileID: 2836974041602746619}
   _mover: {fileID: 5797505303278054737}
 --- !u!195 &8109398792378984824

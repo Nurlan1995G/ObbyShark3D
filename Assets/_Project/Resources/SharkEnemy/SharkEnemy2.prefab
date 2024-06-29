@@ -128,8 +128,8 @@ MonoBehaviour:
   _localScaleX: 0.2
   _crown: {fileID: 2862249430348665147}
   SharkSkin: {fileID: 3688417661052610803}
+  BoxCollider: {fileID: 659761905471928860}
   _triggerSharkEnemy: {fileID: 5197311987298961051}
-  _boxCollider: {fileID: 659761905471928860}
 --- !u!114 &5197311987298961051
 MonoBehaviour:
   m_ObjectHideFlags: 0

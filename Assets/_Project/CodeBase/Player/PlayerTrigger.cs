@@ -13,6 +13,7 @@ public class PlayerTrigger : MonoBehaviour
             {
                 _playerView.AddScore(fish.ScoreLevel);
                 fish.Destroys();
+                _playerView.PlayPartical();
             }
         }
 
@@ -21,8 +22,8 @@ public class PlayerTrigger : MonoBehaviour
             if(_playerView.ScoreLevel > sharkModel.ScoreLevel && sharkModel.ScoreLevel > 1)
             {
                 _playerView.AddScore(sharkModel.ScoreLevel);
-                Debug.Log("Соприкосновение с ботом");
                 sharkModel.Destroys();
+                _playerView.PlayPartical();
             }
         }
     }

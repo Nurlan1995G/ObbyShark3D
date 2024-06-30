@@ -1,4 +1,5 @@
 ﻿using Assets.Project.CodeBase.Player.Respawn;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,26 +11,35 @@ namespace Assets.Project.CodeBase.Player.UI
         [SerializeField] private Button revengeButton;
         [SerializeField] private ADTimer _adTimer;
 
-        private RespawnShark respawnPlayer;
+        private RespawnShark _respawnPlayer;
 
-        public void Initialize(RespawnShark respawnPlayer)
+        public void Initialize(RespawnShark respawnPlayer) =>
+            _respawnPlayer = respawnPlayer;
+
+        private void OnEnable()
         {
-            this.respawnPlayer = respawnPlayer;
             respawnButton.onClick.AddListener(OnRespawn);
-            revengeButton.onClick.AddListener(OnRevenge);
+            revengeButton.onClick.AddListener(SetRewardOnRevenge);
         }
 
-        public void OnRespawn()
+        private void OnDisable()
         {
-            respawnPlayer.Respawn();
+            respawnButton.onClick.RemoveListener(OnRespawn);
+            revengeButton.onClick.RemoveListener(SetRewardOnRevenge);
+        }
+
+        private void OnRespawn()
+        {
+            _respawnPlayer.Respawn();
             gameObject.SetActive(false);
         }
 
-        public void OnRevenge()
+        private void SetRewardOnRevenge() =>
+            YandexSDK.Instance.ShowVideoAd(OnRevenge);
+
+        private void OnRevenge()
         {
-            respawnPlayer.Revenge();
-            _adTimer.ShowAdvertisement();
-            _adTimer.ResetAndStartTimer();
+            _respawnPlayer.Revenge();
             gameObject.SetActive(false);
         }
     }

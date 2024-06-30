@@ -15,14 +15,12 @@ public class ADTimer : MonoBehaviour
     private CanvasGroup _canvasGroup;
     private Canvas _canvas;
 
-    private bool _isShow;
-
     private void Awake()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
         _canvas = GetComponent<Canvas>();
 
-        _canvas.sortingOrder = 0;
+        _canvas.sortingOrder = -1;
     }
 
     private void Start() => StartTimer();
@@ -32,7 +30,7 @@ public class ADTimer : MonoBehaviour
         if (IsMenuOpened())
             return;
 
-        if (_currentTime > 0f || ShowAdvertisement())
+        if (_currentTime > 0f)
         {
             _currentTime -= Time.unscaledDeltaTime;
 
@@ -46,12 +44,7 @@ public class ADTimer : MonoBehaviour
                 _canvasGroup.alpha = 1f;
 
                 if (YandexSDK.Instance != null)
-                {
                     YandexSDK.Instance.ChangeStateTimerVisible(true);
-                    Debug.Log("Реклама");
-                }
-
-                _isShow = false;
             }
 
             if (_currentTime <= 0f)
@@ -60,18 +53,6 @@ public class ADTimer : MonoBehaviour
                 StartTimer();
             }
         }
-    }
-
-    public bool ShowAdvertisement() =>
-        _isShow = true;
-
-    public void ResetAndStartTimer()
-    {
-        _currentTime = 0f;
-        _canvasGroup.alpha = 0f;
-
-        if (YandexSDK.Instance != null)
-            YandexSDK.Instance.ChangeStateTimerVisible(false);
     }
 
     private bool IsMenuOpened() =>

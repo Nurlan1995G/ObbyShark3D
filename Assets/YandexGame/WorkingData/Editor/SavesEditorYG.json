@@ -1,11 +1,11 @@
 {
-    "idSave": 1036,
+    "idSave": 1305,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
     "CurrentLevel": 0,
     "CurrentLevelIndex": 0,
-    "Coin": 15106,
+    "Coin": 5026,
     "IsMute": true,
     "OpenItemsInfoId": [
         -191806,
@@ -64,10 +64,23 @@
         32818,
         32444,
         31706,
-        32450
+        32450,
+        32792,
+        33172,
+        32860,
+        31862,
+        32540,
+        31778,
+        32292,
+        32858,
+        32488,
+        33336,
+        32702,
+        32932,
+        31894
     ],
-    "SelectedSkin": 32450,
-    "SelectedObject": -283568,
+    "SelectedSkin": 32792,
+    "SelectedObject": 32540,
     "SelectedTrail": 0,
     "SelectedAnimal": 0
 }

@@ -597,7 +597,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5857603994954745737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,8 +628,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 6674073697067797537}
-  CanvasRectTransform: {fileID: 0}
+  CanvasRectTransform: {fileID: 3952602129927627200}
   _height: 0.1
+  _positionY: 2.7
 --- !u!114 &5251784190776988750
 MonoBehaviour:
   m_ObjectHideFlags: 0

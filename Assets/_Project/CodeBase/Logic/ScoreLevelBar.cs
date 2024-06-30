@@ -6,8 +6,7 @@ public class ScoreLevelBar : MonoBehaviour
     [field: SerializeField] public TextMeshProUGUI ScoreText;
     [field: SerializeField] public RectTransform CanvasRectTransform; 
     [SerializeField] private float _height = 0.1f;
-
-    private float _positionY = 2.5f;
+    [SerializeField] private float _positionY = 3f;
 
     private void Start()
     {

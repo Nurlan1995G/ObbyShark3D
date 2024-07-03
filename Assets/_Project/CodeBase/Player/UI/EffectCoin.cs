@@ -4,14 +4,16 @@ namespace Assets.Project.CodeBase.Player.UI
 {
     public class EffectCoin : MonoBehaviour
     {
-        [SerializeField] private float _moveSpeed = 1f;      // Скорость движения вверх
-        [SerializeField] private float _fadeSpeed = 5f;      // Скорость исчезновения альфа
+        [SerializeField] private float _moveSpeed = 1f;
+        [SerializeField] private float _fadeSpeed = 5f;
+        [SerializeField] private float _value = 0.1f;
 
         [field: SerializeField] public CanvasGroup CanvasGroup;
 
         public bool IsFadingOut = false;
 
         private Vector3 _initialPosition;
+        private float _positionY = 0.8f;
 
         private void Start()
         {
@@ -21,6 +23,7 @@ namespace Assets.Project.CodeBase.Player.UI
         private void OnEnable()
         {
             CanvasGroup.alpha = 1f;
+            _initialPosition.y = _positionY;
             transform.localPosition = _initialPosition;
         }
 
@@ -40,6 +43,13 @@ namespace Assets.Project.CodeBase.Player.UI
                     transform.localPosition = _initialPosition;
                 }
             }
+        }
+
+        public void SetNewInitPosition()
+        {
+            _positionY += _value;
+
+            _initialPosition = new Vector3(0, _positionY, 0);
         }
     }
 }

@@ -3138,7 +3138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260822709}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.146721, y: 0.0042979675, z: -0.00063750724, w: 0.9891684}
+  m_LocalRotation: {x: 0.146721, y: 0.004297951, z: -0.00063750474, w: 0.9891684}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10019,37 +10019,9 @@ PrefabInstance:
       propertyPath: _screenStick
       value: 
       objectReference: {fileID: 625716711}
-    - target: {fileID: 6589184223923455953, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      propertyPath: lengthInSec
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589184223923455953, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589184223923455953, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      propertyPath: ShapeModule.angle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589184223923455953, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589184223923455953, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589184223923455953, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589184223923455953, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589184223923455953, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 2
+    - target: {fileID: 7032462375054302504, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+      propertyPath: _coinEffect
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8280349610678567197, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
       propertyPath: _shop
@@ -17056,7 +17028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891418089}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18255566, y: 0.004271984, z: -0.0007932119, w: 0.98318595}
+  m_LocalRotation: {x: 0.18255566, y: 0.0042719464, z: -0.0007932049, w: 0.98318595}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

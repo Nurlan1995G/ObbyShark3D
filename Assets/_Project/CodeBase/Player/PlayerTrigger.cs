@@ -1,9 +1,11 @@
-﻿using Assets.Project.CodeBase.SharkEnemy;
+﻿using Assets.Project.CodeBase.Player.UI;
+using Assets.Project.CodeBase.SharkEnemy;
 using UnityEngine;
 
 public class PlayerTrigger : MonoBehaviour
 {
     [SerializeField] private PlayerView _playerView;
+    [SerializeField] private EffectCoin _canvasCoinEffect;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +15,7 @@ public class PlayerTrigger : MonoBehaviour
             {
                 _playerView.AddScore(fish.ScoreLevel);
                 fish.Destroys();
-                _playerView.PlayPartical();
+                ShowCoinEffect();   
             }
         }
 
@@ -23,8 +25,14 @@ public class PlayerTrigger : MonoBehaviour
             {
                 _playerView.AddScore(sharkModel.ScoreLevel);
                 sharkModel.Destroys();
-                _playerView.PlayPartical();
+                ShowCoinEffect();
             }
         }
+    }
+
+    private void ShowCoinEffect()
+    {
+        _canvasCoinEffect.gameObject.SetActive(true);
+        _canvasCoinEffect.IsFadingOut = true;
     }
 }

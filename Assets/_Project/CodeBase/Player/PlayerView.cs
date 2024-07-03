@@ -9,7 +9,6 @@ public class PlayerView : Shark
 {
     [SerializeField] private PlayerTrigger _playerTrigger;
     [SerializeField] private PlayerMover _mover;
-    [SerializeField] private ParticleSystem _coinEffect;
 
     private UIPopup _uiPopup;
     private RespawnShark _respawn;
@@ -66,10 +65,5 @@ public class PlayerView : Shark
     {
         NickName.NickNameText.text = AssetAdress.NickPlayer;
         return AssetAdress.NickPlayer;
-    }
-
-    public void PlayPartical()
-    {
-        _coinEffect.Play();
     }
 }

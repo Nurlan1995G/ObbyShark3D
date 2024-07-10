@@ -1,4 +1,5 @@
-﻿using Assets.Project.AssetProviders;
+﻿using Assets.CodeBase.CameraLogic;
+using Assets.Project.AssetProviders;
 using Assets.Project.CodeBase.Player.Respawn;
 using Assets.Project.CodeBase.Player.UI;
 using Assets.Project.CodeBase.SharkEnemy;
@@ -17,9 +18,10 @@ public class PlayerView : Shark
     private SoundHandler _soundhandler;
 
     public Action<PlayerView> PlayerDied;
+    private CameraRotater _cameraRotater;
 
     public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig, UIPopup uiPopup
-        , BoostButtonUI boostButtonUI, SoundHandler soundHandler)
+        , BoostButtonUI boostButtonUI, SoundHandler soundHandler, CameraRotater cameraRotater)
     {
         _respawn = new RespawnShark();
 
@@ -27,6 +29,7 @@ public class PlayerView : Shark
         _uiPopup = uiPopup;
         _soundhandler = soundHandler;
         _mover.Construct(gameConfig.PlayerData, boostButtonUI);
+        _cameraRotater = cameraRotater;
     }
 
     public void Destroys(SharkModel killerShark = null)
@@ -46,14 +49,13 @@ public class PlayerView : Shark
     public void Teleport()
     {
         transform.position = _positionStaticData.InitPlayerPosition;
-        SharkSkin.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-        Score = 1;
-        ScoreLevelBar.SetScore(Score);
-        ScoreCount = 0;
-        ParametrRaising = 10;
+        ResetScaleAndRotation();
+        ResetScoreLevelBar();
+        _cameraRotater.ResetRotationCamera();
         gameObject.SetActive(true);
         _soundhandler.PlayWin();
     }
+
 
     public override void SetPlayerViewWallet()
     {
@@ -73,5 +75,19 @@ public class PlayerView : Shark
     {
         NickName.NickNameText.text = AssetAdress.NickPlayer;
         return AssetAdress.NickPlayer;
+    }
+
+    private void ResetScaleAndRotation()
+    {
+        SharkSkin.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    private void ResetScoreLevelBar()
+    {
+        Score = 1;
+        ScoreLevelBar.SetScore(Score);
+        ScoreCount = 0;
+        ParametrRaising = 10;
     }
 }

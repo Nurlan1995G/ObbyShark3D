@@ -32,7 +32,7 @@ public class Bootstraper : MonoBehaviour
         
         WriteSpawnPoint(factoryShark, topSharksManager);
 
-        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler);
+        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler,_cameraRotater);
         _playerView.Init(topSharksManager);
 
         _cameraRotater.Construct(_gameConfig);

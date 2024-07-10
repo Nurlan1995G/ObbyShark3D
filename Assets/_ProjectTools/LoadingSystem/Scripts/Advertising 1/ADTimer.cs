@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class ADTimer : MonoBehaviour
@@ -11,9 +12,11 @@ public class ADTimer : MonoBehaviour
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private TMP_Text _label;
 
-    private float _currentTime;
+    [SerializeField, ReadOnly] private float _currentTime;
     private CanvasGroup _canvasGroup;
     private Canvas _canvas;
+
+
 
     private void Awake()
     {
@@ -52,6 +55,9 @@ public class ADTimer : MonoBehaviour
                 TimerExpired();
                 StartTimer();
             }
+
+            if (!Application.isFocused)
+                _canvas.sortingOrder = -1;
         }
     }
 

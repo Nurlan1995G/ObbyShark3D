@@ -141,6 +141,19 @@ namespace Assets.CodeBase.CameraLogic
         public void OnTouchPerformed(InputAction.CallbackContext context) =>
             Rotate(context.ReadValue<Vector2>());
 
+        public void ResetRotationCamera()
+        {
+            Debug.Log("Метод сработал камера");
+            _cinemachineFreeLook.transform.position = new Vector3(80, 20, 5);
+
+            // Сбрасываем вращение камеры Cinemachine
+            _cinemachineFreeLook.m_XAxis.Value = 0; // Сбрасываем вращение по X оси
+            _cinemachineFreeLook.m_YAxis.Value = 0.5f; // Сбрасываем вращение по Y оси на среднее значение (можно подкорректировать при необходимости)
+
+            // Дополнительно устанавливаем вращение объекта камеры, если нужно
+            _cinemachineFreeLook.transform.rotation = Quaternion.Euler(20, 0, 0);
+        }
+
         private void Rotate(Vector2 direction)
         {
             if (_lastDirection != direction)

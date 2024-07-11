@@ -3,14 +3,14 @@ using UnityEngine;
 
 public abstract class Fish : MonoBehaviour
 {
-    [SerializeField] protected ScoreLevelBarFish ScoreLevelBarFish;
     [field: SerializeField] public GameObject FishScale;
+    [SerializeField] protected ScoreLevelBarFish ScoreLevelBarFish;
 
     private Shark _playerView;
 
-    public event Action<Fish> FishDied;
-
     public int ScoreLevel { get; protected set; }
+
+    public event Action<Fish> FishDied;
 
     private void Start()
     {

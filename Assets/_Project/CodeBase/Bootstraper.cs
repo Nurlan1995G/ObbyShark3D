@@ -2,6 +2,7 @@
 using Assets.Project.AssetProviders;
 using Assets.Project.CodeBase.Player.UI;
 using Assets.Project.CodeBase.SharkEnemy.Factory;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,15 +30,27 @@ public class Bootstraper : MonoBehaviour
         _spawner.Construct(new FishFactory(_configFish, assetProvider), random, _playerView, _configFish);
 
         FactoryShark factoryShark = new FactoryShark(assetProvider);
-        
-        WriteSpawnPoint(factoryShark, topSharksManager);
 
-        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler,_cameraRotater);
-        _playerView.Init(topSharksManager);
+        WriteSpawnPoint(factoryShark, topSharksManager);
+        InitPlayerView(topSharksManager);
 
         _cameraRotater.Construct(_gameConfig);
 
         _topSharksUI.Construct(topSharksManager);
+
+        InitBoostUI();
+    }
+
+    private void InitBoostUI()
+    {
+        if (Application.isMobilePlatform)
+            _boostButtonUI.SetMobilePlatform();
+    }
+
+    private void InitPlayerView(TopSharksManager topSharksManager)
+    {
+        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler, _cameraRotater);
+        _playerView.Init(topSharksManager);
     }
 
     private void WriteSpawnPoint(FactoryShark factoryShark, TopSharksManager topSharksManager)

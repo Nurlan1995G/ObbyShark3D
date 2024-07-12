@@ -1,12 +1,12 @@
 {
-    "idSave": 2251,
+    "idSave": 2291,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
     "CurrentLevel": 0,
     "CurrentLevelIndex": 0,
-    "Coin": 18076,
-    "IsMute": true,
+    "Coin": 18571,
+    "IsMute": false,
     "OpenItemsInfoId": [
         -191806,
         0,
@@ -82,7 +82,7 @@
         32788,
         42212
     ],
-    "SelectedSkin": 42212,
+    "SelectedSkin": 32424,
     "SelectedObject": -287762,
     "SelectedTrail": 0,
     "SelectedAnimal": 0

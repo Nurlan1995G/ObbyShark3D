@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using Sirenix.OdinInspector;
+using Assets.Project.CodeBase.Player.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class ADTimer : MonoBehaviour
@@ -12,11 +13,11 @@ public class ADTimer : MonoBehaviour
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private TMP_Text _label;
 
-    [SerializeField, ReadOnly] private float _currentTime;
+    [SerializeField] private UIPopup _respawnUI;
+
+    private float _currentTime;
     private CanvasGroup _canvasGroup;
     private Canvas _canvas;
-
-
 
     private void Awake()
     {
@@ -62,7 +63,7 @@ public class ADTimer : MonoBehaviour
     }
 
     private bool IsMenuOpened() =>
-       _shop.gameObject.activeSelf || _mainMenu.gameObject.activeSelf;
+       _shop.gameObject.activeSelf || _mainMenu.gameObject.activeSelf || _respawnUI.gameObject.activeSelf;
 
     private void StartTimer()
     {
@@ -76,7 +77,7 @@ public class ADTimer : MonoBehaviour
         if (_timerText != null)
         {
             int minutes = Mathf.FloorToInt(_currentTime / 60f);
-            int seconds = Mathf.FloorToInt(_currentTime % 60f);
+            int seconds = Mathf.FloorToInt(_currentTime + 1 % 60f);
 
             _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }

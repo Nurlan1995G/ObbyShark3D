@@ -7,7 +7,7 @@ namespace Assets.Project.CodeBase.Player.UI
     public class BoostButtonUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private TextMeshProUGUI _textShift;
-        [SerializeField] private TextMeshProUGUI _textBoost;
+        //[SerializeField] private TextMeshProUGUI _textBoost;
         
         private PlayerMover _playerMover;
 
@@ -17,7 +17,7 @@ namespace Assets.Project.CodeBase.Player.UI
         public void SetMobilePlatform()
         {
             _textShift.gameObject.SetActive(false);
-            _textBoost.gameObject.SetActive(true);
+            //_textBoost.gameObject.SetActive(true);
         }
 
         public void OnPointerDown(PointerEventData eventData) => 

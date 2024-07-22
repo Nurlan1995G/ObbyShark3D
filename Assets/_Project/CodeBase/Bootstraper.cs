@@ -2,7 +2,6 @@
 using Assets.Project.AssetProviders;
 using Assets.Project.CodeBase.Player.UI;
 using Assets.Project.CodeBase.SharkEnemy.Factory;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,9 +19,13 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private BoostButtonUI _boostButtonUI;
     [SerializeField] private TopSharksUI _topSharksUI;
     [SerializeField] private SoundHandler _soundHandler;
-
+    
+    [SerializeField] private Language _language;
+   
     private void Awake()
     {
+        CheckLanguage();
+
         AssetProvider assetProvider = new AssetProvider();
         ServesSelectTypeFish random = new ServesSelectTypeFish(_configFish);
         TopSharksManager topSharksManager = new TopSharksManager();
@@ -41,6 +44,14 @@ public class Bootstraper : MonoBehaviour
         InitBoostUI();
     }
 
+    private void CheckLanguage()
+    {
+        if (Localization.CurrentLanguage == ".ru")
+            _language = Language.Russian;
+        else
+            _language = Language.English;
+    }
+
     private void InitBoostUI()
     {
         if (Application.isMobilePlatform)
@@ -56,6 +67,6 @@ public class Bootstraper : MonoBehaviour
     private void WriteSpawnPoint(FactoryShark factoryShark, TopSharksManager topSharksManager)
     {
         foreach (SpawnPointEnemyBot spawnPoint in _spawnPoints)
-            spawnPoint.Construct(factoryShark, _positionStaticData, _playerView, _spawner, _gameConfig, topSharksManager);
+            spawnPoint.Construct(factoryShark, _positionStaticData, _playerView, _spawner, _gameConfig, topSharksManager, _language);
     }
 }

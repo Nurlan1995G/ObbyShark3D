@@ -26,7 +26,7 @@ public class TopSharksUI : MonoBehaviour
         {
             _sharkTexts[i].text = $"{sharks[i].GetSharkName()} - {sharks[i].ScoreLevel}";
 
-            if (sharks[i].GetSharkName() == AssetAdress.NickPlayer)
+            if (sharks[i].GetSharkName() == AssetAdress.NickPlayerRu)
             {
                 _sharkTexts[i].color = new Color(130 / 255f, 0, 0, 1); 
             }

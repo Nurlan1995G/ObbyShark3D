@@ -73,8 +73,8 @@ public class PlayerView : Shark
 
     public override string GetSharkName()
     {
-        NickName.NickNameText.text = AssetAdress.NickPlayer;
-        return AssetAdress.NickPlayer;
+        NickName.NickNameText.text = AssetAdress.NickPlayerRu;
+        return AssetAdress.NickPlayerRu;
     }
 
     private void ResetScaleAndRotation()

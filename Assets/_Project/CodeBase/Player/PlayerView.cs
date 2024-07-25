@@ -51,7 +51,6 @@ public class PlayerView : Shark
         transform.position = _positionStaticData.InitPlayerPosition;
         ResetScaleAndRotation();
         ResetScoreLevelBar();
-        _cameraRotater.ResetRotationCamera();
         gameObject.SetActive(true);
         _soundhandler.PlayWin();
     }
